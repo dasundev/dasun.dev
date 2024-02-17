@@ -1,0 +1,7 @@
+#!/usr/bin/env sh
+
+echo 'Run tests'
+composer test
+
+echo 'Run PHP code style fixer'
+composer pint

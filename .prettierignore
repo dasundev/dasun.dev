@@ -1,0 +1,5 @@
+resources/views/components/hero-code.blade.php
+storage
+public
+package-lock.json
+composer.lock

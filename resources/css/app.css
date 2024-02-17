@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+[x-cloak] {
+    display: none !important;
+}
+
+@layer base {
+    html {
+        font-family: "Lexend", sans-serif;
+        font-weight: 300;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+        font-family: "Overpass", sans-serif;
+        font-weight: bold;
+    }
+
+    pre {
+        @apply my-4 overflow-x-auto rounded-none p-0 !important;
+    }
+
+    pre code.torchlight {
+        @apply block min-w-max py-4;
+    }
+
+    pre code.torchlight .line {
+        @apply px-4;
+    }
+
+    pre code.torchlight .line-number,
+    pre code.torchlight .summary-caret {
+        @apply mr-4;
+    }
+
+    .prose {
+        @apply max-w-full !important;
+    }
+
+    .prose blockquote {
+        @apply font-normal text-gray-500 !important;
+    }
+
+    .prose a {
+        @apply text-primary-700;
+    }
+
+    .prose code {
+        @apply bg-gray-100 p-1 dark:bg-gray-800;
+    }
+
+    code.torchlight {
+        white-space: break-spaces !important;
+    }
+
+    .torchlight.has-focus-lines .line:not(.line-focus) {
+        transition:
+            filter 0.35s,
+            opacity 0.35s;
+        filter: blur(0.095rem);
+        opacity: 0.65;
+    }
+
+    .torchlight.has-focus-lines:hover .line:not(.line-focus) {
+        filter: blur(0px);
+        opacity: 1;
+    }
+}
