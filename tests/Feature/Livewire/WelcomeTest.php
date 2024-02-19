@@ -3,11 +3,14 @@
 namespace Tests\Feature\Livewire;
 
 use App\Livewire\Welcome;
+use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Livewire\Livewire;
 use Tests\TestCase;
 
 class WelcomeTest extends TestCase
 {
+    use DatabaseMigrations;
+
     /** @test */
     public function renders_successfully()
     {
