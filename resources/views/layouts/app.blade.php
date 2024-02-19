@@ -10,6 +10,9 @@
 
     <title>@yield('title'){{ $title ?? config('app.name', 'dasun.dev') }}</title>
 
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="{{ url(asset('favicon.ico')) }}">
+
     {!! SEO::generate() !!}
 
     <!-- Fonts -->
