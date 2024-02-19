@@ -10,6 +10,8 @@
 
     <title>@yield('title'){{ $title ?? config('app.name', 'dasun.dev') }}</title>
 
+    {!! SEO::generate() !!}
+
     <!-- Fonts -->
     @googlefonts
     @googlefonts('overpass')
