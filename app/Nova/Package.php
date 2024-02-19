@@ -27,15 +27,23 @@ class Package extends Resource
 
             Text::make('Description', 'description')
                 ->sortable()
-                ->rules('nullable', 'string'),
+                ->hideWhenCreating()
+                ->hideWhenUpdating(),
+
+            Text::make('GitHub Stars', 'github_stars')
+                ->sortable()
+                ->hideWhenCreating()
+                ->hideWhenUpdating(),
 
             Text::make('Downloads Total', 'downloads_total')
                 ->sortable()
-                ->rules('nullable', 'integer'),
+                ->hideWhenCreating()
+                ->hideWhenUpdating(),
 
             Text::make('Repository', 'repository')
                 ->sortable()
-                ->rules('nullable', 'string'),
+                ->hideWhenCreating()
+                ->hideWhenUpdating(),
         ];
     }
 
