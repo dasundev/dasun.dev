@@ -33,6 +33,11 @@ Run the database migrations.
 php artisan migrate
 ```
 
+Install the FrankenPHP library.
+```bash
+artisan octane:install --server=frankenphp
+```
+
 ## Run App
 
 Start frontend development server.
