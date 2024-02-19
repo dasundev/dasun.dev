@@ -1,8 +1,6 @@
-## Description
-Brief description of the changes introduced by this pull request.
+## What is the purpose of this PR?
 
-## Related Issue
-Link to any related issues or feature requests.
+## Related Issue(s)?
 
 ## Checklist
 - [ ] My code follows the project's coding style guidelines.
@@ -14,7 +12,5 @@ Link to any related issues or feature requests.
 - [ ] I have added appropriate reviewers for this pull request.
 
 ## Screenshots (if applicable)
-Include screenshots or GIFs to visually demonstrate the changes made, if applicable.
 
 ## Additional Notes
-Include any additional information or context that may be relevant to the reviewers.
