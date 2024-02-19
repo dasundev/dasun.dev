@@ -18,7 +18,8 @@ class EloquentPackageRepository extends BaseRepository implements PackageReposit
         return $this
             ->model
             ->whereNotNull(['description', 'repository', 'downloads_total'])
-            ->orderBy('name')
+            ->orderBy('name', 'asc')
+            ->orderBy('downloads_total', 'desc')
             ->get();
     }
 
