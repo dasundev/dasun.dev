@@ -106,6 +106,19 @@
             })
         })
     </script>
+
+    @if (app()->isProduction())
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-DF0M53ZHLF"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-DF0M53ZHLF');
+            gtag('config', 'AW-737176690');
+        </script>
+    @endif
 </body>
 
 </html>
