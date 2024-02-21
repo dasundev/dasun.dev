@@ -16,14 +16,10 @@ class ShowPostTest extends TestCase
     /** @test */
     public function renders_successfully()
     {
-        $post = Post::factory()->create([
-            'title' => 'foo',
-            'slug' => Str::slug('foo'),
-            'content' => 'bar',
-        ]);
+        $post = Post::factory()->create();
 
         Livewire::test(ShowPost::class, ['post' => $post])
             ->assertStatus(200)
-            ->assertSee('foo');
+            ->assertSee($post->title);
     }
 }
