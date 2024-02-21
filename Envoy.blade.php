@@ -8,7 +8,6 @@ migrate-database
 fetch-fonts
 build-assets
 install-prod-dependencies
-generate-sitemap
 optimize
 reload-octane-server
 @endstory
@@ -27,7 +26,6 @@ npm install
 @task('install-prod-dependencies')
 cd /home/laravel/dasun.dev
 composer install --optimize-autoloader --no-dev
-npm install --only=prod
 @endtask
 
 @task('maintenance-mode-on')
@@ -55,11 +53,6 @@ npm run build
 @task('migrate-database')
 cd /home/laravel/dasun.dev
 php artisan migrate --force
-@endtask
-
-@task('generate-sitemap')
-cd /home/laravel/dasun.dev
-php artisan sitemap:generate
 @endtask
 
 @task('reload-octane-server')
