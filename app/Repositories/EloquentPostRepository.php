@@ -18,6 +18,7 @@ class EloquentPostRepository extends BaseRepository implements PostRepository
         return $this
             ->model
             ->published()
+            ->visibility('public')
             ->orderByDesc('published_at')
             ->get();
     }

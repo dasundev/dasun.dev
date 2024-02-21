@@ -26,4 +26,11 @@ class PostFactory extends Factory
             'published_at' => null,
         ]);
     }
+
+    public function private(): static
+    {
+        return $this->state(fn (array $attributes) => [
+            'visibility' => 'private',
+        ]);
+    }
 }

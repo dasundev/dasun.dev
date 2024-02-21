@@ -3,6 +3,7 @@
 namespace App\Nova;
 
 use Illuminate\Http\Request;
+use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\Date;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Image;
@@ -67,6 +68,10 @@ class Post extends Resource
             Markdown::make('Content')
                 ->rules('required')
                 ->withFiles('public', 'blog'),
+
+            Boolean::make('Visibility')
+                ->trueValue('public')
+                ->falseValue('private'),
 
             Date::make('Published At')
                 ->rules('sometimes:date'),
