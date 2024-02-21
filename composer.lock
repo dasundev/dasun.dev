@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "dc336de785676afc2e6bfcf4455d9ff0",
+    "content-hash": "a09d9d8cb328948c8bb543fd5c38e836",
     "packages": [
         {
             "name": "artesaos/seotools",
@@ -259,6 +259,75 @@
                 }
             ],
             "time": "2023-12-11T17:09:12+00:00"
+        },
+        {
+            "name": "dasundev/nova-access-secret",
+            "version": "v1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dasundev/nova-access-secret.git",
+                "reference": "6ab771e63dc0c9efede53bf7eee88b4153764f89"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dasundev/nova-access-secret/zipball/6ab771e63dc0c9efede53bf7eee88b4153764f89",
+                "reference": "6ab771e63dc0c9efede53bf7eee88b4153764f89",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^8.1",
+                "spatie/laravel-package-tools": "^1.10.0"
+            },
+            "require-dev": {
+                "larastan/larastan": "^2.0",
+                "laravel/pint": "^1.13",
+                "orchestra/testbench": "^8.0",
+                "orchestra/testbench-dusk": "^8.12",
+                "pestphp/pest": "^2.30.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Dasundev\\NovaAccessSecret\\NovaAccessSecretServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Dasundev\\NovaAccessSecret\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Dasun Tharanga",
+                    "email": "hello@dasun.dev"
+                }
+            ],
+            "description": "Secure your Laravel Nova access with a required secret key in the URL.",
+            "keywords": [
+                "access",
+                "dasundev",
+                "laravel",
+                "login",
+                "nova",
+                "secret"
+            ],
+            "support": {
+                "issues": "https://github.com/dasundev/nova-access-secret/issues",
+                "source": "https://github.com/dasundev/nova-access-secret/tree/v1.0.0"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/dasundev",
+                    "type": "github"
+                }
+            ],
+            "time": "2024-02-21T08:13:49+00:00"
         },
         {
             "name": "dflydev/dot-access-data",
