@@ -10,6 +10,7 @@ build-assets
 install-prod-dependencies
 generate-sitemap
 optimize
+reload-octane-server
 @endstory
 
 @task('update-code')
@@ -59,4 +60,9 @@ php artisan migrate --force
 @task('generate-sitemap')
 cd /home/laravel/dasun.dev
 php artisan sitemap:generate
+@endtask
+
+@task('reload-octane-server')
+cd /home/laravel/dasun.dev
+php artisan octane:reload
 @endtask
