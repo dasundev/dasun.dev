@@ -18,6 +18,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::feeds();
+
 Route::get('/', Welcome::class);
 Route::get('/blog', Blog::class)->name('blog');
 Route::get('/blog/{post}', ShowPost::class)->name('show-post');

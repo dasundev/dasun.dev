@@ -15,6 +15,8 @@
 
     {!! SEO::generate() !!}
 
+    @include('feed::links')
+
     <!-- Fonts -->
     @googlefonts
     @googlefonts('overpass')
