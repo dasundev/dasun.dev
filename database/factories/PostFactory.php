@@ -13,6 +13,7 @@ class PostFactory extends Factory
     {
         return [
             'title' => $this->faker->word(),
+            'excerpt' => $this->faker->text(),
             'slug' => $this->faker->slug(),
             'content' => $this->faker->word(),
             'published_at' => now(),
