@@ -5,7 +5,6 @@ namespace Tests\Feature\Livewire;
 use App\Livewire\ShowPost;
 use App\Models\Post;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
-use Illuminate\Support\Str;
 use Livewire\Livewire;
 use Tests\TestCase;
 
