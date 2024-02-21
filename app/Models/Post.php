@@ -66,6 +66,6 @@ class Post extends Model implements Feedable
 
     public function getAllFeedItems(): Collection
     {
-        return Post::all();
+        return Post::visibility('public')->get();
     }
 }
