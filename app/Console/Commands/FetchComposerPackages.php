@@ -19,7 +19,7 @@ class FetchComposerPackages extends Command
     {
         $packageRepository = app(PackageRepository::class);
 
-        $packages = $packageRepository->getAllDraftPackages();
+        $packages = $packageRepository->getPendingPackages();
 
         $packagist = new PackagistConnector;
 
