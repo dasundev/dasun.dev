@@ -8,7 +8,7 @@ use Illuminate\Support\Collection;
 
 class EloquentPackageRepository implements PackageRepository
 {
-    public function getAllPackages(): Collection
+    public function getPackages(): Collection
     {
         return Package::whereNotNull([
             'description',
@@ -20,7 +20,7 @@ class EloquentPackageRepository implements PackageRepository
             ->get();
     }
 
-    public function getAllDraftPackages(): Collection
+    public function getPendingPackages(): Collection
     {
         return Package::orderBy('name')
             ->get();

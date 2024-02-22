@@ -6,9 +6,9 @@ use Illuminate\Support\Collection;
 
 interface PackageRepository
 {
-    public function getAllPackages(): Collection;
+    public function getPackages(): Collection;
 
-    public function getAllDraftPackages(): Collection;
+    public function getPendingPackages(): Collection;
 
     public function updatePackage(int $id, array $attributes): void;
 }

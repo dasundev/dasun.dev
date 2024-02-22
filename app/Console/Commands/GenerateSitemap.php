@@ -2,7 +2,7 @@
 
 namespace App\Console\Commands;
 
-use App\Models\Post;
+use App\Repositories\Contracts\PostRepository;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Log;
 use Spatie\Sitemap\Sitemap;
@@ -18,9 +18,8 @@ class GenerateSitemap extends Command
     {
         Log::alert('Generating sitemap...');
 
-        $blogPostsSlugs = Post::all()
-            ->whereNotNull('published_at')
-            ->sortByDesc('created_at')
+        $blogPostsSlugs = app(PostRepository::class)
+            ->getPublicPosts()
             ->pluck('slug')
             ->map(fn ($slug) => Url::create("/blog/$slug"));
 
