@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Repositories\Contracts\PostRepository;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -27,9 +28,9 @@ class Post extends Model implements Feedable
         return $query->whereNotNull('published_at');
     }
 
-    public function scopeVisibility($query, $value)
+    public function scopePublic($query)
     {
-        return $query->whereVisibility($value);
+        return $query->whereVisibility('public');
     }
 
     public function isPublic(): bool
@@ -58,7 +59,7 @@ class Post extends Model implements Feedable
             ->id($this->id)
             ->title($this->title)
             ->summary($this->excerpt)
-            ->updated($this->updated_at)
+            ->updated($this->published_at)
             ->link(route('show-post', $this->slug))
             ->authorName($this->author)
             ->authorEmail($this->authorEmail);
@@ -66,9 +67,6 @@ class Post extends Model implements Feedable
 
     public function getAllFeedItems(): Collection
     {
-        return Post::published()
-            ->visibility('public')
-            ->orderByDesc('published_at')
-            ->get();
+        return app(PostRepository::class)->getPublicPosts();
     }
 }

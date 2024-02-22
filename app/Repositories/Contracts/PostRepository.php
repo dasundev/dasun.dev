@@ -6,5 +6,5 @@ use Illuminate\Support\Collection;
 
 interface PostRepository
 {
-    public function getPublishedPosts(): Collection;
+    public function getPublicPosts(): Collection;
 }

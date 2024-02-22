@@ -6,19 +6,12 @@ use App\Models\Post;
 use App\Repositories\Contracts\PostRepository;
 use Illuminate\Support\Collection;
 
-class EloquentPostRepository extends BaseRepository implements PostRepository
+class EloquentPostRepository implements PostRepository
 {
-    public function __construct(Post $model)
+    public function getPublicPosts(): Collection
     {
-        parent::__construct($model);
-    }
-
-    public function getPublishedPosts(): Collection
-    {
-        return $this
-            ->model
+        return Post::public()
             ->published()
-            ->visibility('public')
             ->orderByDesc('published_at')
             ->get();
     }

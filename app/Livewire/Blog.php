@@ -24,7 +24,7 @@ class Blog extends Component
     public function render(): View
     {
         return view('livewire.blog', [
-            'posts' => app(PostRepository::class)->getPublishedPosts(),
+            'posts' => app(PostRepository::class)->getPublicPosts(),
         ]);
     }
 }

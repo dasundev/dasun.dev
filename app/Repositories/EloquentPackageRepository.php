@@ -6,18 +6,15 @@ use App\Models\Package;
 use App\Repositories\Contracts\PackageRepository;
 use Illuminate\Support\Collection;
 
-class EloquentPackageRepository extends BaseRepository implements PackageRepository
+class EloquentPackageRepository implements PackageRepository
 {
-    public function __construct(Package $model)
-    {
-        parent::__construct($model);
-    }
-
     public function getAllPackages(): Collection
     {
-        return $this
-            ->model
-            ->whereNotNull(['description', 'repository', 'downloads_total'])
+        return Package::whereNotNull([
+                'description',
+                'repository',
+                'downloads_total'
+            ])
             ->orderBy('name', 'asc')
             ->orderBy('downloads_total', 'desc')
             ->get();
@@ -25,17 +22,13 @@ class EloquentPackageRepository extends BaseRepository implements PackageReposit
 
     public function getAllDraftPackages(): Collection
     {
-        return $this
-            ->model
-            ->orderBy('name')
+        return Package::orderBy('name')
             ->get();
     }
 
     public function updatePackage(int $id, array $attributes): void
     {
-        $this
-            ->model
-            ->where('id', $id)
+        Package::where('id', $id)
             ->update($attributes);
     }
 }
