@@ -2,7 +2,6 @@
 
 namespace App\Console\Commands;
 
-use App\Models\Post;
 use App\Repositories\Contracts\PostRepository;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Log;
