@@ -13,6 +13,7 @@ class EloquentPostRepository implements PostRepository
         return Post::public()
             ->published()
             ->orderByDesc('published_at')
+            ->orderByDesc('updated_at')
             ->get();
     }
 }
