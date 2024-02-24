@@ -1,5 +1,14 @@
 # Changelog
 
+## v1.0.2 - 2024-02-24
+
+### What's Changed
+
+* feat: Add follow me card to the show post page by @dasundev in https://github.com/dasundev/dasun.dev/pull/13
+* fix: Title display by @dasundev in https://github.com/dasundev/dasun.dev/pull/14
+
+**Full Changelog**: https://github.com/dasundev/dasun.dev/compare/v1.0.1...v1.0.2
+
 ## v1.1.0 - 2024-02-22
 
 ### What's Changed
