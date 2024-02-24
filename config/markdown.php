@@ -23,7 +23,7 @@ return [
     /*
      * When enabled, anchor links will be added to all titles
      */
-    'add_anchors_to_headings' => false,
+    'add_anchors_to_headings' => true,
 
     /**
      * When enabled, anchors will be rendered as links.
