@@ -18,7 +18,7 @@ class TorchlightWithCopyExtension extends TorchlightExtension
                     <button
                         type="button"
                         title="Copy to clipboard"
-                        class="copy-to-clipboard-button"
+                        class="hidden lg:block copy-to-clipboard-button"
                         @click.prevent="copyToClipboard"
                     >
                         <svg x-show="!copied" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20px" height="20px" class="text-gray-500">
