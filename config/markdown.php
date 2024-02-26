@@ -1,7 +1,7 @@
 <?php
 
+use App\Torchlight\TorchlightWithCopyExtension;
 use League\CommonMark\Extension\Attributes\AttributesExtension;
-use Torchlight\Commonmark\V2\TorchlightExtension;
 
 return [
     'code_highlighting' => [
@@ -66,8 +66,7 @@ return [
      */
     'extensions' => [
         AttributesExtension::class,
-        //        TorchlightExtension::class,
-        \App\Torchlight\TorchlightWithCopyExtension::class,
+        TorchlightWithCopyExtension::class,
     ],
 
     /*
