@@ -1,5 +1,13 @@
 # Changelog
 
+## v1.1.1 - 2024-02-26
+
+### What's Changed
+
+* fix: Copy to clipboard button display only on desktop screen by @dasundev in https://github.com/dasundev/dasun.dev/pull/21
+
+**Full Changelog**: https://github.com/dasundev/dasun.dev/compare/v1.1.0...v1.1.1
+
 ## v1.0.2 - 2024-02-24
 
 ### What's Changed
