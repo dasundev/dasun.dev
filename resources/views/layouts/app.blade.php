@@ -88,7 +88,7 @@
         </div>
     </footer>
 
-    @livewireScripts
+    @livewireScriptConfig
 
     <script>
         document.addEventListener('alpine:init', () => {

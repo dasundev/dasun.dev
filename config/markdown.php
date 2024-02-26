@@ -66,7 +66,8 @@ return [
      */
     'extensions' => [
         AttributesExtension::class,
-        TorchlightExtension::class,
+        //        TorchlightExtension::class,
+        \App\Torchlight\TorchlightWithCopyExtension::class,
     ],
 
     /*

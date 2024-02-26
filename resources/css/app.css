@@ -6,6 +6,17 @@
     display: none !important;
 }
 
+.copy-to-clipboard-button {
+    position: absolute !important;
+    top: 0.5rem;
+    right: 0.5rem;
+    color: white;
+}
+
+.copy-to-clipboard-button.svg {
+    color: white;
+}
+
 @layer base {
     html {
         font-family: "Lexend", sans-serif;
