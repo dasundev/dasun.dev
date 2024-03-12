@@ -11,6 +11,7 @@ use Laravel\Nova\Fields\Markdown;
 use Laravel\Nova\Fields\Slug;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Textarea;
+use Laravel\Nova\Fields\URL;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
 class Post extends Resource
@@ -54,10 +55,13 @@ class Post extends Resource
                 ->maxlength(60)
                 ->enforceMaxlength(),
 
+            URL::make('Link', fn () => route('show-post', $this->slug)),
+
             Slug::make('Slug')
                 ->from('Title')
                 ->rules('required', 'max:255')
-                ->hideWhenUpdating(),
+                ->hideWhenUpdating()
+                ->hideFromIndex(),
 
             Textarea::make('Excerpt')
                 ->rules('required'),
