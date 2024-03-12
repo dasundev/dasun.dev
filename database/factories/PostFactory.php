@@ -15,7 +15,7 @@ class PostFactory extends Factory
             'title' => $this->faker->word(),
             'excerpt' => $this->faker->text(),
             'slug' => $this->faker->slug(),
-            'content' => $this->faker->word(),
+            'content' => $this->faker->text(1000),
             'published_at' => now(),
         ];
     }
