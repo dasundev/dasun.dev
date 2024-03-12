@@ -28,5 +28,8 @@ jobs:
           cp .env.example .env
           php artisan key:generate
 
+      - name: Install node modules and build assets
+        run: npm install && npm run build
+
       - name: Tests
         run: ./vendor/bin/pest
