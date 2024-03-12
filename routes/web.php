@@ -2,8 +2,8 @@
 
 use App\Livewire\About;
 use App\Livewire\Blog;
+use App\Livewire\Blog\ShowPost;
 use App\Livewire\OpenSource;
-use App\Livewire\ShowPost;
 use App\Livewire\Welcome;
 use Illuminate\Support\Facades\Route;
 
