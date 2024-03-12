@@ -12,8 +12,6 @@ use Laravel\Nova\Fields\Slug;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Http\Requests\NovaRequest;
-use Laravel\Nova\Http\Requests\UpdateResourceRequest;
-use Laravel\Nova\Http\Resources\DetailViewResource;
 
 class Post extends Resource
 {
