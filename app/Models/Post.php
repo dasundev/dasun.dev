@@ -72,8 +72,6 @@ class Post extends Model implements Feedable
 
     /**
      * Determine if the post has been edited.
-     *
-     * @return bool
      */
     public function isEdited(): bool
     {
