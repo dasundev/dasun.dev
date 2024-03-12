@@ -1,5 +1,13 @@
 # Changelog
 
+## v1.3.0 - 2024-03-12
+
+### What's Changed
+
+* feat: Integrate laravel pulse by @dasundev in https://github.com/dasundev/dasun.dev/pull/28
+
+**Full Changelog**: https://github.com/dasundev/dasun.dev/compare/v1.2.0...v1.3.0
+
 ## v1.2.0 - 2024-03-12
 
 ### What's Changed
