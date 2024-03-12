@@ -1,5 +1,15 @@
 # Changelog
 
+## v1.2.0 - 2024-03-12
+
+### What's Changed
+
+* feat: Update nova login path by @dasundev in https://github.com/dasundev/dasun.dev/pull/24
+* feat: Update nova panel by @dasundev in https://github.com/dasundev/dasun.dev/pull/25
+* feat: Add post meta data component by @dasundev in https://github.com/dasundev/dasun.dev/pull/26
+
+**Full Changelog**: https://github.com/dasundev/dasun.dev/compare/v1.1.1...v1.2.0
+
 ## v1.1.1 - 2024-02-26
 
 ### What's Changed
