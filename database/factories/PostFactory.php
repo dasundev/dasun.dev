@@ -12,10 +12,10 @@ class PostFactory extends Factory
     public function definition(): array
     {
         return [
-            'title' => $this->faker->word(),
+            'title' => $this->faker->text(100),
             'excerpt' => $this->faker->text(),
             'slug' => $this->faker->slug(),
-            'content' => $this->faker->word(),
+            'content' => $this->faker->text(1000),
             'published_at' => now(),
         ];
     }
