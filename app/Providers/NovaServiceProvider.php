@@ -80,8 +80,6 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
 
     /**
      * Register all menu items.
-     *
-     * @return void
      */
     private function registerMenus(): void
     {
