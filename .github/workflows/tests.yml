@@ -29,7 +29,7 @@ jobs:
           php artisan key:generate
 
       - name: Install node modules and build assets
-        run: npm run install && npm run build
+        run: npm install && npm run build
 
       - name: Tests
         run: ./vendor/bin/pest
