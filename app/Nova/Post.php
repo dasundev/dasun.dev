@@ -74,7 +74,8 @@ class Post extends Resource
                 ->falseValue('private'),
 
             Date::make('Published At')
-                ->rules('sometimes:date'),
+                ->rules('sometimes:date')
+                ->hideWhenUpdating(),
         ];
     }
 
