@@ -12,6 +12,8 @@ use Laravel\Nova\Fields\Slug;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Http\Requests\NovaRequest;
+use Laravel\Nova\Http\Requests\UpdateResourceRequest;
+use Laravel\Nova\Http\Resources\DetailViewResource;
 
 class Post extends Resource
 {
@@ -56,7 +58,8 @@ class Post extends Resource
 
             Slug::make('Slug')
                 ->from('Title')
-                ->rules('required', 'max:255'),
+                ->rules('required', 'max:255')
+                ->hideWhenUpdating(),
 
             Textarea::make('Excerpt')
                 ->rules('required'),
