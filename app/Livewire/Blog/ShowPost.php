@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Livewire;
+namespace App\Livewire\Blog;
 
 use App\Models\Post;
 use Artesaos\SEOTools\Facades\OpenGraph;
@@ -27,7 +27,7 @@ class ShowPost extends Component
 
     public function render(): View
     {
-        return view('livewire.show-post', [
+        return view('livewire.blog.show-post', [
             'title' => $this->post->title,
         ]);
     }

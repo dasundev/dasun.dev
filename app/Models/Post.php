@@ -69,4 +69,12 @@ class Post extends Model implements Feedable
     {
         return app(PostRepository::class)->getPublicPosts();
     }
+
+    /**
+     * Determine if the post has been edited.
+     */
+    public function isEdited(): bool
+    {
+        return $this->published_at->isBefore($this->updated_at);
+    }
 }

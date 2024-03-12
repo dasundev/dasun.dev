@@ -1,8 +1,8 @@
 <?php
 
-namespace Tests\Feature\Livewire;
+namespace Tests\Feature\Livewire\Blog;
 
-use App\Livewire\ShowPost;
+use App\Livewire\Blog\ShowPost;
 use App\Models\Post;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Livewire\Livewire;
