@@ -1,5 +1,13 @@
 # Changelog
 
+## v1.3.1 - 2024-03-14
+
+### What's Changed
+
+* fix: Typo on last updated date by @dasundev in https://github.com/dasundev/dasun.dev/pull/29
+
+**Full Changelog**: https://github.com/dasundev/dasun.dev/compare/v1.3.0...v1.3.1
+
 ## v1.3.0 - 2024-03-12
 
 ### What's Changed
