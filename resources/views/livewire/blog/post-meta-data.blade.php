@@ -13,7 +13,7 @@
         </p>
     @else
         <p class="text-sm text-gray-700 dark:text-gray-200">
-            Latest updated on
+            Last updated on
             <time datetime="{{ $post->updated_at }}">
                 {{ $post->updated_at->format('M jS Y') }}
             </time>
