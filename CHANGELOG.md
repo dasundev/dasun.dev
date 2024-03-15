@@ -1,5 +1,14 @@
 # Changelog
 
+## v1.3.3 - 2024-03-15
+
+### What's Changed
+
+* fix: Display the publish date until the post is published by @dasundev in https://github.com/dasundev/dasun.dev/pull/31
+* fix: Remove blog post title's link by @dasundev in https://github.com/dasundev/dasun.dev/pull/32
+
+**Full Changelog**: https://github.com/dasundev/dasun.dev/compare/v1.3.2...v1.3.3
+
 ## v1.3.2 - 2024-03-15
 
 ### What's Changed
