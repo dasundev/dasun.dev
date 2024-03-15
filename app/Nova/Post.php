@@ -60,7 +60,6 @@ class Post extends Resource
             Slug::make('Slug')
                 ->from('Title')
                 ->rules('required', 'max:255')
-                ->hideWhenUpdating()
                 ->hideFromIndex(),
 
             Textarea::make('Excerpt')
