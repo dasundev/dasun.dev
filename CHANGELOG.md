@@ -1,5 +1,13 @@
 # Changelog
 
+## v1.3.2 - 2024-03-15
+
+### What's Changed
+
+* fix: Display slug when updating by @dasundev in https://github.com/dasundev/dasun.dev/pull/30
+
+**Full Changelog**: https://github.com/dasundev/dasun.dev/compare/v1.3.1...v1.3.2
+
 ## v1.3.1 - 2024-03-14
 
 ### What's Changed
