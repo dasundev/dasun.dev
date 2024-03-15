@@ -2,8 +2,8 @@
 
 <div class="max-w-3xl mx-auto">
     <article class="max-w-none my-10 px-5 lg:px-0">
-        <a href="{{ route('show-post', $post->slug) }}"
-           class="text-3xl lg:text-4xl font-semibold text-black dark:text-white" wire:navigate>{{ $post->title }}</a>
+        <h1 href="{{ route('show-post', $post->slug) }}"
+           class="text-3xl lg:text-4xl font-semibold text-black dark:text-white">{{ $post->title }}</h1>
         <div class="mt-5 mb-10">
             <livewire:blog.post-meta-data :$post />
         </div>
