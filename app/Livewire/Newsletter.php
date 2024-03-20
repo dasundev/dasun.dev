@@ -2,8 +2,8 @@
 
 namespace App\Livewire;
 
-use Livewire\Component;
 use Exception;
+use Livewire\Component;
 
 class Newsletter extends Component
 {
