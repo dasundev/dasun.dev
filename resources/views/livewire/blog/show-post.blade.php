@@ -10,7 +10,11 @@
         <div class="prose dark:prose-invert">
             @markdown($post->content)
         </div>
-        <livewire:newsletter />
+
+        <div class="mt-20">
+            <livewire:newsletter />
+        </div>
+
         <div class="mt-10 flex justify-center gap-2 bg-gray-50 dark:bg-gray-900 p-5">
             <p class="text-md text-black dark:text-gray-300 font-normal">Follow me on</p>
             <a href="https://x.com/dasundev" target="_blank">
