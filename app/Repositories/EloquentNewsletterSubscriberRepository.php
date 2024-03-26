@@ -20,7 +20,7 @@ class EloquentNewsletterSubscriberRepository implements NewsletterSubscriberRepo
     public function verify(string $email): bool
     {
         return NewsletterSubscriber::whereEmail($email)->update([
-            'email_verified_at' => now()
+            'email_verified_at' => now(),
         ]);
     }
 }
