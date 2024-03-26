@@ -3,26 +3,23 @@
 namespace App\Livewire;
 
 use Exception;
+use Illuminate\Contracts\View\View;
 use Livewire\Component;
 
 class Newsletter extends Component
 {
-    public $isSubscribed = false;
+    public $email;
 
-    public function subscribe()
+    public function subscribe(): void
     {
         try {
-            // TODO
-
-            $this->isSubscribed = true;
-
-            return back()->with('success', "Success! I've just sent you an email. Simply click the link inside to confirm your subscription.");
+            $this->dispatch('subscribed', message: "Success! I've just sent you an email. Simply click the link inside to confirm your subscription.");
         } catch (Exception $e) {
-            return back()->with('error', "Apologies, but it seems we're experiencing a server error.");
+            $this->dispatch('subscribed', message: "Apologies, but it seems we're experiencing a server error.");
         }
     }
 
-    public function render()
+    public function render(): View
     {
         return view('livewire.newsletter');
     }
