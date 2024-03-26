@@ -5,7 +5,7 @@ namespace App\Livewire\Components\Forms;
 use Livewire\Attributes\Modelable;
 use Livewire\Component;
 
-class Input extends Component
+class TextInput extends Component
 {
     #[Modelable]
     public $value = '';
@@ -25,6 +25,6 @@ class Input extends Component
 
     public function render()
     {
-        return view('livewire.components.forms.input');
+        return view('livewire.components.forms.text-input');
     }
 }
