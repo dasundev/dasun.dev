@@ -2,6 +2,7 @@
 
 namespace App\Livewire;
 
+use App\Repositories\Contracts\NewsletterSubscriberRepository;
 use Exception;
 use Illuminate\Contracts\View\View;
 use Livewire\Attributes\Validate;
@@ -16,11 +17,13 @@ class Newsletter extends Component
     {
         $this->validate();
 
-        try {
-            $this->dispatch('subscribed', message: "Success! I've just sent you an email. Simply click the link inside to confirm your subscription.");
-        } catch (Exception $e) {
-            $this->dispatch('subscribed', message: "Apologies, but it seems we're experiencing a server error.");
+        $repository = app(NewsletterSubscriberRepository::class);
+
+        if (! $repository->isSubscribed($this->email)) {
+            $repository->createSubscriber(['email' => $this->email]);
         }
+
+        $this->dispatch('subscribed', message: "Success! I've just sent you an email. Simply click the link inside to confirm your subscription.");
     }
 
     public function render(): View

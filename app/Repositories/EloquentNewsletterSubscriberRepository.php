@@ -11,4 +11,9 @@ class EloquentNewsletterSubscriberRepository implements NewsletterSubscriberRepo
     {
         return NewsletterSubscriber::create($attributes);
     }
+
+    public function isSubscribed(string $email): bool
+    {
+        return NewsletterSubscriber::whereEmail($email)->exists();
+    }
 }
