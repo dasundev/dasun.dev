@@ -8,14 +8,20 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
+use Illuminate\Support\Facades\URL;
 
 class NewsletterSubscriberVerifyEmail extends Mailable
 {
     use Queueable, SerializesModels;
 
+    public string $confirmationUrl;
+
     public function __construct(
         private readonly NewsletterSubscriber $subscriber
     ) {
+        $this->confirmationUrl = URL::temporarySignedRoute(
+            'newsletter.confirm-subscription', now()->addMinutes(30), ['email' => $this->subscriber->email]
+        );
     }
 
     public function envelope(): Envelope

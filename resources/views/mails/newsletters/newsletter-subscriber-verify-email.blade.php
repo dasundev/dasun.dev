@@ -5,7 +5,7 @@ To stay updated with the latest from Dasun's Blog, please click the button below
 
 By confirming, you'll receive an email every time a new blog post is published.
 
-<x-mail::button :url="''">
+<x-mail::button :url="$confirmationUrl">
 Confirm subscription
 </x-mail::button>
 

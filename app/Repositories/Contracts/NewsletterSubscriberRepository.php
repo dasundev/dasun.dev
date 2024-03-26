@@ -9,4 +9,6 @@ interface NewsletterSubscriberRepository
     public function createSubscriber(array $attributes): NewsletterSubscriber;
 
     public function isSubscribed(string $email): bool;
+
+    public function verify(string $email): bool;
 }

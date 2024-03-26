@@ -16,4 +16,11 @@ class EloquentNewsletterSubscriberRepository implements NewsletterSubscriberRepo
     {
         return NewsletterSubscriber::whereEmail($email)->exists();
     }
+
+    public function verify(string $email): bool
+    {
+        return NewsletterSubscriber::whereEmail($email)->update([
+            'email_verified_at' => now()
+        ]);
+    }
 }
