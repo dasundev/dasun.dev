@@ -4,13 +4,14 @@ namespace App\Http\Controllers;
 
 use App\Repositories\Contracts\NewsletterSubscriberRepository;
 use Illuminate\Http\Request;
+use Illuminate\Routing\Exceptions\InvalidSignatureException;
 
 class NewsletterController extends Controller
 {
     public function confirmSubscription(Request $request)
     {
         if (! $request->hasValidSignature()) {
-            abort(401);
+            throw new InvalidSignatureException;
         }
 
         $repository = app(NewsletterSubscriberRepository::class);
@@ -25,7 +26,7 @@ class NewsletterController extends Controller
     public function unsubscribe(Request $request)
     {
         if (! $request->hasValidSignature()) {
-            abort(401);
+            throw new InvalidSignatureException;
         }
 
         $repository = app(NewsletterSubscriberRepository::class);
