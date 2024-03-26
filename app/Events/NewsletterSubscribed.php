@@ -13,5 +13,6 @@ class NewsletterSubscribed
 
     public function __construct(
         public NewsletterSubscriber $subscriber
-    ) {}
+    ) {
+    }
 }

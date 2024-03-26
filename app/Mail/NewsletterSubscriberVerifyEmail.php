@@ -16,7 +16,8 @@ class NewsletterSubscriberVerifyEmail extends Mailable implements ShouldQueue
 
     public function __construct(
         private readonly NewsletterSubscriber $subscriber
-    ) {}
+    ) {
+    }
 
     public function envelope(): Envelope
     {

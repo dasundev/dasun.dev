@@ -13,6 +13,6 @@ class NewsletterSubscriber extends Model
     protected $guarded = [];
 
     protected $dispatchesEvents = [
-        'created' => NewsletterSubscribed::class
+        'created' => NewsletterSubscribed::class,
     ];
 }

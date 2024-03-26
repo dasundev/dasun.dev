@@ -8,7 +8,7 @@ use Illuminate\Contracts\Events\ShouldHandleEventsAfterCommit;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Support\Facades\Mail;
 
-class SendNewsletterSubscribeNotification implements ShouldQueue, ShouldHandleEventsAfterCommit
+class SendNewsletterSubscribeNotification implements ShouldHandleEventsAfterCommit, ShouldQueue
 {
     public string $queue = 'listeners';
 
