@@ -33,8 +33,9 @@
                     <livewire:components.forms.input
                         id="email"
                         type="email"
-                        wire:model="email"
+                        wire:model.live="email"
                         placeholder="Enter your email"
+                        required="true"
                     />
                 </div>
                 <div>
