@@ -10,7 +10,7 @@ use Livewire\Component;
 class Newsletter extends Component
 {
     #[Validate('required|email')]
-    public $email;
+    public $email = '';
 
     public function subscribe(): void
     {
