@@ -3,7 +3,6 @@
 namespace App\Livewire;
 
 use App\Repositories\Contracts\NewsletterSubscriberRepository;
-use Exception;
 use Illuminate\Contracts\View\View;
 use Livewire\Attributes\Validate;
 use Livewire\Component;
