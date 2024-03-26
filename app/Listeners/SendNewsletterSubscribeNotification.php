@@ -10,8 +10,6 @@ use Illuminate\Support\Facades\Mail;
 
 class SendNewsletterSubscribeNotification implements ShouldHandleEventsAfterCommit, ShouldQueue
 {
-    public string $queue = 'listeners';
-
     public function handle(NewsletterSubscribed $event): void
     {
         Mail::send((new NewsletterSubscriberVerifyEmail($event->subscriber)));
