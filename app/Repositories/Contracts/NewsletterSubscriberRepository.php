@@ -2,9 +2,9 @@
 
 namespace App\Repositories\Contracts;
 
-use Illuminate\Support\Collection;
+use App\Models\NewsletterSubscriber;
 
 interface NewsletterSubscriberRepository
 {
-    public function createSubscriber(array $attributes): Collection;
+    public function createSubscriber(array $attributes): NewsletterSubscriber;
 }
