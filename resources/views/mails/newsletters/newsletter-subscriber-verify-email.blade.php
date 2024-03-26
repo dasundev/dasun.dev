@@ -1,12 +1,14 @@
 <x-mail::message>
-# Introduction
+# Confirm Your Subscription
 
-The body of your message.
+To stay updated with the latest from Dasun's Blog, please click the button below to confirm your subscription to our newsletter.
+
+By confirming, you'll receive an email every time a new blog post is published.
 
 <x-mail::button :url="''">
-Button Text
+Confirm subscription
 </x-mail::button>
 
 Thanks,<br>
-{{ config('app.name') }}
+Dasun Tharanga
 </x-mail::message>
