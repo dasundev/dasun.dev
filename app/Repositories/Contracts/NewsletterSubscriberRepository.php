@@ -11,4 +11,6 @@ interface NewsletterSubscriberRepository
     public function isSubscribed(string $email): bool;
 
     public function verify(string $email): bool;
+
+    public function deleteSubscriber(string $email): bool;
 }

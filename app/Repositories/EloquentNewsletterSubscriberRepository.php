@@ -23,4 +23,9 @@ class EloquentNewsletterSubscriberRepository implements NewsletterSubscriberRepo
             'email_verified_at' => now(),
         ]);
     }
+
+    public function deleteSubscriber(string $email): bool
+    {
+        return NewsletterSubscriber::whereEmail($email)->delete();
+    }
 }
