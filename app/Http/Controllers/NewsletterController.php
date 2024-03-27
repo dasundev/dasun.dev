@@ -20,7 +20,7 @@ class NewsletterController extends Controller
             email: $request->email
         );
 
-        return response()->json('success');
+        return view('newsletter.subscription-confirmed');
     }
 
     public function unsubscribe(Request $request)
