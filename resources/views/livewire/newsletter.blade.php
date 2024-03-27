@@ -26,7 +26,7 @@
             x-show="!subscribed"
             wire:submit="subscribe"
         >
-            <div class="mt-10 flex flex-col lg:flex-row items-center justify-center gap-2">
+            <div class="mt-10 flex items-center justify-center gap-2">
                 <div class="w-full lg:w-1/2">
                     <label for="email" class="sr-only">Email</label>
                     <x-forms.input
