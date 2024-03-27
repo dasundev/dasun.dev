@@ -1,5 +1,13 @@
 # Changelog
 
+## v1.4.0 - 2024-03-27
+
+### What's Changed
+
+* feat: Add newsletter for blog posts by @dasundev in https://github.com/dasundev/dasun.dev/pull/37
+
+**Full Changelog**: https://github.com/dasundev/dasun.dev/compare/v1.3.3...v1.4.0
+
 ## v1.3.3 - 2024-03-15
 
 ### What's Changed
