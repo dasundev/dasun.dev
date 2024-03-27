@@ -2,7 +2,6 @@
 
 namespace App\Mail;
 
-use App\Models\NewsletterSubscriber;
 use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
 use Illuminate\Mail\Mailables\Content;
@@ -17,17 +16,17 @@ class NewsletterSubscriberVerifyEmail extends Mailable
     public string $confirmationUrl;
 
     public function __construct(
-        private readonly NewsletterSubscriber $subscriber
+        private readonly string $subscriber
     ) {
         $this->confirmationUrl = URL::temporarySignedRoute(
-            'newsletter.confirm-subscription', now()->addMinutes(30), ['email' => $this->subscriber->email]
+            'newsletter.confirm-subscription', now()->addMinutes(30), ['email' => $this->subscriber]
         );
     }
 
     public function envelope(): Envelope
     {
         return new Envelope(
-            to: $this->subscriber->email,
+            to: $this->subscriber,
             subject: "Confirm Your Subscription to Dasun's Blog Newsletter",
         );
     }

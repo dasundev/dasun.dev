@@ -17,11 +17,10 @@
         <div
             x-cloak
             x-show="subscribed"
+            x-text="message"
             x-transition
             class="mt-10 p-5 transition-opacity duration-300 text-black bg-gray-100 dark:bg-gray-900 dark:text-white"
-        >
-            Success! I've just sent you an email. Simply click the link inside to confirm your subscription.
-        </div>
+        ></div>
 
         <form
             x-show="!subscribed"

@@ -8,9 +8,11 @@ interface NewsletterSubscriberRepository
 {
     public function createSubscriber(array $attributes): NewsletterSubscriber;
 
-    public function isSubscribed(string $email): bool;
+    public function isEmailVerified(string $email): bool;
 
-    public function verify(string $email): bool;
+    public function verifyEmail(string $email): bool;
 
     public function deleteSubscriber(string $email): bool;
+
+    public function isSubscriberExists(string $email): bool;
 }

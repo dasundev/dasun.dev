@@ -12,12 +12,14 @@ class EloquentNewsletterSubscriberRepository implements NewsletterSubscriberRepo
         return NewsletterSubscriber::create($attributes);
     }
 
-    public function isSubscribed(string $email): bool
+    public function isEmailVerified(string $email): bool
     {
-        return NewsletterSubscriber::whereEmail($email)->exists();
+        return NewsletterSubscriber::whereEmail($email)
+            ->whereNotNull('email_verified_at')
+            ->exists();
     }
 
-    public function verify(string $email): bool
+    public function verifyEmail(string $email): bool
     {
         return NewsletterSubscriber::whereEmail($email)->update([
             'email_verified_at' => now(),
@@ -27,5 +29,10 @@ class EloquentNewsletterSubscriberRepository implements NewsletterSubscriberRepo
     public function deleteSubscriber(string $email): bool
     {
         return NewsletterSubscriber::whereEmail($email)->delete();
+    }
+
+    public function isSubscriberExists(string $email): bool
+    {
+        return NewsletterSubscriber::whereEmail($email)->exists();
     }
 }
