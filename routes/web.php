@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\NewsletterController;
 use App\Livewire\About;
 use App\Livewire\Blog;
 use App\Livewire\Blog\ShowPost;
@@ -25,3 +26,5 @@ Route::get('/blog', Blog::class)->name('blog');
 Route::get('/blog/{post}', ShowPost::class)->name('show-post');
 Route::get('/open-source', OpenSource::class)->name('open-source.index');
 Route::get('/about', About::class)->name('about');
+Route::get('/newsletter/confirm-subscription', [NewsletterController::class, 'confirmSubscription'])->name('newsletter.confirm-subscription');
+Route::get('/newsletter/unsubscribe', [NewsletterController::class, 'unsubscribe'])->name('newsletter.unsubscribe');

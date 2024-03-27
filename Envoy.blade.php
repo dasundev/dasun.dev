@@ -10,6 +10,7 @@ build-assets
 install-prod-dependencies
 optimize
 reload-octane-server
+restart-queue-workers
 maintenance-mode-off
 @endstory
 
@@ -59,6 +60,11 @@ php artisan migrate --force
 @task('reload-octane-server')
 cd /home/laravel/dasun.dev
 php artisan octane:reload
+@endtask
+
+@task('restart-queue-workers')
+cd /home/laravel/dasun.dev
+php artisan queue:restart
 @endtask
 
 @task('maintenance-mode-off')
