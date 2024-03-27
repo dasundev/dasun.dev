@@ -12,7 +12,7 @@ class NewsletterSubscribed
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
     public function __construct(
-        public NewsletterSubscriber $subscriber
+        public string $subscriber
     ) {
     }
 }

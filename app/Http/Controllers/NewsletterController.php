@@ -14,9 +14,9 @@ class NewsletterController extends Controller
             throw new InvalidSignatureException;
         }
 
-        $repository = app(NewsletterSubscriberRepository::class);
+        $newsletterSubscriberRepository = app(NewsletterSubscriberRepository::class);
 
-        $repository->verify(
+        $newsletterSubscriberRepository->verifyEmail(
             email: $request->email
         );
 
@@ -29,9 +29,9 @@ class NewsletterController extends Controller
             throw new InvalidSignatureException;
         }
 
-        $repository = app(NewsletterSubscriberRepository::class);
+        $newsletterSubscriberRepository = app(NewsletterSubscriberRepository::class);
 
-        $repository->deleteSubscriber(
+        $newsletterSubscriberRepository->deleteSubscriber(
             email: $request->email
         );
 
