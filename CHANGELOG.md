@@ -1,5 +1,14 @@
 # Changelog
 
+## v1.4.1 - 2024-03-27
+
+### What's Changed
+
+* fix: Resend confirmation subscription email if user email is not verified by @dasundev in https://github.com/dasundev/dasun.dev/pull/39
+* feat: Trust all proxies by @dasundev in https://github.com/dasundev/dasun.dev/pull/40
+
+**Full Changelog**: https://github.com/dasundev/dasun.dev/compare/v1.4.0...v1.4.1
+
 ## v1.4.0 - 2024-03-27
 
 ### What's Changed
