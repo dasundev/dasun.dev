@@ -5,6 +5,7 @@ namespace App\Livewire;
 use App\Events\NewsletterSubscribed;
 use App\Repositories\Contracts\NewsletterSubscriberRepository;
 use Illuminate\Contracts\View\View;
+use Illuminate\Support\Facades\RateLimiter;
 use Livewire\Attributes\Validate;
 use Livewire\Component;
 
@@ -24,12 +25,23 @@ class Newsletter extends Component
             $newsletterSubscriberRepository->createSubscriber(['email' => $this->email]);
         }
 
-        // Send the confirmation email to subscribers if their email addresses have not been verified yet.
-        if (! $newsletterSubscriberRepository->isEmailVerified($this->email)) {
-            NewsletterSubscribed::dispatch($this->email);
-        }
+        $executed = RateLimiter::attempt(
+            key: 'newsletter-subscription:'.$this->email,
+            maxAttempts: 3,
+            callback: function () use ($newsletterSubscriberRepository) {
+                // Send the confirmation email to subscribers if their email addresses have not been verified yet.
+                if (! $newsletterSubscriberRepository->isEmailVerified($this->email)) {
+                    NewsletterSubscribed::dispatch($this->email);
+                }
+            },
+            decaySeconds: 60 * 5
+        );
 
-        $this->dispatch('subscribed', message: "Success! I've just sent you an email. Simply click the link inside to confirm your subscription.");
+        if (! $executed) {
+            $this->dispatch('subscribed', message: 'You may try again in 5 minutes.');
+        } else {
+            $this->dispatch('subscribed', message: "Success! I've just sent you an email. Simply click the link inside to confirm your subscription.");
+        }
     }
 
     public function render(): View
