@@ -35,6 +35,6 @@ class NewsletterController extends Controller
             email: $request->email
         );
 
-        return response()->json('success');
+        return view('newsletter.unsubscribed');
     }
 }
