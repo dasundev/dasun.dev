@@ -2,6 +2,7 @@
 
 namespace App\Livewire;
 
+use App\Repositories\Contracts\PostRepository;
 use Artesaos\SEOTools\Facades\SEOMeta;
 use Illuminate\Contracts\View\View;
 use Livewire\Attributes\Title;
@@ -18,6 +19,8 @@ class Welcome extends Component
     #[Title('dasun.dev - Laravel Developer')]
     public function render(): View
     {
-        return view('livewire.welcome');
+        return view('livewire.welcome', [
+            'posts' => app(PostRepository::class)->getLatestPost(),
+        ]);
     }
 }
