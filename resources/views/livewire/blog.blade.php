@@ -12,8 +12,7 @@
             </div>
             <p class="text-black dark:text-white mt-5 text-md">{{ $post->excerpt }}</p>
             <p class="mt-6">
-                <a class="underline text-primary-700 font-normal" href="{{ route('show-post', $post->slug) }}"
-                    wire:navigate.hover>{{ __('Read more') }}</a>
+                <a class="underline text-primary-700 font-normal" href="{{ route('show-post', $post->slug) }}" wire:navigate.hover>{{ __('Read more') }}</a>
             </p>
         </article>
     @endforeach
