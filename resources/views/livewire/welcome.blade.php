@@ -21,7 +21,7 @@
         </div>
     </section>
     <section class="bg-white dark:bg-black">
-        <div class="max-w-4xl flex flex-col items-center justify-center gap-2 mx-auto px-5 lg:px-8">
+        <div class="max-w-4xl flex flex-col items-center justify-center gap-2 mx-auto px-0 lg:px-10">
             <h2 class="text-3xl lg:text-4xl text-center text-black dark:text-white mb-10">Latest Blog Post</h2>
             @foreach ($posts as $post)
                 <livewire:blog.post :$post :key="$post->id"/>
