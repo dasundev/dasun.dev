@@ -16,4 +16,14 @@ class EloquentPostRepository implements PostRepository
             ->orderByDesc('updated_at')
             ->get();
     }
+
+    public function getLatestPost(): Collection
+    {
+        return Post::public()
+            ->published()
+            ->orderByDesc('published_at')
+            ->orderByDesc('updated_at')
+            ->take(1)
+            ->get();
+    }
 }
