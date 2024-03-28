@@ -36,7 +36,7 @@ class AppServiceProvider extends ServiceProvider
     private function registerStringMacros(): void
     {
         Str::macro('readTime', function (...$text) {
-            $totalWords = Str::wordCount(implode(" ", $text));
+            $totalWords = Str::wordCount(implode(' ', $text));
             $minutesToRead = round($totalWords / 200);
 
             return (int) max(1, $minutesToRead);
