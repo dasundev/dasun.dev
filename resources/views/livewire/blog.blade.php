@@ -4,6 +4,8 @@
         <p class="text-center text-md text-gray-500 mt-2">{{ __('Web Development Tips, Tricks, and Insights') }}</p>
     </div>
     @foreach ($posts as $post)
-        <livewire:blog.post :$post :key="$post->id"/>
+        <div class="mb-8">
+            <livewire:blog.post :$post :key="$post->id"/>
+        </div>
     @endforeach
 </div>
