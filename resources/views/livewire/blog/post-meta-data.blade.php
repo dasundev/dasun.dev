@@ -11,11 +11,7 @@
                 {{ $post->updated_at->format('M jS Y') }}
             </time>
         @endif
-        by
-        <a class="underline" target="_blank" rel="noopener noreferrer" title="https://x.com/dasundev"
-           href="https://x.com/dasundev">
-            Dasun Tharanga
-        </a>
+        by Dasun Tharanga
     </p>
     <span class="text-gray-700 dark:text-gray-200 hidden sm:block">·</span>
     <span class="text-sm text-gray-700 dark:text-gray-200">{{ Str::readTime($post->content) }} min read</span>

@@ -10,7 +10,7 @@
                 <div class="mt-2">
                     <livewire:blog.post-meta-data :$post :key="$post->id" />
                 </div>
-                <p class="text-gray-500 mt-5">{{ $post->excerpt }}</p>
+                <p class="text-gray-600 dark:text-gray-300 mt-5">{{ $post->excerpt }}</p>
             </a>
         </div>
     @endforeach
