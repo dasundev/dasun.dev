@@ -9,7 +9,6 @@
             <a
                 href="mailto:hello@dasun.dev?subject=Interested in hiring you&body=Hi Dasun,%0D%0A%0D%0AI'm interested in hiring you for my project. Are you currently available?"><x-button
                     class="mt-7">Work with me</x-button></a>
-            <x-hero-code />
         </div>
     </section>
     <section class="bg-white dark:bg-black">
