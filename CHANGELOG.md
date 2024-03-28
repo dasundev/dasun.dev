@@ -1,5 +1,17 @@
 # Changelog
 
+## v1.5.0 - 2024-03-28
+
+### What's Changed
+
+* feat: Enhance blog page user inteface by @dasundev in https://github.com/dasundev/dasun.dev/pull/43
+* feat: Add read time to blog posts by @dasundev in https://github.com/dasundev/dasun.dev/pull/44
+* fix: Blog ui bugs by @dasundev in https://github.com/dasundev/dasun.dev/pull/45
+* feat: Add latest blog post to the welcome page by @dasundev in https://github.com/dasundev/dasun.dev/pull/46
+* fix: Welcome page ui bugs by @dasundev in https://github.com/dasundev/dasun.dev/pull/48
+
+**Full Changelog**: https://github.com/dasundev/dasun.dev/compare/v1.4.1...v1.5.0
+
 ## v1.4.1 - 2024-03-27
 
 ### What's Changed
