@@ -13,6 +13,7 @@
         "aws/aws-sdk-php": "^3.301",
         "dasundev/nova-access-secret": "^1.0",
         "guzzlehttp/guzzle": "^7.2",
+        "larabug/larabug": "^3.0",
         "laravel/framework": "^10.10",
         "laravel/nova": "^4.32",
         "laravel/octane": "^2.3",
