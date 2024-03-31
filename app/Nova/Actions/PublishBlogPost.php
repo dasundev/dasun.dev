@@ -43,7 +43,12 @@ class PublishBlogPost extends Action implements ShouldQueue
         $subscribers = app(NewsletterSubscriberRepository::class)->getAllSubscribers();
 
         foreach ($subscribers as $subscriber) {
-            Mail::send(new BlogPostNewsletterMail($post, $subscriber));
+            // Send the newsletter if it hasn't been sent before.
+            if ((bool) $post->newsletter_sent === false) {
+                Mail::send(new BlogPostNewsletterMail($post, $subscriber));
+            }
+
+            $post->markNewsletterAsSent();
         }
     }
 }
