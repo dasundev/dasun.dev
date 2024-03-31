@@ -27,6 +27,7 @@ class PublishBlogPost extends Action implements ShouldQueue
     {
         foreach ($models as $post) {
             $this->sendBlogPostNewsletter($post);
+            $this->publishBlogPost($post);
         }
     }
 
@@ -38,6 +39,25 @@ class PublishBlogPost extends Action implements ShouldQueue
         return [];
     }
 
+    /**
+     * Publish the blog post if it hasn't been published before.
+     *
+     * @param Post $post
+     * @return void
+     */
+    private function publishBlogPost(Post $post): void
+    {
+        if ($post->published_at === null) {
+            $post->markAsPublished();
+        }
+    }
+
+    /**
+     * Send the blog post newsletter.
+     *
+     * @param Post $post
+     * @return void
+     */
     private function sendBlogPostNewsletter(Post $post): void
     {
         $subscribers = app(NewsletterSubscriberRepository::class)->getAllSubscribers();
@@ -46,10 +66,8 @@ class PublishBlogPost extends Action implements ShouldQueue
             // Send the newsletter if it hasn't been sent before.
             if ((bool) $post->newsletter_sent === false) {
                 Mail::send(new BlogPostNewsletterMail($post, $subscriber));
+                $post->markNewsletterAsSent();
             }
         }
-
-        $post->markAsPublished();
-        $post->markNewsletterAsSent();
     }
 }
