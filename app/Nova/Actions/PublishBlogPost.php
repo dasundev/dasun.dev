@@ -48,7 +48,7 @@ class PublishBlogPost extends Action implements ShouldQueue
                 Mail::send(new BlogPostNewsletterMail($post, $subscriber));
             }
         }
-        
+
         $post->markAsPublished();
         $post->markNewsletterAsSent();
     }
