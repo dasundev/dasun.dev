@@ -3,6 +3,7 @@
 namespace App\Repositories\Contracts;
 
 use App\Models\NewsletterSubscriber;
+use Illuminate\Support\Collection;
 
 interface NewsletterSubscriberRepository
 {
@@ -15,4 +16,6 @@ interface NewsletterSubscriberRepository
     public function deleteSubscriber(string $email): bool;
 
     public function isSubscriberExists(string $email): bool;
+
+    public function getAllSubscribers(): Collection;
 }

@@ -2,7 +2,7 @@
 
 namespace App\Nova;
 
-use Illuminate\Http\Request;
+use App\Nova\Actions\PublishBlogPost;
 use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\Date;
 use Laravel\Nova\Fields\ID;
@@ -21,7 +21,7 @@ class Post extends Resource
      *
      * @var class-string<\App\Models\Post>
      */
-    public static $model = \App\Models\Post::class;
+    public static string $model = \App\Models\Post::class;
 
     /**
      * The single value that should be used to represent the resource when being displayed.
@@ -43,9 +43,10 @@ class Post extends Resource
     /**
      * Get the fields displayed by the resource.
      *
+     * @param NovaRequest $request
      * @return array
      */
-    public function fields(NovaRequest $request)
+    public function fields(NovaRequest $request): array
     {
         return [
             ID::make()->sortable(),
@@ -86,9 +87,10 @@ class Post extends Resource
     /**
      * Get the cards available for the request.
      *
+     * @param NovaRequest $request
      * @return array
      */
-    public function cards(NovaRequest $request)
+    public function cards(NovaRequest $request): array
     {
         return [];
     }
@@ -96,9 +98,10 @@ class Post extends Resource
     /**
      * Get the filters available for the resource.
      *
+     * @param NovaRequest $request
      * @return array
      */
-    public function filters(NovaRequest $request)
+    public function filters(NovaRequest $request): array
     {
         return [];
     }
@@ -106,9 +109,10 @@ class Post extends Resource
     /**
      * Get the lenses available for the resource.
      *
+     * @param NovaRequest $request
      * @return array
      */
-    public function lenses(NovaRequest $request)
+    public function lenses(NovaRequest $request): array
     {
         return [];
     }
@@ -116,10 +120,13 @@ class Post extends Resource
     /**
      * Get the actions available for the resource.
      *
+     * @param NovaRequest $request
      * @return array
      */
-    public function actions(NovaRequest $request)
+    public function actions(NovaRequest $request): array
     {
-        return [];
+        return [
+            new Actions\PublishBlogPost
+        ];
     }
 }
