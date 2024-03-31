@@ -34,7 +34,7 @@ class NewsletterSubscriberVerifyEmail extends Mailable
     public function content(): Content
     {
         return new Content(
-            markdown: 'mails.newsletters.newsletter-subscriber-verify-email',
+            markdown: 'emails.newsletter.newsletter-subscriber-verify-email',
         );
     }
 }

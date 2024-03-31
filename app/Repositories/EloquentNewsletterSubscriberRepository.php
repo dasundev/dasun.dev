@@ -4,6 +4,7 @@ namespace App\Repositories;
 
 use App\Models\NewsletterSubscriber;
 use App\Repositories\Contracts\NewsletterSubscriberRepository;
+use Illuminate\Support\Collection;
 
 class EloquentNewsletterSubscriberRepository implements NewsletterSubscriberRepository
 {
@@ -34,5 +35,10 @@ class EloquentNewsletterSubscriberRepository implements NewsletterSubscriberRepo
     public function isSubscriberExists(string $email): bool
     {
         return NewsletterSubscriber::whereEmail($email)->exists();
+    }
+
+    public function getAllSubscribers(): Collection
+    {
+        return NewsletterSubscriber::all();
     }
 }

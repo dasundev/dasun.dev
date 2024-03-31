@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Repositories\Contracts\PostRepository;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -76,5 +77,13 @@ class Post extends Model implements Feedable
     public function isEdited(): bool
     {
         return $this->published_at->isBefore($this->updated_at);
+    }
+
+    /**
+     * Mark the newsletter as sent for the post.
+     */
+    public function scopeMarkNewsletterAsSent(Builder $query): void
+    {
+        $query->update(['newsletter_sent' => true]);
     }
 }
