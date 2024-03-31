@@ -31,7 +31,7 @@ class BlogPostNewsletterMail extends Mailable
     public function content(): Content
     {
         return new Content(
-            markdown: 'mails.newsletters.blog-post-newsletter',
+            markdown: 'emails.newsletter.blog-post-newsletter',
         );
     }
 
