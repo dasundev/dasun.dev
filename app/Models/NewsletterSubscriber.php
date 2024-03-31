@@ -12,6 +12,10 @@ class NewsletterSubscriber extends Model
 
     protected $guarded = [];
 
+    protected $casts = [
+        'email_verified_at' => 'date'
+    ];
+
     protected static function booted(): void
     {
         static::addGlobalScope(new EmailVerified);
