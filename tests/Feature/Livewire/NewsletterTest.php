@@ -2,7 +2,6 @@
 
 namespace Tests\Feature\Livewire;
 
-use App\Livewire\About;
 use App\Livewire\Newsletter;
 use App\Models\NewsletterSubscriber;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
