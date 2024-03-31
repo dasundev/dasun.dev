@@ -76,7 +76,7 @@ class Post extends Resource
 
             Date::make('Published At')
                 ->rules('sometimes:date')
-                ->showOnDetail(),
+                ->onlyOnDetail(),
         ];
     }
 

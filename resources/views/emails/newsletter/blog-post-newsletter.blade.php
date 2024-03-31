@@ -8,5 +8,5 @@ Read More
 @endcomponent
 
 Thanks,<br>
-{{ config('app.name') }}
+Dasun Tharanga
 @endcomponent

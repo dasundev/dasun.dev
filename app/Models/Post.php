@@ -86,4 +86,12 @@ class Post extends Model implements Feedable
     {
         $query->update(['newsletter_sent' => true]);
     }
+
+    /**
+     * Mark the post as published.
+     */
+    public function scopeMarkAsPublished(Builder $query): void
+    {
+        $query->update(['published_at' => now()]);
+    }
 }
