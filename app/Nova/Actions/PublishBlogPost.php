@@ -60,8 +60,9 @@ class PublishBlogPost extends Action implements ShouldQueue
             // Send the newsletter if it hasn't been sent before.
             if ((bool) $post->newsletter_sent === false) {
                 Mail::send(new BlogPostNewsletterMail($post, $subscriber));
-                $post->markNewsletterAsSent();
             }
         }
+
+        $post->markNewsletterAsSent();
     }
 }
