@@ -1,5 +1,17 @@
 # Changelog
 
+## v1.6.0 - 2024-03-31
+
+### What's Changed
+
+* feat: Install larabug by @dasundev in https://github.com/dasundev/dasun.dev/pull/49
+* feat: Send an email after publishing a post by @dasundev in https://github.com/dasundev/dasun.dev/pull/56
+* fix: Send blog post newsletter by @dasundev in https://github.com/dasundev/dasun.dev/pull/57
+* feat: Add newsletter to nova by @dasundev in https://github.com/dasundev/dasun.dev/pull/58
+* test: Add newsletter test cases by @dasundev in https://github.com/dasundev/dasun.dev/pull/59
+
+**Full Changelog**: https://github.com/dasundev/dasun.dev/compare/v1.5.0...v1.5.1
+
 ## v1.5.0 - 2024-03-28
 
 ### What's Changed
