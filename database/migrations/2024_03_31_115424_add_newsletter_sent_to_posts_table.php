@@ -9,7 +9,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('posts', function (Blueprint $table) {
-            $table->boolean('newsletter_sent')->default(false);
+            $table->boolean('newsletter_sent')->default(false)->after('visibility');
         });
     }
 
