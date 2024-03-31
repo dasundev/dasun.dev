@@ -13,7 +13,7 @@ class NewsletterSubscriber extends Model
     protected $guarded = [];
 
     protected $casts = [
-        'email_verified_at' => 'date'
+        'email_verified_at' => 'date',
     ];
 
     protected static function booted(): void
