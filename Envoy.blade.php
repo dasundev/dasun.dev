@@ -9,7 +9,6 @@ fetch-fonts
 build-assets
 install-prod-dependencies
 optimize
-reload-octane-server
 restart-queue-workers
 maintenance-mode-off
 @endstory
