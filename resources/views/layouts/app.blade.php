@@ -40,7 +40,9 @@
                 </div>
                 <div class="flex items-center order-none lg:order-3">
                     <div class="inline-flex gap-5 items-center">
-                        <div id="search"></div>
+                        @persist('search')
+                            <div id="search"></div>
+                        @endpersist
                         <button type="button" @click="$store.darkMode.toggle()"
                                 class="bg-gray-50 dark:bg-gray-800 hover:dark:bg-gray-700 hover:bg-gray-100 cursor-pointer text-yellow-500 p-2 rounded-full">
                             <svg x-data xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
