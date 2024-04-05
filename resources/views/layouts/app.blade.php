@@ -35,7 +35,7 @@
         })"
             class="relative max-w-7xl mx-auto flex-col justify-center items-center p-0 lg:p-5">
             <div class="flex justify-between flex-wrap lg:flex-nowrap items-center w-full">
-                <div class="p-5 lg:p-0 order-none lg:order-1">
+                <div class="z-10 p-5 lg:p-0 order-none lg:order-1">
                     <a href="/" class="text-2xl font-normal dark:text-white" wire:navigate.hover>dasun.dev</a>
                 </div>
                 <div class="flex items-center order-none lg:order-3">
