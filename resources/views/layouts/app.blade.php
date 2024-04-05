@@ -39,7 +39,7 @@
                     <a href="/" class="text-2xl font-normal dark:text-white" wire:navigate.hover>dasun.dev</a>
                 </div>
                 <div class="flex items-center order-none lg:order-3">
-                    <div class="inline-flex gap-5 items-center">
+                    <div class="z-10 inline-flex gap-5 items-center">
                         @persist('search')
                             <div id="search"></div>
                         @endpersist
