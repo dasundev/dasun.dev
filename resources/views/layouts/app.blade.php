@@ -67,7 +67,7 @@
                     </button>
                 </div>
                 <div x-ref="links"
-                    class="order-none lg:order-2 hidden lg:inline-flex justify-center flex-col lg:flex-row gap-x-0 lg:gap-x-6 h-full w-full">
+                    class="absolute order-none lg:order-2 hidden lg:inline-flex justify-center flex-col lg:flex-row gap-x-0 lg:gap-x-6 h-full w-full">
                     <a class="text-md inline-flex leading-none items-center font-light hover:text-gray-600 dark:hover:text-gray-300 border-b border-gray-100 dark:border-gray-900 first:border-t lg:first:border-0 lg:border-0 px-6 py-6 lg:p-0 {{ request()->is('open-source') ? 'text-black font-normal dark:text-white bg-gray-50 lg:bg-white dark:bg-gray-900 lg:dark:bg-black' : 'text-gray-500 dark:text-gray-400' }}"
                         href="{{ route('open-source.index') }}" wire:navigate.hover>Open Source</a>
                     <a class="text-md inline-flex leading-none items-center font-light hover:text-gray-600 dark:text-gray-400 dark:hover:text-gray-300 border-b border-gray-100 dark:border-gray-900 lg:border-0 px-6 py-6 lg:p-0 {{ request()->is('blog', 'blog/*') ? 'text-black font-normal dark:text-white bg-gray-50 lg:bg-white dark:bg-gray-900 lg:dark:bg-black' : 'text-gray-500 dark:text-gray-400' }}"
