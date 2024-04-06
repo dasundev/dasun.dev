@@ -10,10 +10,6 @@ class NewsletterController extends Controller
 {
     public function confirmSubscription(Request $request)
     {
-        if (! $request->hasValidSignature()) {
-            throw new InvalidSignatureException;
-        }
-
         $newsletterSubscriberRepository = app(NewsletterSubscriberRepository::class);
 
         $newsletterSubscriberRepository->verifyEmail(
@@ -25,10 +21,6 @@ class NewsletterController extends Controller
 
     public function unsubscribe(Request $request)
     {
-        if (! $request->hasValidSignature()) {
-            throw new InvalidSignatureException;
-        }
-
         $newsletterSubscriberRepository = app(NewsletterSubscriberRepository::class);
 
         $newsletterSubscriberRepository->deleteSubscriber(
