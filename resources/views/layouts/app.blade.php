@@ -35,11 +35,11 @@
         })"
             class="relative max-w-7xl mx-auto flex-col justify-center items-center p-0 lg:p-5">
             <div class="flex justify-between flex-wrap lg:flex-nowrap items-center w-full">
-                <div class="z-10 p-5 lg:p-0 order-none lg:order-1">
+                <div class="z-0 lg:z-10 p-5 lg:p-0 order-none lg:order-1">
                     <a href="/" class="text-2xl font-normal dark:text-white" wire:navigate.hover>dasun.dev</a>
                 </div>
                 <div class="flex items-center order-none lg:order-3">
-                    <div class="z-10 inline-flex gap-5 items-center">
+                    <div class="z-0 lg:z-10 inline-flex gap-5 items-center">
                         @persist('search')
                             <div id="search"></div>
                         @endpersist
@@ -67,7 +67,7 @@
                     </button>
                 </div>
                 <div x-ref="links"
-                    class="absolute order-none lg:order-2 hidden lg:inline-flex justify-center flex-col lg:flex-row gap-x-0 lg:gap-x-6 h-full w-full">
+                    class="block lg:absolute order-none lg:order-2 hidden lg:inline-flex justify-center flex-col lg:flex-row gap-x-0 lg:gap-x-6 h-full w-full">
                     <a class="text-md inline-flex leading-none items-center font-light hover:text-gray-600 dark:hover:text-gray-300 border-b border-gray-100 dark:border-gray-900 first:border-t lg:first:border-0 lg:border-0 px-6 py-6 lg:p-0 {{ request()->is('open-source') ? 'text-black font-normal dark:text-white bg-gray-50 lg:bg-white dark:bg-gray-900 lg:dark:bg-black' : 'text-gray-500 dark:text-gray-400' }}"
                         href="{{ route('open-source.index') }}" wire:navigate.hover>Open Source</a>
                     <a class="text-md inline-flex leading-none items-center font-light hover:text-gray-600 dark:text-gray-400 dark:hover:text-gray-300 border-b border-gray-100 dark:border-gray-900 lg:border-0 px-6 py-6 lg:p-0 {{ request()->is('blog', 'blog/*') ? 'text-black font-normal dark:text-white bg-gray-50 lg:bg-white dark:bg-gray-900 lg:dark:bg-black' : 'text-gray-500 dark:text-gray-400' }}"
