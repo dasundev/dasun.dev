@@ -80,25 +80,21 @@ class Post extends Model implements Feedable
 
     /**
      * Mark the newsletter as sent for the post.
-     *
-     * @return void
      */
     public function markNewsletterAsSent(): void
     {
         $this->update([
-            'newsletter_sent' => true
+            'newsletter_sent' => true,
         ]);
     }
 
     /**
      * Mark the post as published.
-     *
-     * @return void
      */
     public function markAsPublished(): void
     {
         $this->update([
-            'published_at' => now()
+            'published_at' => now(),
         ]);
     }
 }
