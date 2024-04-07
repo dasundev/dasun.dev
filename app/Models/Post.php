@@ -3,7 +3,6 @@
 namespace App\Models;
 
 use App\Repositories\Contracts\PostRepository;
-use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -81,17 +80,25 @@ class Post extends Model implements Feedable
 
     /**
      * Mark the newsletter as sent for the post.
+     *
+     * @return void
      */
-    public function scopeMarkNewsletterAsSent(Builder $query): void
+    public function markNewsletterAsSent(): void
     {
-        $query->update(['newsletter_sent' => true]);
+        $this->update([
+            'newsletter_sent' => true
+        ]);
     }
 
     /**
      * Mark the post as published.
+     *
+     * @return void
      */
-    public function scopeMarkAsPublished(Builder $query): void
+    public function markAsPublished(): void
     {
-        $query->update(['published_at' => now()]);
+        $this->update([
+            'published_at' => now()
+        ]);
     }
 }
