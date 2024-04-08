@@ -28,4 +28,9 @@
             @endforeach
         </div>
     </section>
+    <section>
+        <div class="py-20">
+            <livewire:newsletter />
+        </div>
+    </section>
 </div>
