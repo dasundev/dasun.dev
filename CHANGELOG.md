@@ -1,5 +1,17 @@
 # Changelog
 
+## v1.7.1 - 2024-04-11
+
+### What's Changed
+
+* fix: post model's methods by @dasundev in https://github.com/dasundev/dasun.dev/pull/61
+* fix: open source packages sorting by @dasundev in https://github.com/dasundev/dasun.dev/pull/62
+* feat: setup laravel backups  by @dasundev in https://github.com/dasundev/dasun.dev/pull/63
+* feat: remove post visibility by @dasundev in https://github.com/dasundev/dasun.dev/pull/64
+* feat: preview blog post for admin by @dasundev in https://github.com/dasundev/dasun.dev/pull/65
+
+**Full Changelog**: https://github.com/dasundev/dasun.dev/compare/v1.6.0...v1.7.1
+
 ## v1.6.0 - 2024-03-31
 
 ### What's Changed
