@@ -69,6 +69,14 @@ class Post extends Model implements Feedable
     }
 
     /**
+     * Determine if the post has been published.
+     */
+    public function isPublished(): bool
+    {
+        return $this->published_at !== null;
+    }
+
+    /**
      * Mark the newsletter as sent for the post.
      */
     public function markNewsletterAsSent(): void

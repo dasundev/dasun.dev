@@ -105,6 +105,7 @@ class Post extends Resource
     public function actions(NovaRequest $request): array
     {
         return [
+            new Actions\PreviewBlogPost,
             new Actions\PublishBlogPost,
         ];
     }
