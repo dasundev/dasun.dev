@@ -57,7 +57,7 @@ class Post extends Model implements Feedable
 
     public function getAllFeedItems(): Collection
     {
-        return app(PostRepository::class)->getPublicPosts();
+        return app(PostRepository::class)->getPublishedPosts();
     }
 
     /**

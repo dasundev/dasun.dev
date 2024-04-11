@@ -19,7 +19,7 @@ class GenerateSitemap extends Command
         Log::alert('Generating sitemap...');
 
         $blogPostsSlugs = app(PostRepository::class)
-            ->getPublicPosts()
+            ->getPublishedPosts()
             ->pluck('slug')
             ->map(fn ($slug) => Url::create("/blog/$slug"));
 

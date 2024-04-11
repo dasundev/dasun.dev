@@ -8,7 +8,7 @@ use Illuminate\Support\Collection;
 
 class EloquentPostRepository implements PostRepository
 {
-    public function getPublicPosts(): Collection
+    public function getPublishedPosts(): Collection
     {
         return Post::published()
             ->orderByDesc('published_at')
