@@ -15,7 +15,6 @@ class EloquentPackageRepository implements PackageRepository
             'repository',
             'downloads_total',
         ])
-            ->orderBy('name', 'asc')
             ->orderBy('downloads_total', 'desc')
             ->get();
     }
