@@ -10,8 +10,7 @@ class EloquentPostRepository implements PostRepository
 {
     public function getPublicPosts(): Collection
     {
-        return Post::public()
-            ->published()
+        return Post::published()
             ->orderByDesc('published_at')
             ->orderByDesc('updated_at')
             ->get();
@@ -19,8 +18,7 @@ class EloquentPostRepository implements PostRepository
 
     public function getLatestPost(): Collection
     {
-        return Post::public()
-            ->published()
+        return Post::published()
             ->orderByDesc('published_at')
             ->orderByDesc('updated_at')
             ->take(1)
