@@ -2,7 +2,9 @@
 
 namespace App\Providers;
 
+use App\Models\Post;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Str;
@@ -30,6 +32,18 @@ class AppServiceProvider extends ServiceProvider
     {
         Gate::define('viewPulse', function (User $user) {
             return $user->isAdmin();
+        });
+
+        Gate::define('showBlogPost', function (?User $user, Post $post) {
+            if ($post->isPublished()) {
+                return true;
+            }
+
+            if (Auth::check()) {
+                return $user->isAdmin();
+            }
+
+            return false;
         });
     }
 

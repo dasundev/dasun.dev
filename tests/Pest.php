@@ -11,6 +11,8 @@
 |
 */
 
+use App\Models\User;
+
 uses(
     Tests\TestCase::class,
     // Illuminate\Foundation\Testing\RefreshDatabase::class,
@@ -42,7 +44,7 @@ uses(
 |
 */
 
-function something()
+function admin()
 {
-    // ..
+    return User::factory()->state(['email' => 'hello@dasun.dev'])->create();
 }

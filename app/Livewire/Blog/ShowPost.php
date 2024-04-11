@@ -15,6 +15,8 @@ class ShowPost extends Component
 
     public function mount(Post $post): void
     {
+        $this->authorize('showBlogPost', $post);
+
         $this->post = $post;
 
         SEOMeta::setTitle($this->post->title);
