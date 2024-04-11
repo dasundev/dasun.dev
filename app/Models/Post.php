@@ -28,16 +28,6 @@ class Post extends Model implements Feedable
         return $query->whereNotNull('published_at');
     }
 
-    public function scopePublic($query)
-    {
-        return $query->whereVisibility('public');
-    }
-
-    public function isPublic(): bool
-    {
-        return $this->visibility === 'public';
-    }
-
     public function link(): Attribute
     {
         return Attribute::get(fn ($value) => url($this->slug));
