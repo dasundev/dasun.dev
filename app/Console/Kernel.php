@@ -16,6 +16,8 @@ class Kernel extends ConsoleKernel
         $schedule->call(new PruneStaleAttachments)->daily();
         $schedule->command('composer:fetch-packages')->hourly();
         $schedule->command('sitemap:generate')->hourly();
+        $schedule->command('backup:clean')->daily()->at('01:00');
+        $schedule->command('backup:run')->daily()->at('01:30');
     }
 
     /**
