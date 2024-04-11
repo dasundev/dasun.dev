@@ -3,14 +3,11 @@
 namespace App\Nova\Actions;
 
 use Illuminate\Bus\Queueable;
-use Illuminate\Contracts\Queue\ShouldQueue;
-use Illuminate\Http\RedirectResponse;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Support\Collection;
 use Laravel\Nova\Actions\Action;
 use Laravel\Nova\Actions\ActionResponse;
 use Laravel\Nova\Fields\ActionFields;
-use Laravel\Nova\Http\Requests\NovaRequest;
 
 class PreviewBlogPost extends Action
 {
@@ -20,10 +17,6 @@ class PreviewBlogPost extends Action
 
     /**
      * Perform the action on the given models.
-     *
-     * @param ActionFields $fields
-     * @param Collection $models
-     * @return ActionResponse
      */
     public function handle(ActionFields $fields, Collection $models): ActionResponse
     {

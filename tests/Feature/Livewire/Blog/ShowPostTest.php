@@ -4,7 +4,6 @@ namespace Tests\Feature\Livewire\Blog;
 
 use App\Livewire\Blog\ShowPost;
 use App\Models\Post;
-use App\Models\User;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Livewire\Livewire;
 use Tests\TestCase;
