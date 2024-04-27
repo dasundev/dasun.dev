@@ -5,7 +5,7 @@
             development. With over 5 years of experience in the industry, I have a proven track record of delivering
             high-quality, robust and scalable web solutions to clients. I specialize in utilizing the tools and features
             of the Laravel framework to create powerful and secure web applications.</p>
-        <p class="text-black dark:text-white my-5">In addition to my development work, I am also a YouTuber, where I
+        <p class="text-black dark:text-white my-5">In addition to my development work, I am also a <a href="https://youtube.com/dasundev" target="_blank" class="text-primary-700 font-medium underline">YouTuber</a>, where I
             share my knowledge and experience with the developer community. My channel is dedicated to providing
             valuable and informative content to help developers improve their skills and stay up-to-date with the latest
             technologies and trends.</p>
@@ -18,7 +18,6 @@
             environment and able to adapt quickly to new technologies.</p>
         <p class="text-black dark:text-white">If you're looking for a reliable and experienced web developer to bring
             your ideas to life and achieve your goals, or if you want to improve your skills as a developer, I'd love to
-            hear from you. Please feel free to contact me to discuss your project in more detail, or visit my YouTube
-            channel to check out my content.</p>
+            hear from you. Please feel free to <a href="mailto:hello@dasun.dev" class="text-primary-700 font-medium underline">contact me</a> to discuss your project in more detail, or visit my <a href="https://youtube.com/dasundev" target="_blank" class="text-primary-700 font-medium underline">YouTube channel</a> to check out my content.</p>
     </div>
 </div>
