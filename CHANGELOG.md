@@ -1,5 +1,14 @@
 # Changelog
 
+## v1.8.0 - 2024-05-01
+
+### What's Changed
+
+* feat: add profile picture to the about page by @dasundev in https://github.com/dasundev/dasun.dev/pull/66
+* feat: improve docsearch by @dasundev in https://github.com/dasundev/dasun.dev/pull/67
+
+**Full Changelog**: https://github.com/dasundev/dasun.dev/compare/v1.7.1...v1.8.0
+
 ## v1.7.1 - 2024-04-11
 
 ### What's Changed
