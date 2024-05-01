@@ -6,6 +6,7 @@ use App\Models\Post;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
+use Illuminate\Support\Facades\Vite;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Str;
 
@@ -26,6 +27,7 @@ class AppServiceProvider extends ServiceProvider
     {
         $this->registerGates();
         $this->registerStringMacros();
+        $this->registerViteAliases();
     }
 
     private function registerGates(): void
@@ -55,5 +57,10 @@ class AppServiceProvider extends ServiceProvider
 
             return (int) max(1, $minutesToRead);
         });
+    }
+
+    private function registerViteAliases(): void
+    {
+        Vite::macro('image', fn (string $asset) => $this->asset("resources/images/{$asset}"));
     }
 }
