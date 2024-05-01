@@ -1,7 +1,9 @@
 <div class="max-w-3xl mx-auto my-10 px-5 lg:px-0">
     <div class="mb-10">
         <h2 class="text-3xl lg:text-4xl text-center text-black dark:text-white">{{ __('About') }}</h2>
-        <p class="text-black dark:text-white mt-5">I am Dasun, a highly experienced web developer with a focus on Laravel
+        <img class="float-left w-1/4 mt-[1.7rem] mr-5" src="{{ Vite::image('dasun-tharanga.webp') }}" alt="Dasun Tharanga">
+        <p class="text-black dark:text-white mt-5">
+            I am Dasun, a highly experienced web developer with a focus on Laravel
             development. With over 5 years of experience in the industry, I have a proven track record of delivering
             high-quality, robust and scalable web solutions to clients. I specialize in utilizing the tools and features
             of the Laravel framework to create powerful and secure web applications.</p>
