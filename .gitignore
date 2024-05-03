@@ -3,6 +3,7 @@
 /public/build
 /public/hot
 /public/storage
+/public/sitemap.xml
 /storage/*.key
 /vendor
 .env
@@ -21,4 +22,3 @@ yarn-error.log
 /caddy
 frankenphp
 frankenphp-worker.php
-sitemap.xml
