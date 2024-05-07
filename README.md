@@ -1,53 +1,73 @@
-# dasun.dev
+# The source code of dasun.dev
 
-## Installation
+<a href="https://github.com/dasundev/livewire-dropzone/actions"><img src="https://github.com/dasundev/livewire-dropzone/workflows/tests/badge.svg" alt="Build Status"></a>
 
-Clone the repository.
+## ✨ Introduction
+
+Welcome to the source code repository for [Dasun's website](https://www.dasun.dev). Feel free to explore, learn new things, and contribute to this codebase.
+
+## 📦 Installation
+
+This is a Laravel application, built on Laravel 10 and uses Livewire and TailwindCSS for the frontend. If you're familiar with Laravel, you'll feel right at home.
+
+In terms of local development, you can use the following requirements:
+
+- PHP 8.1 - with SQLite, GD, and other common extensions.
+- Node.js 16 or more recent.
+
+If you have these requirements, you can start by cloning the repository and installing the dependencies:
 ```bash
 git clone https://github.com/dasundev/dasun.dev.git
-```
 
-Switch to the repo folder.
-
-```bash
 cd dasun.dev
+
+git checkout -b feat/your-feature # or fix/your-fix
 ```
 
-Install all dependencies.
+> [!IMPORTANT]
+> Don't push directly to the main branch. Instead, create a new branch and push it to your branch.
+
+Install PHP and Node.js dependencies:
 ```bash
 composer install
-```
 
-Install all npm modules.
-```bash
 npm install
 ```
 
-Create .env file.
+Set up your environment file and generate the application key:
 ```bash
 cp .env.example .env
+
+php artisan key:generate
 ```
 
-Run the database migrations.
+Prepare your database and run the migrations:
 ```bash
+touch database/database.sqlite
+
 php artisan migrate
 ```
 
-Install the FrankenPHP library.
+Link the storage to the public folder:
 ```bash
-artisan octane:install --server=frankenphp
+php artisan storage:link
 ```
 
-## Run App
-
-Start frontend development server.
+In a separate terminal, build the assets in watch mode:
 ```bash
 npm run dev
 ```
 
-Start php development server.
+Run the database migrations.
+```bash
+php artisan queue:work
+```
+
+Finally, start the development server:
 ```bash
 php artisan serve
 ```
+
+That's it! You're now ready to start local development on dasun.dev. If you have any questions or run into issues, don't hesitate to reach out or create an issue on the repository.
 
 
