@@ -1,6 +1,6 @@
 # The source code of dasun.dev
 
-<a href="https://github.com/dasundev/livewire-dropzone/actions"><img src="https://github.com/dasundev/livewire-dropzone/workflows/tests/badge.svg" alt="Build Status"></a>
+<a href="https://github.com/dasundev/dasun.dev/actions"><img src="https://github.com/dasundev/dasun.dev/workflows/tests/badge.svg" alt="Build Status"></a>
 
 ## ✨ Introduction
 
