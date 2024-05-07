@@ -1,6 +1,6 @@
 # The source code of dasun.dev
 
-<a href="https://github.com/dasundev/dasun.dev/actions"><img src="https://github.com/dasundev/dasun.dev/workflows/tests/badge.svg" alt="Build Status"></a>
+<a href="https://github.com/dasundev/dasun.dev/actions"><img src="https://img.shields.io/github/actions/workflow/status/dasundev/dasun.dev/tests.yml?label=tests" alt="Build Status"></a>
 
 ## ✨ Introduction
 
