@@ -46,24 +46,4 @@ class Package extends Resource
                 ->hideWhenUpdating(),
         ];
     }
-
-    public function cards(Request $request): array
-    {
-        return [];
-    }
-
-    public function filters(Request $request): array
-    {
-        return [];
-    }
-
-    public function lenses(Request $request): array
-    {
-        return [];
-    }
-
-    public function actions(Request $request): array
-    {
-        return [];
-    }
 }

@@ -44,7 +44,7 @@ class PublishBlogPost extends Action implements ShouldQueue
      */
     private function publishBlogPost(Post $post): void
     {
-        if ($post->published_at === null) {
+        if (! $post->isPublished()) {
             $post->markAsPublished();
         }
     }
@@ -58,7 +58,7 @@ class PublishBlogPost extends Action implements ShouldQueue
 
         foreach ($subscribers as $subscriber) {
             // Send the newsletter if it hasn't been sent before.
-            if ((bool) $post->newsletter_sent === false) {
+            if (! $post->hasSentNewsletter()) {
                 Mail::send(new BlogPostNewsletterMail($post, $subscriber));
             }
         }
