@@ -95,4 +95,9 @@ class Post extends Model implements Feedable
             'published_at' => now(),
         ]);
     }
+
+    public function hasSentNewsletter(): bool
+    {
+        return $this->newsletter_sent == true;
+    }
 }
