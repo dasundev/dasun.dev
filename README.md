@@ -68,6 +68,3 @@ Finally, start the development server:
 php artisan serve
 ```
 
-That's it! You're now ready to start local development on dasun.dev. If you have any questions or run into issues, don't hesitate to reach out or create an issue on the repository.
-
-
