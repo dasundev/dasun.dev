@@ -50,36 +50,4 @@ class NewsletterSubscriber extends Resource
             Date::make('email_verified_at'),
         ];
     }
-
-    /**
-     * Get the cards available for the request.
-     */
-    public function cards(NovaRequest $request): array
-    {
-        return [];
-    }
-
-    /**
-     * Get the filters available for the resource.
-     */
-    public function filters(NovaRequest $request): array
-    {
-        return [];
-    }
-
-    /**
-     * Get the lenses available for the resource.
-     */
-    public function lenses(NovaRequest $request): array
-    {
-        return [];
-    }
-
-    /**
-     * Get the actions available for the resource.
-     */
-    public function actions(NovaRequest $request): array
-    {
-        return [];
-    }
 }
