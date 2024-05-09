@@ -7,6 +7,7 @@ install-dev-dependencies
 migrate-database
 fetch-fonts
 build-assets
+build-docs
 install-prod-dependencies
 optimize
 restart-queue-workers
@@ -72,6 +73,6 @@ php artisan up
 @endtask
 
 @task('build-docs')
-cd /home/laravel/dasun.dev
+cd /home/laravel/dasun.dev/docs
 npm run docs:build
 @endtask
