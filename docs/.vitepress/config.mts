@@ -20,6 +20,9 @@ export default defineConfig({
         ],
         socialLinks: [
             { icon: "github", link: "https://github.com/vuejs/vitepress" }
-        ]
+        ],
+    },
+    rewrites: {
+        'packages/:pkg/(.*)': ':pkg/index.md'
     }
 });
