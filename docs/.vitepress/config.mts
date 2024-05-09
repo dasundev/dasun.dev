@@ -31,13 +31,8 @@ export default defineConfig({
                                 { text: 'Customize the dropzone', link: '/livewire-dropzone/tailor-ui' },
                             ]
                         },
-                        {
-                            text: 'References',
-                            items: [
-                                { text: 'Special note', link: '/livewire-dropzone/special-note' },
-                                { text: 'Blog post', link: '/livewire-dropzone/blog-post' },
-                            ]
-                        },
+                        { text: 'Special note', link: '/livewire-dropzone/special-note' },
+                        { text: 'Blog post', link: '/livewire-dropzone/blog-post' },
                     ]
                 }
             ],
