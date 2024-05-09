@@ -59,6 +59,27 @@ export default defineConfig({
                         { text: 'Special note', link: '/filament-access-secret/special-note' },
                     ]
                 }
+            ],
+            '/livewire-quill-text-editor/': [
+                {
+                    text: 'Livewire Quill Text Editor',
+                    items: [
+                        {
+                            text: 'Getting Started',
+                            items: [
+                                { text: 'Introduction', link: '/livewire-quill-text-editor/introduction' },
+                                { text: 'Installation', link: '/livewire-quill-text-editor/installation' },
+                            ]
+                        },
+                        {
+                            text: 'Usage',
+                            items: [
+                                { text: 'Use editor component', link: '/livewire-quill-text-editor/use-editor-component' },
+                                { text: 'Customize the editor', link: '/livewire-quill-text-editor/customize-the-editor' },
+                            ]
+                        },
+                    ]
+                }
             ]
         },
         socialLinks: [
