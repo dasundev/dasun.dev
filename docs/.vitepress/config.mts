@@ -7,6 +7,7 @@ export default defineConfig({
     srcDir: "src",
     outDir: "../public/docs",
     themeConfig: {
+        logoLink: "https://www.dasun.dev",
         sidebar: {
             '/livewire-dropzone/': [
                 {
