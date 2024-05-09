@@ -2,10 +2,10 @@ import { defineConfig } from "vitepress";
 
 export default defineConfig({
     title: "dasun.dev",
-    description: "A VitePress Site",
+    description: "Official Documentation",
+    base: "/docs",
     srcDir: "src",
     outDir: "../public/docs",
-    base: "/docs",
     themeConfig: {
         sidebar: {
             '/livewire-dropzone/': [
