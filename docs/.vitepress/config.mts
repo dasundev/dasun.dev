@@ -5,6 +5,7 @@ export default defineConfig({
     description: "A VitePress Site",
     srcDir: "src",
     outDir: "../public/docs",
+    base: "/docs",
     themeConfig: {
         sidebar: {
             '/livewire-dropzone/': [
