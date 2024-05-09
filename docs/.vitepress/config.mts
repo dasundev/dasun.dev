@@ -4,6 +4,7 @@ export default defineConfig({
     title: "dasun.dev",
     description: "A VitePress Site",
     srcDir: "src",
+    outDir: "../public/docs",
     themeConfig: {
         sidebar: {
             '/livewire-dropzone/': [
