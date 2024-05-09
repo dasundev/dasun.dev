@@ -12,6 +12,7 @@ export default defineConfig({
                     items: [
                         { text: 'Introduction', link: '/livewire-dropzone/introduction' },
                         { text: 'Installation', link: '/livewire-dropzone/installation' },
+                        { text: 'Usage', link: '/livewire-dropzone/usage' },
                     ]
                 }
             ]
