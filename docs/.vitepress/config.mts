@@ -13,6 +13,9 @@ export default defineConfig({
                         { text: 'Introduction', link: '/livewire-dropzone/introduction' },
                         { text: 'Installation', link: '/livewire-dropzone/installation' },
                         { text: 'Usage', link: '/livewire-dropzone/usage' },
+                        { text: 'Tailor UI', link: '/livewire-dropzone/tailor-ui' },
+                        { text: 'Special Note', link: '/livewire-dropzone/special-note' },
+                        { text: 'Blog Post', link: '/livewire-dropzone/blog-post' },
                     ]
                 }
             ]
