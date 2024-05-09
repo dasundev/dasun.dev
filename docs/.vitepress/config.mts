@@ -5,24 +5,22 @@ export default defineConfig({
     description: "A VitePress Site",
     srcDir: "src",
     themeConfig: {
-        nav: [
-            { text: "Home", link: "/" },
-            { text: "Examples", link: "/markdown-examples" }
-        ],
-        sidebar: [
-            {
-                text: "Examples",
-                items: [
-                    { text: "Markdown Examples", link: "/markdown-examples" },
-                    { text: "Runtime API Examples", link: "/api-examples" }
-                ]
-            }
-        ],
+        sidebar: {
+            '/livewire-dropzone/': [
+                {
+                    text: 'Livewire Dropzone',
+                    items: [
+                        {
+                            text: 'Introduction', link: '/livewire-dropzone/introduction' },
+                    ]
+                }
+            ]
+        },
         socialLinks: [
-            { icon: "github", link: "https://github.com/vuejs/vitepress" }
+            { icon: "github", link: "https://github.com/dasundev/dasun.dev" }
         ],
     },
     rewrites: {
-        'packages/:pkg/(.*)': ':pkg/index.md'
+        'packages/:pkg/(.*)': ':pkg/(.*)'
     }
 });
