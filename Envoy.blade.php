@@ -70,3 +70,8 @@ php artisan queue:restart
 cd /home/laravel/dasun.dev
 php artisan up
 @endtask
+
+@task('build-docs')
+cd /home/laravel/dasun.dev
+npm run docs:build
+@endtask
