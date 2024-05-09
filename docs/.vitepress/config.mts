@@ -88,7 +88,7 @@ export default defineConfig({
     },
     base: "/docs",
     sitemap: {
-        hostname: 'https://dasun.test/docs/'
+        hostname: 'https://www.dasun.dev/docs/'
     },
     rewrites: {
         'packages/:pkg/(.*)': ':pkg/(.*)'
