@@ -1,6 +1,7 @@
 /.phpunit.cache
 /node_modules
 /public/build
+/public/docs
 /public/hot
 /public/storage
 /public/sitemap.xml
