@@ -3,7 +3,6 @@ import { defineConfig } from "vitepress";
 export default defineConfig({
     title: "dasun.dev",
     description: "Official Documentation",
-    base: "/docs",
     srcDir: "src",
     outDir: "../public/docs",
     themeConfig: {
@@ -81,13 +80,17 @@ export default defineConfig({
                         },
                     ]
                 }
-            ]
+            ],
         },
         socialLinks: [
             { icon: "github", link: "https://github.com/dasundev/dasun.dev" }
         ],
     },
+    base: "/docs",
+    sitemap: {
+        hostname: 'https://dasun.test/docs/'
+    },
     rewrites: {
         'packages/:pkg/(.*)': ':pkg/(.*)'
-    }
+    },
 });
