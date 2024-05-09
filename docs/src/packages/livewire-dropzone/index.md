@@ -1,1 +1,1 @@
-<meta http-equiv="refresh" content="0;url=/livewire-dropzone/introduction.html" />
+<meta http-equiv="refresh" content="0;url=/docs/livewire-dropzone/introduction.html" />
