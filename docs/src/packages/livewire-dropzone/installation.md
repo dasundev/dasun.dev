@@ -1,4 +1,4 @@
-# 📦 Installation
+# Installation
 You can install the package via Composer:
 ```bash
 composer require dasundev/livewire-dropzone

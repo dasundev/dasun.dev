@@ -1,4 +1,4 @@
-# ✨ Introduction
+# Introduction
 This dropzone component for Livewire enables easy drag-and-drop file uploads.
 
 > [!IMPORTANT]

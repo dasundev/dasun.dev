@@ -12,12 +12,32 @@ export default defineConfig({
                 {
                     text: 'Livewire Dropzone',
                     items: [
-                        { text: 'Introduction', link: '/livewire-dropzone/introduction' },
-                        { text: 'Installation', link: '/livewire-dropzone/installation' },
-                        { text: 'Usage', link: '/livewire-dropzone/usage' },
-                        { text: 'Tailor UI', link: '/livewire-dropzone/tailor-ui' },
-                        { text: 'Special Note', link: '/livewire-dropzone/special-note' },
-                        { text: 'Blog Post', link: '/livewire-dropzone/blog-post' },
+                        {
+                            text: 'Getting Started',
+                            items: [
+                                { text: 'Introduction', link: '/livewire-dropzone/introduction' },
+                                { text: 'Installation', link: '/livewire-dropzone/installation' },
+                            ]
+                        },
+                        {
+                            text: 'Basic Usage',
+                            items: [
+                                { text: 'Add your first dropzone', link: '/livewire-dropzone/usage' },
+                            ]
+                        },
+                        {
+                            text: 'Advanced Usage',
+                            items: [
+                                { text: 'Customize the dropzone', link: '/livewire-dropzone/tailor-ui' },
+                            ]
+                        },
+                        {
+                            text: 'References',
+                            items: [
+                                { text: 'Special note', link: '/livewire-dropzone/special-note' },
+                                { text: 'Blog post', link: '/livewire-dropzone/blog-post' },
+                            ]
+                        },
                     ]
                 }
             ]

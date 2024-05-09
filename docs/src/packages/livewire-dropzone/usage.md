@@ -1,4 +1,4 @@
-# 🎬 Usage
+# Add your first dropzone
 Now you can use the dropzone component as you like.
 ```html
 <livewire:dropzone
