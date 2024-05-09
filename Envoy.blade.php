@@ -1,4 +1,4 @@
-@servers(['web' => 'dasundev'])
+@servers(['web' => 'dasun'])
 
 @story('deploy')
 maintenance-mode-on
