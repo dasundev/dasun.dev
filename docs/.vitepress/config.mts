@@ -40,6 +40,30 @@ export default defineConfig({
                         },
                     ]
                 }
+            ],
+            '/filament-access-secret/': [
+                {
+                    text: 'Filament Access Secret',
+                    items: [
+                        {
+                            text: 'Getting Started',
+                            items: [
+                                { text: 'Introduction', link: '/filament-access-secret/introduction' },
+                                { text: 'Installation', link: '/filament-access-secret/installation' },
+                            ]
+                        },
+                        {
+                            text: 'Usage',
+                            items: [
+                                { text: 'Enable secret access', link: '/filament-access-secret/enable-secret-access' },
+                                { text: 'Multiple panel support', link: '/filament-access-secret/multiple-panel-support' },
+                                { text: 'Disable secret access', link: '/filament-access-secret/disable-secret-access' },
+                                { text: 'Enhance security', link: '/filament-access-secret/enhance-security' },
+                            ]
+                        },
+                        { text: 'Special note', link: '/filament-access-secret/special-note' },
+                    ]
+                }
             ]
         },
         socialLinks: [
