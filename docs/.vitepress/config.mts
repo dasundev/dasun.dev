@@ -90,6 +90,20 @@ export default defineConfig({
     sitemap: {
         hostname: 'https://www.dasun.dev/docs/'
     },
+    head: [
+        [
+            'script',
+            { async: '', src: 'https://www.googletagmanager.com/gtag/js?id=G-DF0M53ZHLF' }
+        ],
+        [
+            'script',
+            {},
+            `window.dataLayer = window.dataLayer || [];
+             function gtag(){dataLayer.push(arguments);}
+             gtag('js', new Date());
+             gtag('config', 'G-DF0M53ZHLF');`
+        ]
+    ],
     rewrites: {
         'packages/:pkg/(.*)': ':pkg/(.*)'
     },
