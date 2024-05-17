@@ -1,5 +1,19 @@
 # Changelog
 
+## v2.0.0 - 2024-05-17
+
+### What's Changed
+
+* chore(deps): bump livewire/livewire from 3.4.6 to 3.4.9 by @dependabot in https://github.com/dasundev/dasun.dev/pull/72
+* chore(deps-dev): bump vite from 5.1.1 to 5.1.7 by @dependabot in https://github.com/dasundev/dasun.dev/pull/73
+* chore(deps-dev): bump follow-redirects from 1.15.5 to 1.15.6 by @dependabot in https://github.com/dasundev/dasun.dev/pull/74
+
+### New Contributors
+
+* @dependabot made their first contribution in https://github.com/dasundev/dasun.dev/pull/72
+
+**Full Changelog**: https://github.com/dasundev/dasun.dev/compare/2.0.0...v2.1.0
+
 ## v1.8.0 - 2024-05-01
 
 ### What's Changed
