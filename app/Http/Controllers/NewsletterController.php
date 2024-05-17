@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Repositories\Contracts\NewsletterSubscriberRepository;
 use Illuminate\Http\Request;
-use Illuminate\Routing\Exceptions\InvalidSignatureException;
 
 class NewsletterController extends Controller
 {
