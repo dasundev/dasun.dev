@@ -14,5 +14,7 @@ class Package extends Model
         'description',
         'downloads_total',
         'github_stars',
+        'is_premium',
+        'price',
     ];
 }
