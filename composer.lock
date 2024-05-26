@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e616c64a72635d016eece89c213e8adb",
+    "content-hash": "fb553d18b0aa25580306bb760a1c45b6",
     "packages": [
         {
             "name": "artesaos/seotools",
@@ -408,6 +408,90 @@
                 }
             ],
             "time": "2023-12-11T17:09:12+00:00"
+        },
+        {
+            "name": "dasundev/laravel-payhere",
+            "version": "1.0.0-beta.1",
+            "dist": {
+                "type": "zip",
+                "url": "https://laravel-payhere.composer.sh/download/9c22e777-9336-48b8-bf7b-883f29478f7b/laravel-payhere-1.0.0-beta.1.zip",
+                "reference": "a710b1c6a6285ba8358e2613f8b4169029cf390b",
+                "shasum": "a5cea1e9847a2f4222c4ed93dae49e99b770533f"
+            },
+            "require": {
+                "laravel/framework": "^10.0",
+                "php": "^8.2",
+                "saloonphp/saloon": "^3.0",
+                "spatie/laravel-package-tools": "^1.16"
+            },
+            "require-dev": {
+                "larastan/larastan": "^2.9",
+                "laravel/pint": "^1.15",
+                "orchestra/testbench-dusk": "^8.25",
+                "pestphp/pest": "^2.34"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Dasundev\\PayHere\\PayHereServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Dasundev\\PayHere\\": "src/"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "Workbench\\App\\": "workbench/app/",
+                    "Dasundev\\PayHere\\Tests\\": "tests",
+                    "Workbench\\Database\\Factories\\": "workbench/database/factories/"
+                }
+            },
+            "scripts": {
+                "lint": [
+                    "./vendor/bin/pint -v"
+                ],
+                "test": [
+                    "./vendor/bin/pest"
+                ],
+                "build": [
+                    "@php vendor/bin/testbench workbench:build --ansi"
+                ],
+                "clear": [
+                    "@php vendor/bin/testbench package:purge-skeleton --ansi"
+                ],
+                "serve": [
+                    "Composer\\Config::disableProcessTimeout",
+                    "@build",
+                    "@php vendor/bin/testbench serve"
+                ],
+                "prepare": [
+                    "@php vendor/bin/testbench package:discover --ansi"
+                ],
+                "post-autoload-dump": [
+                    "@clear",
+                    "@prepare",
+                    "@dusk:install-chromedriver",
+                    "@package:create-sqlite-db"
+                ],
+                "package:create-sqlite-db": [
+                    "@php vendor/bin/testbench-dusk package:create-sqlite-db --ansi"
+                ],
+                "dusk:install-chromedriver": [
+                    "@php vendor/bin/dusk-updater detect --auto-update --ansi"
+                ]
+            },
+            "authors": [
+                {
+                    "name": "Dasun Tharanga",
+                    "email": "hello@dasun.dev"
+                }
+            ],
+            "description": "A Laravel plugin for PayHere payment gateway.",
+            "time": "2024-05-26T15:27:43+00:00"
         },
         {
             "name": "dasundev/nova-access-secret",
