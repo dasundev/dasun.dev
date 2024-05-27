@@ -27,10 +27,12 @@ class Package extends Resource
 
             Text::make('Name', 'name')
                 ->sortable()
-                ->rules('required', 'string', 'unique:packages,name'),
+                ->creationRules('required', 'string', 'unique:packages,name')
+                ->updateRules('required', 'string', 'unique:packages,name,{{resourceId}}'),
 
             Text::make('Slug', 'slug')
-                ->rules('required', 'string', 'unique:packages,slug')
+                ->creationRules('required', 'string', 'unique:packages,slug')
+                ->updateRules('required', 'string', 'unique:packages,slug,{{resourceId}}')
                 ->dependsOn('name', function (Text $field, NovaRequest $request, FormData $formData) {
                     if (! empty($formData->get('name'))) {
                         $field->setValue(preg_replace('/^[^\/]+\//', '', $formData['name']));
