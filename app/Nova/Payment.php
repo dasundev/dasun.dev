@@ -5,6 +5,7 @@ namespace App\Nova;
 use Dasundev\PayHere\Models\Payment as PaymentModel;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsTo;
+use Laravel\Nova\Fields\Currency;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Number;
 use Laravel\Nova\Fields\Text;
@@ -44,7 +45,7 @@ class Payment extends Resource
                 ->hideWhenCreating()
                 ->hideWhenUpdating(),
 
-            Number::make('Amount', 'captured_amount')
+            Currency::make('Amount', 'captured_amount')
                 ->sortable()
                 ->hideWhenCreating()
                 ->hideWhenUpdating(),
