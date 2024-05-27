@@ -1,0 +1,64 @@
+<?php
+
+namespace App\Nova;
+
+use App\Models\Order as OrderModel;
+use Illuminate\Http\Request;
+use Laravel\Nova\Fields\Badge;
+use Laravel\Nova\Fields\BelongsTo;
+use Laravel\Nova\Fields\Currency;
+use Laravel\Nova\Fields\ID;
+
+class Order extends Resource
+{
+    public static string $model = OrderModel::class;
+
+    public static $title = 'id';
+
+    public static $search = [
+        'id', 'status',
+    ];
+
+    public static function label(): string
+    {
+        return 'Orders';
+    }
+
+    public function fields(Request $request): array
+    {
+        return [
+            ID::make()->sortable(),
+
+            BelongsTo::make('User', 'user', User::class),
+
+            Currency::make('Total', 'total')
+                ->sortable()
+                ->rules('required', 'integer'),
+
+            Badge::make('status')->map([
+                'unpaid' => 'warning',
+                'paid' => 'success',
+            ]),
+        ];
+    }
+
+    public function cards(Request $request): array
+    {
+        return [];
+    }
+
+    public function filters(Request $request): array
+    {
+        return [];
+    }
+
+    public function lenses(Request $request): array
+    {
+        return [];
+    }
+
+    public function actions(Request $request): array
+    {
+        return [];
+    }
+}
