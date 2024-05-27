@@ -21,7 +21,7 @@ class Order extends Model implements PayHereOrder
     protected $guarded = [];
 
     protected $casts = [
-        'status' => OrderStatus::class
+        'status' => OrderStatus::class,
     ];
 
     public function payherePayment(): HasOne
