@@ -2,8 +2,8 @@
 
 namespace App\Enums;
 
-enum OrderStatus
+enum OrderStatus: string
 {
-    case UNPAID;
-    case PAID;
+    case UNPAID = 'unpaid';
+    case PAID = 'paid';
 }
