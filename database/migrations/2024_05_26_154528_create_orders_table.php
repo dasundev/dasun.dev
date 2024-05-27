@@ -10,7 +10,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('orders', function (Blueprint $table) {
-            $table->uuid('id');
+            $table->uuid('id')->primary();
             $table->foreignIdFor(User::class)->constrained();
             $table->string('status', [
                 'pending',
