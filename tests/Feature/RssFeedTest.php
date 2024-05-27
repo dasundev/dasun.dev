@@ -1,7 +1,6 @@
 <?php
 
 use App\Models\Post;
-use Illuminate\Foundation\Testing\DatabaseMigrations;
 
 test('rss feed renders successfully', function () {
     $post = Post::factory()->create();

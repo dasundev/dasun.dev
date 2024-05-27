@@ -1,7 +1,6 @@
 <?php
 
 use App\Models\User;
-use Illuminate\Foundation\Testing\DatabaseMigrations;
 
 test('guest users should be forbidden from accessing the pulse dashboard', function () {
     $response = $this->get('/pulse');
