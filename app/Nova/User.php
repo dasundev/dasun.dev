@@ -72,11 +72,11 @@ class User extends Resource
                 ->sortable()
                 ->rules('required', 'max:254'),
 
-            Textarea::make('City')
+            Text::make('City')
                 ->sortable()
                 ->rules('required', 'max:254'),
 
-            Textarea::make('Country')
+            Text::make('Country')
                 ->sortable()
                 ->rules('required', 'max:254'),
         ];
