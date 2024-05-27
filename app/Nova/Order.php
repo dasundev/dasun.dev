@@ -35,7 +35,7 @@ class Order extends Resource
                 ->sortable()
                 ->rules('required', 'integer'),
 
-            Badge::make('status')->map([
+            Badge::make('Status')->map([
                 'unpaid' => 'warning',
                 'paid' => 'success',
             ]),
