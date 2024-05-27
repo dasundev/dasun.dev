@@ -1,6 +1,5 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\NewsletterController;
 use App\Livewire\About;
@@ -8,6 +7,7 @@ use App\Livewire\Blog;
 use App\Livewire\Blog\ShowPost;
 use App\Livewire\OpenSource;
 use App\Livewire\Welcome;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
