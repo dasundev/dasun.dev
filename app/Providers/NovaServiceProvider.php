@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use App\Nova\Dashboards\Main;
 use App\Nova\NewsletterSubscriber;
+use App\Nova\Order;
 use App\Nova\Package;
 use App\Nova\Post;
 use App\Nova\User;
@@ -103,6 +104,10 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
                 MenuSection::make('Newsletter', [
                     MenuItem::resource(NewsletterSubscriber::class),
                 ])->icon('mail')->collapsable(),
+
+                MenuSection::make('PayHere', [
+                    MenuItem::resource(Order::class),
+                ])->icon('cash')->collapsable(),
             ];
         });
     }
