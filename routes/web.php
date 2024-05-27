@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\NewsletterController;
 use App\Livewire\About;
 use App\Livewire\Blog;
@@ -28,3 +29,4 @@ Route::get('/open-source', OpenSource::class)->name('open-source.index');
 Route::get('/about', About::class)->name('about');
 Route::get('/newsletter/confirm-subscription', [NewsletterController::class, 'confirmSubscription'])->middleware('signed')->name('newsletter.confirm-subscription');
 Route::get('/newsletter/unsubscribe', [NewsletterController::class, 'unsubscribe'])->name('newsletter.unsubscribe');
+Route::get('/checkout/{package}', [CheckoutController::class, 'checkout'])->name('checkout');
