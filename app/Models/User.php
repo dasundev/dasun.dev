@@ -67,21 +67,21 @@ class User extends Authenticatable implements PayHereCustomer
 
     public function payHerePhone(): string
     {
-        return '0770689524';
+        return $this->phone;
     }
 
     public function payHereAddress(): string
     {
-        return '358, Maussakanda, Nikakatiya';
+        return $this->address;
     }
 
     public function payHereCity(): string
     {
-        return 'Bulutota';
+        return $this->city;
     }
 
     public function payHereCountry(): string
     {
-        return 'Sri Lanka';
+        return $this->country;
     }
 }
