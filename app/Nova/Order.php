@@ -54,4 +54,9 @@ class Order extends Resource
     {
         return false;
     }
+
+    public function authorizedToReplicate(Request $request): bool
+    {
+        return false;
+    }
 }
