@@ -46,6 +46,11 @@ class OrderLine extends Resource
         return false;
     }
 
+    public function authorizedToDelete(Request $request): bool
+    {
+        return false;
+    }
+
     public function authorizedToUpdate(Request $request): bool
     {
         return false;
