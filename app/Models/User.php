@@ -23,6 +23,10 @@ class User extends Authenticatable implements PayHereCustomer
         'name',
         'email',
         'password',
+        'phone',
+        'address',
+        'city',
+        'country'
     ];
 
     /**
