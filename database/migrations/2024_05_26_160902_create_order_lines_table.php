@@ -1,6 +1,5 @@
 <?php
 
-use App\Models\Order;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -11,7 +10,7 @@ return new class extends Migration
     {
         Schema::create('order_lines', function (Blueprint $table) {
             $table->id();
-            $table->foreignUuid(Order::class)->constrained();
+            $table->foreignUuid('order_id')->constrained();
             $table->morphs('purchasable');
             $table->integer('unit_price')->unsigned();
             $table->smallInteger('unit_quantity')->unsigned()->default(1);
