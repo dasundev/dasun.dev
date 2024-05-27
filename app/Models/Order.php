@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Enums\OrderStatus;
 use Dasundev\PayHere\Models\Contracts\PayHereOrder;
 use Dasundev\PayHere\Models\Payment;
 use Dasundev\PayHere\Models\Subscription;
@@ -18,6 +19,10 @@ class Order extends Model implements PayHereOrder
     use HasUuids;
 
     protected $guarded = [];
+
+    protected $casts = [
+        'status' => OrderStatus::class
+    ];
 
     public function payherePayment(): HasOne
     {
