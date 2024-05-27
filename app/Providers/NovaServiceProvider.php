@@ -6,6 +6,7 @@ use App\Nova\Dashboards\Main;
 use App\Nova\NewsletterSubscriber;
 use App\Nova\Order;
 use App\Nova\Package;
+use App\Nova\Payment;
 use App\Nova\Post;
 use App\Nova\User;
 use Illuminate\Http\Request;
@@ -107,6 +108,7 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
 
                 MenuSection::make('PayHere', [
                     MenuItem::resource(Order::class),
+                    MenuItem::resource(Payment::class),
                 ])->icon('cash')->collapsable(),
             ];
         });
