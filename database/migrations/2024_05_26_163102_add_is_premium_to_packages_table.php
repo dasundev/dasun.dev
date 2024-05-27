@@ -9,7 +9,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('packages', function (Blueprint $table) {
-            $table->boolean('is_premium')->default(false);
+            $table->boolean('is_premium')->after('downloads')->default(false);
         });
     }
 
