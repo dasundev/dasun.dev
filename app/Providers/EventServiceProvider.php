@@ -26,8 +26,8 @@ class EventServiceProvider extends ServiceProvider
             SendNewsletterSubscribeNotification::class,
         ],
         PaymentVerified::class => [
-            OrderPaid::class
-        ]
+            OrderPaid::class,
+        ],
     ];
 
     /**
