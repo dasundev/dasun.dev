@@ -20,6 +20,9 @@ jobs:
       - name: Authenticating Nova
         run: composer config http-basic.nova.laravel.com "${{ secrets.NOVA_USERNAME }}" "${{ secrets.NOVA_LICENSE_KEY }}"
 
+      - name: Authenticating Laravel PayHere
+        run: composer config http-basic.laravel-payhere.composer.sh "${{ secrets.LARAVEL_PAYHERE_USERNAME }}" "${{ secrets.LARAVEL_PAYHERE_LICENSE_KEY }}"
+
       - name: Install Dependencies
         run: composer install --no-interaction --prefer-dist --optimize-autoloader
 

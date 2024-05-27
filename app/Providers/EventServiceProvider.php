@@ -3,7 +3,9 @@
 namespace App\Providers;
 
 use App\Events\NewsletterSubscribed;
+use App\Listeners\OrderPaid;
 use App\Listeners\SendNewsletterSubscribeNotification;
+use Dasundev\PayHere\Events\PaymentVerified;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
@@ -22,6 +24,9 @@ class EventServiceProvider extends ServiceProvider
         ],
         NewsletterSubscribed::class => [
             SendNewsletterSubscribeNotification::class,
+        ],
+        PaymentVerified::class => [
+            OrderPaid::class,
         ],
     ];
 

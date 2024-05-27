@@ -3,8 +3,12 @@
 namespace App\Nova;
 
 use Illuminate\Http\Request;
+use Laravel\Nova\Fields\Boolean;
+use Laravel\Nova\Fields\Currency;
+use Laravel\Nova\Fields\FormData;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Text;
+use Laravel\Nova\Http\Requests\NovaRequest;
 
 class Package extends Resource
 {
@@ -23,7 +27,32 @@ class Package extends Resource
 
             Text::make('Name', 'name')
                 ->sortable()
-                ->rules('required', 'string', 'unique:packages,name'),
+                ->creationRules('required', 'string', 'unique:packages,name')
+                ->updateRules('required', 'string', 'unique:packages,name,{{resourceId}}'),
+
+            Text::make('Slug', 'slug')
+                ->creationRules('required', 'string', 'unique:packages,slug')
+                ->updateRules('required', 'string', 'unique:packages,slug,{{resourceId}}')
+                ->dependsOn('name', function (Text $field, NovaRequest $request, FormData $formData) {
+                    if (! empty($formData->get('name'))) {
+                        $field->setValue(preg_replace('/^[^\/]+\//', '', $formData['name']));
+                    }
+                })
+                ->hideFromIndex(),
+
+            Boolean::make('Premium', 'is_premium')
+                ->sortable()
+                ->rules('sometimes', 'boolean'),
+
+            Currency::make('Price', 'price')
+                ->sortable()
+                ->hide()
+                ->dependsOn('is_premium', function (Text $field, NovaRequest $request, FormData $formData) {
+                    if ($formData->boolean('is_premium') === true) {
+                        $field->show()->rules('required', 'integer');
+                    }
+                })
+                ->hideFromIndex(),
 
             Text::make('Description', 'description')
                 ->sortable()

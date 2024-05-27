@@ -13,7 +13,7 @@ class Packages extends Component
     {
         return view('livewire.packages', [
             'packages' => Cache::remember('packages', 60 * 60, function () {
-                return app(PackageRepository::class)->getPackages();
+                return app(PackageRepository::class)->getOpenSourcePackages();
             }),
         ]);
     }

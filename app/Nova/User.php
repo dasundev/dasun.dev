@@ -7,6 +7,7 @@ use Laravel\Nova\Fields\Gravatar;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Password;
 use Laravel\Nova\Fields\Text;
+use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
 class User extends Resource
@@ -60,6 +61,24 @@ class User extends Resource
                 ->onlyOnForms()
                 ->creationRules('required', Rules\Password::defaults())
                 ->updateRules('nullable', Rules\Password::defaults()),
+
+            Text::make('Phone')
+                ->sortable()
+                ->rules('required', 'max:254')
+                ->creationRules('unique:users,phone')
+                ->updateRules('unique:users,phone,{{resourceId}}'),
+
+            Textarea::make('Address')
+                ->sortable()
+                ->rules('required', 'max:254'),
+
+            Text::make('City')
+                ->sortable()
+                ->rules('required', 'max:254'),
+
+            Text::make('Country')
+                ->sortable()
+                ->rules('required', 'max:254'),
         ];
     }
 }
