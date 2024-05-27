@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\NewsletterController;
 use App\Livewire\About;
@@ -7,7 +8,6 @@ use App\Livewire\Blog;
 use App\Livewire\Blog\ShowPost;
 use App\Livewire\OpenSource;
 use App\Livewire\Welcome;
-use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,3 +30,13 @@ Route::get('/about', About::class)->name('about');
 Route::get('/newsletter/confirm-subscription', [NewsletterController::class, 'confirmSubscription'])->middleware('signed')->name('newsletter.confirm-subscription');
 Route::get('/newsletter/unsubscribe', [NewsletterController::class, 'unsubscribe'])->name('newsletter.unsubscribe');
 Route::get('/checkout/{package}', [CheckoutController::class, 'checkout'])->middleware('auth')->name('checkout');
+
+Route::view('dashboard', 'dashboard')
+    ->middleware(['auth', 'verified'])
+    ->name('dashboard');
+
+Route::view('profile', 'profile')
+    ->middleware(['auth'])
+    ->name('profile');
+
+require __DIR__.'/auth.php';
