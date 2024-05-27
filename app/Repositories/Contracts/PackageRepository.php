@@ -6,7 +6,7 @@ use Illuminate\Support\Collection;
 
 interface PackageRepository
 {
-    public function getPackages(): Collection;
+    public function getOpenSourcePackages(): Collection;
 
     public function getPendingPackages(): Collection;
 

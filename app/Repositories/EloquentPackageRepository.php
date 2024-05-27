@@ -8,13 +8,10 @@ use Illuminate\Support\Collection;
 
 class EloquentPackageRepository implements PackageRepository
 {
-    public function getPackages(): Collection
+    public function getOpenSourcePackages(): Collection
     {
-        return Package::whereNotNull([
-            'description',
-            'repository',
-            'downloads_total',
-        ])
+        return Package::openSource()
+            ->whereNotNull(['description', 'repository', 'downloads_total'])
             ->orderBy('downloads_total', 'desc')
             ->get();
     }
