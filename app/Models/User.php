@@ -3,14 +3,16 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Dasundev\PayHere\Billable;
+use Dasundev\PayHere\Models\Contracts\PayHereCustomer;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
-class User extends Authenticatable
+class User extends Authenticatable implements PayHereCustomer
 {
-    use HasApiTokens, HasFactory, Notifiable;
+    use HasApiTokens, HasFactory, Notifiable, Billable;
 
     /**
      * The attributes that are mass assignable.
@@ -46,5 +48,40 @@ class User extends Authenticatable
     public function isAdmin(): bool
     {
         return $this->email === 'hello@dasun.dev';
+    }
+
+    public function payHereFirstName(): string
+    {
+        return explode(' ', trim($this->name))[0];
+    }
+
+    public function payHereLastName(): string
+    {
+        return explode(' ', trim($this->name))[1];
+    }
+
+    public function payHereEmail(): string
+    {
+        return $this->email;
+    }
+
+    public function payHerePhone(): string
+    {
+        return '0770689524';
+    }
+
+    public function payHereAddress(): string
+    {
+        return '358, Maussakanda, Nikakatiya';
+    }
+
+    public function payHereCity(): string
+    {
+        return 'Bulutota';
+    }
+
+    public function payHereCountry(): string
+    {
+        return 'Sri Lanka';
     }
 }
