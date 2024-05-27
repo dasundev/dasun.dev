@@ -416,12 +416,12 @@
         },
         {
             "name": "dasundev/laravel-payhere",
-            "version": "1.0.0-beta.1",
+            "version": "1.0.0-beta.3",
             "dist": {
                 "type": "zip",
-                "url": "https://laravel-payhere.composer.sh/download/9c24143a-1197-4274-ab3e-94a43ecdfd60/laravel-payhere-1.0.0-beta.1.zip",
-                "reference": "84e53bef00504462648314b704e0aa6ceb3d0151",
-                "shasum": "64ddc24f706a6b5854d090ec9d8a93436dd2c594"
+                "url": "https://laravel-payhere.composer.sh/download/9c242b24-4908-4d36-b2d5-e95406dff68c/laravel-payhere-1.0.0-beta.3.zip",
+                "reference": "28a28a1930f7fe7c6343c7c2ba8922a7d9cbc4ee",
+                "shasum": "da492d6d593c2c85970f360d6a43a2a6519f47ec"
             },
             "require": {
                 "laravel/framework": "^10.0",
@@ -496,7 +496,7 @@
                 }
             ],
             "description": "A Laravel plugin for PayHere payment gateway.",
-            "time": "2024-05-27T05:28:42+00:00"
+            "time": "2024-05-27T06:32:47+00:00"
         },
         {
             "name": "dasundev/nova-access-secret",

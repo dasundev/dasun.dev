@@ -12,7 +12,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id');
             $table->foreignUuid('order_id');
-            $table->string('merchant_id')->unique();
+            $table->string('merchant_id');
             $table->string('payment_id')->unique()->nullable();
             $table->string('authorization_token')->nullable();
             $table->string('subscription_id')->unique()->nullable();
@@ -56,5 +56,10 @@ return new class extends Migration
             $table->string('custom_2')->nullable();
             $table->timestamps();
         });
+    }
+
+    public function down(): void
+    {
+        Schema::dropIfExists('payments');
     }
 };
