@@ -35,6 +35,7 @@ class CheckoutController extends Controller
             return $request->user()->newOrder($order)->checkout();
         } catch (Exception $e) {
             Log::error($e->getMessage());
+
             return back()->with('error', 'Checkout process failed!');
         }
     }
