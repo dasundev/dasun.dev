@@ -16,6 +16,7 @@ class PackageFactory extends Factory
 
         return [
             'name' => $name,
+            'slug' => Str::slug($name),
             'description' => $this->faker->text(),
             'repository' => Str::slug($name),
             'github_stars' => $this->faker->randomNumber(),
