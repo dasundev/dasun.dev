@@ -29,4 +29,4 @@ Route::get('/open-source', OpenSource::class)->name('open-source.index');
 Route::get('/about', About::class)->name('about');
 Route::get('/newsletter/confirm-subscription', [NewsletterController::class, 'confirmSubscription'])->middleware('signed')->name('newsletter.confirm-subscription');
 Route::get('/newsletter/unsubscribe', [NewsletterController::class, 'unsubscribe'])->name('newsletter.unsubscribe');
-Route::get('/checkout/{package}', [CheckoutController::class, 'checkout'])->name('checkout');
+Route::get('/checkout/{package}', [CheckoutController::class, 'checkout'])->middleware('auth')->name('checkout');
