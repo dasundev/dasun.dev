@@ -9,7 +9,6 @@ use Laravel\Nova\Fields\Currency;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\MorphTo;
 use Laravel\Nova\Fields\Number;
-use Laravel\Nova\Fields\Text;
 
 class OrderLine extends Resource
 {
@@ -18,7 +17,7 @@ class OrderLine extends Resource
     public static $title = 'id';
 
     public static $search = [
-        'id', 'order_id', 'purchasable_type'
+        'id', 'order_id', 'purchasable_type',
     ];
 
     public function fields(Request $request): array
@@ -38,7 +37,7 @@ class OrderLine extends Resource
                 ->sortable(),
 
             Currency::make('Total', 'total')
-                ->sortable()
+                ->sortable(),
         ];
     }
 
