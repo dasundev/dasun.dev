@@ -38,6 +38,11 @@ class Order extends Model implements PayHereOrder
         return $this->belongsTo(User::class);
     }
 
+    public function order(): BelongsTo
+    {
+        return $this->belongsTo(User::class);
+    }
+
     public function markAsPaid(): void
     {
         $this->update(['status' => OrderStatus::PAID]);

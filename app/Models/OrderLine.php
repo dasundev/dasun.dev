@@ -5,6 +5,7 @@ namespace App\Models;
 use Dasundev\PayHere\Models\Contracts\PayHereOrderLine;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
 
 class OrderLine extends Model implements PayHereOrderLine
@@ -16,6 +17,11 @@ class OrderLine extends Model implements PayHereOrderLine
     public function purchasable(): MorphTo
     {
         return $this->morphTo();
+    }
+
+    public function order(): BelongsTo
+    {
+        return $this->belongsTo(Order::class);
     }
 
     public function payHereOrderLineId(): string

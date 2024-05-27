@@ -2,46 +2,43 @@
 
 namespace App\Nova;
 
-use App\Models\Order as OrderModel;
+use App\Models\OrderLine as OrderLineModel;
 use Illuminate\Http\Request;
-use Laravel\Nova\Fields\Badge;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\Currency;
-use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
+use Laravel\Nova\Fields\MorphTo;
+use Laravel\Nova\Fields\Number;
+use Laravel\Nova\Fields\Text;
 
-class Order extends Resource
+class OrderLine extends Resource
 {
-    public static string $model = OrderModel::class;
+    public static string $model = OrderLineModel::class;
 
     public static $title = 'id';
 
     public static $search = [
-        'id', 'status',
+        'id', 'order_id', 'purchasable_type'
     ];
-
-    public static function label(): string
-    {
-        return 'Orders';
-    }
 
     public function fields(Request $request): array
     {
         return [
             ID::make()->sortable(),
 
-            BelongsTo::make('User', 'user', User::class),
+            BelongsTo::make('Order', 'order', Order::class),
 
-            HasMany::make('Lines', 'lines', OrderLine::class),
+            MorphTo::make('Purchasable', 'purchasable')
+                ->sortable(),
+
+            Currency::make('Unit Price', 'unit_price')
+                ->sortable(),
+
+            Number::make('Unit Quantity', 'unit_quantity')
+                ->sortable(),
 
             Currency::make('Total', 'total')
                 ->sortable()
-                ->rules('required', 'integer'),
-
-            Badge::make('Status')->map([
-                'unpaid' => 'warning',
-                'paid' => 'success',
-            ]),
         ];
     }
 
