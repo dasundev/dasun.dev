@@ -18,7 +18,6 @@ class Payment extends Resource
     public static $search = [
         'id',
         'order_id',
-        'merchant_id',
         'status_message',
         'card_holder_name',
         'card_no',
