@@ -9,7 +9,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('packages', function (Blueprint $table) {
-            $table->unsignedInteger('price')->nullable();
+            $table->unsignedInteger('price')->after('is_premium')->nullable();
         });
     }
 
