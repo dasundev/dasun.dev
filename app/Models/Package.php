@@ -28,4 +28,9 @@ class Package extends Model
     {
         return $this->morphMany(OrderLine::class, 'purchasable');
     }
+
+    public function getRouteKeyName(): string
+    {
+        return 'slug';
+    }
 }
