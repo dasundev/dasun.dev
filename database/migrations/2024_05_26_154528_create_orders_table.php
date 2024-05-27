@@ -13,9 +13,9 @@ return new class extends Migration
             $table->uuid('id')->primary();
             $table->foreignIdFor(User::class)->constrained();
             $table->string('status', [
-                'pending',
-                'completed',
-            ])->default('pending');
+                'unpaid',
+                'paid',
+            ])->default('unpaid');
             $table->integer('total');
             $table->timestamps();
         });
