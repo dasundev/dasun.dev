@@ -42,26 +42,6 @@ class Order extends Resource
         ];
     }
 
-    public function cards(Request $request): array
-    {
-        return [];
-    }
-
-    public function filters(Request $request): array
-    {
-        return [];
-    }
-
-    public function lenses(Request $request): array
-    {
-        return [];
-    }
-
-    public function actions(Request $request): array
-    {
-        return [];
-    }
-
     public static function authorizedToCreate(Request $request): bool
     {
         return false;
