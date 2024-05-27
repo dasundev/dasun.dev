@@ -26,7 +26,7 @@ class User extends Authenticatable implements PayHereCustomer
         'phone',
         'address',
         'city',
-        'country'
+        'country',
     ];
 
     /**
