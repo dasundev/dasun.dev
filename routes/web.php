@@ -8,6 +8,7 @@ use App\Livewire\Blog\ShowPost;
 use App\Livewire\OpenSource;
 use App\Livewire\Welcome;
 use Illuminate\Support\Facades\Route;
+use Livewire\Volt\Volt;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,7 +31,7 @@ Route::get('/about', About::class)->name('about');
 Route::get('/newsletter/confirm-subscription', [NewsletterController::class, 'confirmSubscription'])->middleware('signed')->name('newsletter.confirm-subscription');
 Route::get('/newsletter/unsubscribe', [NewsletterController::class, 'unsubscribe'])->name('newsletter.unsubscribe');
 Route::get('/checkout/{package}', [CheckoutController::class, 'checkout'])->middleware(['auth', 'verified'])->name('checkout');
-Route::view('dashboard', 'livewire.dashboard')->middleware(['auth', 'verified'])->name('dashboard');
+Volt::route('dashboard', 'dashboard')->middleware(['auth', 'verified'])->name('dashboard');
 Route::view('profile', 'livewire.profile')->middleware(['auth'])->name('profile');
 
 require __DIR__.'/auth.php';
