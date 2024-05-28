@@ -44,6 +44,16 @@ class Package extends Resource
                 ->sortable()
                 ->rules('sometimes', 'boolean'),
 
+            Text::make('Anystack Product ID', 'anystack_product_id')
+                ->sortable()
+                ->hide()
+                ->dependsOn('is_premium', function (Text $field, NovaRequest $request, FormData $formData) {
+                    if ($formData->boolean('is_premium') === true) {
+                        $field->show()->rules('required', 'string');
+                    }
+                })
+                ->hideFromIndex(),
+
             Currency::make('Price', 'price')
                 ->sortable()
                 ->hide()
