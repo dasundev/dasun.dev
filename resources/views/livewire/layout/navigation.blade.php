@@ -33,9 +33,9 @@ $logout = function (Logout $logout) {
             <a href="/" class="text-2xl font-normal dark:text-white" wire:navigate.hover>dasun.dev</a>
         </div>
         <div class="flex items-center order-none lg:order-3">
-            <div class="z-0 lg:z-10 inline-flex items-center">
+            <div class="z-0 lg:z-10 inline-flex gap-0 lg:gap-5 items-center">
                 @persist('search')
-                <div id="search" class="mr-5"></div>
+                <div id="search"></div>
                 @endpersist
                 @auth
                     <div class="sm:flex sm:items-center">
@@ -59,7 +59,7 @@ $logout = function (Logout $logout) {
                     </div>
                 @endauth
                 <button type="button" @click="$store.darkMode.toggle()"
-                        class="bg-gray-50 dark:bg-gray-800 hover:dark:bg-gray-700 hover:bg-gray-100 cursor-pointer text-yellow-500 p-2 m-5 rounded-full">
+                        class="bg-gray-50 dark:bg-gray-800 hover:dark:bg-gray-700 hover:bg-gray-100 cursor-pointer text-yellow-500 p-2 m-5 lg:m-0 rounded-full">
                     <svg x-data xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                          stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                         <path x-show="!$store.darkMode.on" stroke-linecap="round" stroke-linejoin="round"
