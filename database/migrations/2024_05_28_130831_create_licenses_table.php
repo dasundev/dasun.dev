@@ -13,7 +13,7 @@ return new class extends Migration
             $table->id();
             $table->foreignIdFor(User::class)->constrained();
             $table->string('name');
-            $table->string('key');
+            $table->string('key')->unique();
             $table->timestamp('expires_at');
             $table->timestamps();
         });
