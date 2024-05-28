@@ -31,11 +31,11 @@ Route::get('/newsletter/confirm-subscription', [NewsletterController::class, 'co
 Route::get('/newsletter/unsubscribe', [NewsletterController::class, 'unsubscribe'])->name('newsletter.unsubscribe');
 Route::get('/checkout/{package}', [CheckoutController::class, 'checkout'])->middleware('auth')->name('checkout');
 
-Route::view('dashboard', 'dashboard')
+Route::view('dashboard', 'livewire.dashboard')
     ->middleware(['auth', 'verified'])
     ->name('dashboard');
 
-Route::view('profile', 'profile')
+Route::view('profile', 'livewire.profile')
     ->middleware(['auth'])
     ->name('profile');
 
