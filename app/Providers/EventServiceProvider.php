@@ -2,8 +2,10 @@
 
 namespace App\Providers;
 
+use App\Events\LicenseCreated;
 use App\Events\NewsletterSubscribed;
 use App\Listeners\OrderPaid;
+use App\Listeners\SendLicenseCreatedNotification;
 use App\Listeners\SendNewsletterSubscribeNotification;
 use Dasundev\PayHere\Events\PaymentVerified;
 use Illuminate\Auth\Events\Registered;
@@ -27,6 +29,9 @@ class EventServiceProvider extends ServiceProvider
         ],
         PaymentVerified::class => [
             OrderPaid::class,
+        ],
+        LicenseCreated::class => [
+            SendLicenseCreatedNotification::class,
         ],
     ];
 

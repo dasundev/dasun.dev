@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Events\LicenseCreated;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -16,6 +17,10 @@ class License extends Model
 
     protected $casts = [
         'expires_at' => 'datetime',
+    ];
+
+    protected $dispatchesEvents = [
+        'created' => LicenseCreated::class,
     ];
 
     public function user(): BelongsTo
