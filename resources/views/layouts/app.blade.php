@@ -28,6 +28,14 @@
 <body class="antialiased dark:selection:text-white dark:selection:bg-primary-900 bg-white dark:bg-black">
     @livewire('layout.navigation')
 
+    @isset($header)
+        <header class="border-t border-gray-100 dark:border-gray-900">
+            <div class="max-w-7xl mx-auto p-5 mt-5">
+                {{ $header }}
+            </div>
+        </header>
+    @endisset
+
     {{ $slot }}
 
     <footer class="max-w-7xl mx-auto dark:bg-black mt-10">
