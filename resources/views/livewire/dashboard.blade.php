@@ -31,7 +31,7 @@
                     </thead>
                     <tbody>
                         <tr class="bg-white border-b border-gray-100 dark:bg-black dark:border-gray-900">
-                            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-gray-100">
                                 Laravel PayHere (1 Year)
                             </th>
                             <td class="px-6 py-4">
