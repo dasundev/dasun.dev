@@ -32,8 +32,8 @@
 
     {{ $slot }}
 
-    <footer class="dark:bg-black mt-10">
-        <div class="max-w-7xl mx-auto border-t border-gray-100 dark:border-gray-900 py-5 px-5 lg:px-0 dark:bg-black">
+    <footer class="max-w-7xl mx-auto dark:bg-black mt-10">
+        <div class="border-t border-gray-100 dark:border-gray-900 py-5 mx-5 dark:bg-black">
             <p class="text-gray-500 text-xs lg:text-sm">
                 Copyright © 2020-{{ now()->format('Y') }}. All Rights Reserved.
             </p>
