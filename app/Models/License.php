@@ -13,7 +13,7 @@ class License extends Model
     protected $guarded = [];
 
     protected $casts = [
-        'expires_at' => 'datetime'
+        'expires_at' => 'datetime',
     ];
 
     public function user(): BelongsTo
