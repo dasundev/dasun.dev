@@ -16,7 +16,7 @@ $logout = function (Logout $logout) {
                 $refs.links.style.display = 'inline-flex' :
                 $refs.links.style.display = 'none'
         })"
-     class="relative max-w-7xl mx-auto flex-col justify-center items-center p-0 lg:p-5">
+     class="relative max-w-7xl mx-auto flex-col justify-center items-center p-0 lg:px-0 lg:py-5">
     <div class="flex justify-between flex-wrap lg:flex-nowrap items-center w-full">
         <button type="button" class="block lg:hidden p-5" @click="open = !open">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
