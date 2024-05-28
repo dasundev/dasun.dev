@@ -15,6 +15,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('key')->unique();
             $table->timestamp('expires_at');
+            $table->softDeletes();
             $table->timestamps();
         });
     }
