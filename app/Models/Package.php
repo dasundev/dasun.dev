@@ -19,7 +19,7 @@ class Package extends Model
         'github_stars',
         'is_premium',
         'price',
-        'anystack_product_id'
+        'anystack_product_id',
     ];
 
     public function isPremium(): bool
