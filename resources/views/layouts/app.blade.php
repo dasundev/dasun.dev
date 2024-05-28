@@ -26,9 +26,7 @@
 </head>
 
 <body class="antialiased dark:selection:text-white dark:selection:bg-primary-900 bg-white dark:bg-black">
-    <header class="bg-white dark:bg-black">
-        @livewire('layout.navigation')
-    </header>
+    @livewire('layout.navigation')
 
     {{ $slot }}
 
