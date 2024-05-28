@@ -35,12 +35,12 @@
                                 Laravel PayHere (1 Year)
                             </th>
                             <td class="px-6 py-4">
-                                <span class="bg-gray-100 text-gray-500 px-3 py-1 rounded-full dark:bg-gray-800">64b5d4gi-d70e-5juk-8fdf-02f9ikb5c7a9</span>
+                                <span class="bg-gray-100 text-gray-500 px-3 py-1 rounded-full dark:bg-gray-800 whitespace-nowrap">64b5d4gi-d70e-5juk-8fdf-02f9ikb5c7a9</span>
                             </td>
-                            <td class="px-6 py-4">
+                            <td class="px-6 py-4 whitespace-nowrap">
                                 January 15, 2024
                             </td>
-                            <td class="px-6 py-4">
+                            <td class="px-6 py-4 whitespace-nowrap">
                                 January 15, 2025
                             </td>
                         </tr>
