@@ -18,19 +18,30 @@ $logout = function (Logout $logout) {
         })"
      class="relative max-w-7xl mx-auto flex-col justify-center items-center p-0 lg:p-5">
     <div class="flex justify-between flex-wrap lg:flex-nowrap items-center w-full">
-        <div class="z-0 lg:z-10 p-5 lg:p-0 order-none lg:order-1">
+        <button type="button" class="block lg:hidden p-5" @click="open = !open">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                 stroke="currentColor"
+                 class="w-7 h-7 transition-all duration-300 scale-90 text-black dark:text-white"
+                 :class="open ? 'rotate-90' : 'rotate-[-45]'">
+                <path x-show="!open" stroke-linecap="round" stroke-linejoin="round"
+                      d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                <path x-cloak x-show="open" stroke-linecap="round" stroke-linejoin="round"
+                      d="M6 18 18 6M6 6l12 12" />
+            </svg>
+        </button>
+        <div class="absolute lg:relative top-0 left-1/2 lg:left-0 -ml-[75px] lg:m-0 z-0 lg:z-10 p-5 lg:p-0 order-none lg:order-1">
             <a href="/" class="text-2xl font-normal dark:text-white" wire:navigate.hover>dasun.dev</a>
         </div>
         <div class="flex items-center order-none lg:order-3">
-            <div class="z-0 lg:z-10 inline-flex gap-5 items-center">
+            <div class="z-0 lg:z-10 inline-flex items-center">
                 @persist('search')
-                <div id="search"></div>
+                <div id="search" class="mr-5"></div>
                 @endpersist
                 @auth
-                    <div class="hidden sm:flex sm:items-center">
+                    <div class="sm:flex sm:items-center">
                         <x-dropdown align="right" width="48">
                             <x-slot name="trigger">
-                                <img class="rounded-full ring-2 ring-primary-700 cursor-pointer" width="36" height="36" src="{{ Gravatar::get(auth()->user()->email) }}" alt="{{ auth()->user()->name }}">
+                                <img class="rounded-full cursor-pointer" width="38" height="38" src="{{ Gravatar::fallback("https://ui-avatars.com/api?name=".auth()->user()->name)->get(auth()->user()->email) }}" alt="{{ auth()->user()->name }}">
                             </x-slot>
                             <x-slot name="content">
                                 <x-dropdown-link :href="route('profile')" wire:navigate>
@@ -48,7 +59,7 @@ $logout = function (Logout $logout) {
                     </div>
                 @endauth
                 <button type="button" @click="$store.darkMode.toggle()"
-                        class="bg-gray-50 dark:bg-gray-800 hover:dark:bg-gray-700 hover:bg-gray-100 cursor-pointer text-yellow-500 p-2 rounded-full">
+                        class="bg-gray-50 dark:bg-gray-800 hover:dark:bg-gray-700 hover:bg-gray-100 cursor-pointer text-yellow-500 p-2 m-5 rounded-full">
                     <svg x-data xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                          stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                         <path x-show="!$store.darkMode.on" stroke-linecap="round" stroke-linejoin="round"
@@ -58,17 +69,6 @@ $logout = function (Logout $logout) {
                     </svg>
                 </button>
             </div>
-            <button type="button" class="block lg:hidden p-5 lg:p-0" @click="open = !open">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                     stroke="currentColor"
-                     class="w-7 h-7 transition-all duration-300 scale-90 text-black dark:text-white"
-                     :class="open ? 'rotate-90' : 'rotate-[-45]'">
-                    <path x-show="!open" stroke-linecap="round" stroke-linejoin="round"
-                          d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-                    <path x-cloak x-show="open" stroke-linecap="round" stroke-linejoin="round"
-                          d="M6 18 18 6M6 6l12 12" />
-                </svg>
-            </button>
         </div>
         <div x-ref="links"
              class="static lg:absolute order-none lg:order-2 hidden lg:inline-flex justify-center flex-col lg:flex-row gap-x-0 lg:gap-x-6 h-full w-full">
