@@ -13,7 +13,7 @@
                         {{ __('Licenses') }}
                         <p class="mt-1 text-sm font-normal text-gray-500 dark:text-gray-400">{{ __('All purchased licenses appear in the table below.') }}</p>
                     </caption>
-                    <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-900 dark:text-gray-400">
+                    <thead class="text-xs text-gray-700 uppercase bg-gray-100 dark:bg-gray-900 dark:text-gray-400">
                         <tr>
                             <th scope="col" class="px-6 py-3">
                                 {{ __('License name') }}
