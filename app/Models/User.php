@@ -6,6 +6,7 @@ namespace App\Models;
 use Dasundev\PayHere\Billable;
 use Dasundev\PayHere\Models\Contracts\PayHereCustomer;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
@@ -87,5 +88,10 @@ class User extends Authenticatable implements PayHereCustomer
     public function payHereCountry(): string
     {
         return $this->country;
+    }
+
+    public function licenses(): HasMany
+    {
+        return $this->hasMany(License::class);
     }
 }
