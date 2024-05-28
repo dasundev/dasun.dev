@@ -18,7 +18,8 @@ class EloquentPackageRepository implements PackageRepository
 
     public function getPendingPackages(): Collection
     {
-        return Package::orderBy('name')
+        return Package::openSource()
+            ->orderBy('name')
             ->get();
     }
 
