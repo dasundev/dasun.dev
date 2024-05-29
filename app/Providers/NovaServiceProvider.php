@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Nova\Dashboards\Main;
+use App\Nova\License;
 use App\Nova\NewsletterSubscriber;
 use App\Nova\Order;
 use App\Nova\Package;
@@ -96,6 +97,7 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
 
                 MenuSection::make('Open Source', [
                     MenuItem::resource(Package::class),
+                    MenuItem::resource(License::class),
                 ])->icon('heart')->collapsable(),
 
                 MenuSection::make('Customers', [

@@ -6,6 +6,7 @@ use App\Repositories\Contracts\PostRepository;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Collection;
 use Spatie\Feed\Feedable;
 use Spatie\Feed\FeedItem;
@@ -13,6 +14,7 @@ use Spatie\Feed\FeedItem;
 class Post extends Model implements Feedable
 {
     use HasFactory;
+    use SoftDeletes;
 
     protected $casts = [
         'published_at' => 'datetime',

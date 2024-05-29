@@ -5,14 +5,17 @@ namespace App\Models;
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Dasundev\PayHere\Billable;
 use Dasundev\PayHere\Models\Contracts\PayHereCustomer;
+use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
-class User extends Authenticatable implements PayHereCustomer
+class User extends Authenticatable implements MustVerifyEmail, PayHereCustomer
 {
-    use Billable, HasApiTokens, HasFactory, Notifiable;
+    use Billable, HasApiTokens, HasFactory, Notifiable, SoftDeletes;
 
     /**
      * The attributes that are mass assignable.
@@ -87,5 +90,10 @@ class User extends Authenticatable implements PayHereCustomer
     public function payHereCountry(): string
     {
         return $this->country;
+    }
+
+    public function licenses(): HasMany
+    {
+        return $this->hasMany(License::class);
     }
 }
