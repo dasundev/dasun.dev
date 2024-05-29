@@ -81,6 +81,14 @@ export default defineConfig({
                     ]
                 }
             ],
+            '/laravel-payhere/': [
+                {
+                    text: 'Laravel PayHere',
+                    items: [
+                        { text: 'Introduction', link: '/laravel-payhere/introduction' },
+                    ]
+                }
+            ],
         },
         footer: {
             message: 'Released under the MIT License.',
