@@ -15,7 +15,7 @@ class PackageFactory extends Factory
         $name = $this->faker->text();
 
         return [
-            'name' => $name,
+            'composer_package' => $name,
             'slug' => Str::slug($name),
             'description' => $this->faker->text(),
             'repository' => Str::slug($name),

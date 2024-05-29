@@ -2,7 +2,7 @@
     @foreach($packages as $package)
         <div class="max-w-4xl mx-auto grid grid-cols-3 justify-start mt-10">
             <div class="col-span-3 lg:col-span-1">
-                <a class="text-primary-700 font-normal text-md" href="{{ $package->repository }}" target="_blank" rel="nofollow noreferrer noopener" >{{ \Illuminate\Support\Str::replace('dasundev/', '', $package->name) }}</a>
+                <a class="text-primary-700 font-normal text-md" href="{{ $package->repository }}" target="_blank" rel="nofollow noreferrer noopener" >{{ \Illuminate\Support\Str::replace('dasundev/', '', $package->composer_package) }}</a>
                 <div class="flex gap-2 items-center">
                     <div class="flex items-center gap-1">
                         <span class="text-gray-500 text-sm">{{ $package->github_stars }}</span>
