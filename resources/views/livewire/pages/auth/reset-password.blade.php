@@ -62,7 +62,9 @@ $resetPassword = function () {
 ?>
 
 <div>
-    <form wire:submit="resetPassword">
+    <h2 class="text-lg leading-6 font-medium dark:text-white">Reset Password</h2>
+
+    <form wire:submit="resetPassword" class="mt-8">
         <!-- Email Address -->
         <div>
             <x-input-label for="email" :value="__('Email')" />
