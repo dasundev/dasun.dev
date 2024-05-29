@@ -22,7 +22,7 @@ class Package extends Model
         'is_premium',
         'price',
         'anystack_product_id',
-        'thumbnail'
+        'thumbnail',
     ];
 
     public function isPremium(): bool
