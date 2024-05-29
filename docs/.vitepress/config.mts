@@ -86,6 +86,7 @@ export default defineConfig({
                     text: 'Laravel PayHere',
                     items: [
                         { text: 'Introduction', link: '/laravel-payhere/introduction' },
+                        { text: 'Installation', link: '/laravel-payhere/installation' },
                     ]
                 }
             ],
