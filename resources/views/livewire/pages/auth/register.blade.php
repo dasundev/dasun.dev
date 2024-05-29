@@ -41,7 +41,9 @@ $register = function () {
 ?>
 
 <div>
-    <form wire:submit="register">
+    <h2 class="text-lg leading-6 font-medium dark:text-white">Register</h2>
+
+    <form wire:submit="register" class="mt-8">
         <!-- Name -->
         <div>
             <x-input-label for="name" :value="__('Name')" />
