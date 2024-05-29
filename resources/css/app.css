@@ -4,11 +4,11 @@
 @tailwind components;
 @tailwind utilities;
 
-[x-cloak] {
-    display: none !important;
-}
-
 @layer base {
+    [x-cloak] {
+        @apply hidden !important;
+    }
+
     html {
         font-family: "Lexend", sans-serif;
         font-weight: 300;
