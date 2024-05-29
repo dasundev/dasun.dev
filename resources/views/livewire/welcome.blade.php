@@ -14,7 +14,7 @@
     <section class="bg-white dark:bg-black">
         @foreach($premiumPackages as $premiumPackage)
             <div class="max-w-4xl flex flex-wrap lg:flex-nowrap items-start justify-center gap-8 lg:gap-10 mx-auto px-5 lg:px-12 pt-20">
-                <img src="{{ $premiumPackage->thumbnail }}" class="w-full md:w-1/2 lg:w-1/3" alt="{{ $premiumPackage->name }}">
+                <img src="{{ Storage::url($premiumPackage->thumbnail) }}" class="w-full md:w-1/2 lg:w-1/3" alt="{{ $premiumPackage->name }}">
                 <div class="flex flex-col gap-4">
                     <div>
                         <h3 class="text-2xl lg:text-3xl dark:text-white">{{ $premiumPackage->name }}</h3>
