@@ -8,21 +8,15 @@
     display: none !important;
 }
 
-.copy-to-clipboard-button {
-    position: absolute !important;
-    top: 0.5rem;
-    right: 0.5rem;
-    color: white;
-}
-
-.copy-to-clipboard-button.svg {
-    color: white;
-}
-
 @layer base {
     html {
         font-family: "Lexend", sans-serif;
         font-weight: 300;
+    }
+
+    h1, h2, h3, h4, h5 {
+        font-family: "Overpass", sans-serif;
+        font-weight: bold;
     }
 
     input:-webkit-autofill,
@@ -41,13 +35,31 @@
         }
     }
 
-    h1,
-    h2,
-    h3,
-    h4,
-    h5 {
-        font-family: "Overpass", sans-serif;
-        font-weight: bold;
+    .copy-to-clipboard-button {
+        position: absolute !important;
+        top: 0.5rem;
+        right: 0.5rem;
+        color: white;
+    }
+
+    .copy-to-clipboard-button.svg {
+        color: white;
+    }
+
+    .prose {
+        @apply max-w-full !important;
+    }
+
+    .prose blockquote {
+        @apply font-normal text-gray-500 !important;
+    }
+
+    .prose a {
+        @apply text-primary-700;
+    }
+
+    .prose code {
+        @apply bg-gray-100 p-1 dark:bg-gray-800;
     }
 
     pre {
@@ -67,30 +79,12 @@
         @apply mr-4;
     }
 
-    .prose {
-        @apply max-w-full !important;
-    }
-
-    .prose blockquote {
-        @apply font-normal text-gray-500 !important;
-    }
-
-    .prose a {
-        @apply text-primary-700;
-    }
-
-    .prose code {
-        @apply bg-gray-100 p-1 dark:bg-gray-800;
-    }
-
     code.torchlight {
         white-space: break-spaces !important;
     }
 
     .torchlight.has-focus-lines .line:not(.line-focus) {
-        transition:
-            filter 0.35s,
-            opacity 0.35s;
+        transition: filter 0.35s, opacity 0.35s;
         filter: blur(0.095rem);
         opacity: 0.65;
     }
@@ -99,6 +93,4 @@
         filter: blur(0px);
         opacity: 1;
     }
-
-
 }
