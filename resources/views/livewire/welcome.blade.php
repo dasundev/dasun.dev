@@ -13,15 +13,15 @@
     </section>
     <section class="bg-white dark:bg-black">
         @foreach($premiumPackages as $premiumPackage)
-            <div class="max-w-4xl flex flex-wrap lg:flex-nowrap items-start justify-center gap-10 mx-auto px-5 lg:px-12 pt-20">
-                <img src="{{ $premiumPackage->thumbnail }}" class="w-1/2 lg:w-1/3" alt="{{ $premiumPackage->name }}">
+            <div class="max-w-4xl flex flex-wrap lg:flex-nowrap items-start justify-center gap-8 lg:gap-10 mx-auto px-5 lg:px-12 pt-20">
+                <img src="{{ $premiumPackage->thumbnail }}" class="w-full md:w-1/2 lg:w-1/3" alt="{{ $premiumPackage->name }}">
                 <div class="flex flex-col gap-4">
                     <div>
-                        <h3 class="text-3xl dark:text-white">{{ $premiumPackage->name }}</h3>
-                        <span class="bg-green-400 dark:bg-green-600 font-normal text-green-800 dark:text-green-950 px-2 py-1 rounded-full text-sm">20% OFF</span>
+                        <h3 class="text-2xl lg:text-3xl dark:text-white">{{ $premiumPackage->name }}</h3>
+                        <span class="bg-green-400 dark:bg-green-600 font-normal text-green-800 dark:text-green-950 px-2 py-1 rounded-full text-xs lg:text-sm">20% OFF</span>
                     </div>
-                    <p class="text-gray-500 text-lg">{{ $premiumPackage->description }}</p>
-                    <a href="{{ route('checkout', ['package' => $premiumPackage->slug]) }}" class="text-primary-700 font-normal">{{ __('Buy for :price', ['price' => Number::currency($premiumPackage->price, config('payhere.currency'))]) }}</a>
+                    <p class="text-gray-500 text-md lg:text-lg">{{ $premiumPackage->description }}</p>
+                    <a href="{{ route('checkout', ['package' => $premiumPackage->slug]) }}" class="text-primary-700 text-md font-normal">{{ __('Buy for :price', ['price' => Number::currency($premiumPackage->price, config('payhere.currency'))]) }}</a>
                 </div>
             </div>
         @endforeach
