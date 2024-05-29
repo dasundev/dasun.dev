@@ -9,6 +9,7 @@ use Laravel\Nova\Fields\FormData;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Image;
 use Laravel\Nova\Fields\Text;
+use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
 class Package extends Resource
@@ -56,12 +57,22 @@ class Package extends Resource
                 })
                 ->hideFromIndex(),
 
+            Textarea::make('Package description', 'description')
+                ->sortable()
+                ->hide()
+                ->dependsOn('is_premium', function (Textarea $field, NovaRequest $request, FormData $formData) {
+                    if ($formData->boolean('is_premium') === true) {
+                        $field->show()->rules('required', 'string');
+                    }
+                })
+                ->hideFromIndex(),
+
             Image::make('Thumbnail', 'thumbnail')
                 ->sortable()
                 ->hide()
                 ->dependsOn('is_premium', function (Image $field, NovaRequest $request, FormData $formData) {
                     if ($formData->boolean('is_premium') === true) {
-                        $field->show()->rules('required', 'image');
+                        $field->show()->rules('image')->creationRules('required')->updateRules('image');
                     }
                 })
                 ->hideFromIndex(),

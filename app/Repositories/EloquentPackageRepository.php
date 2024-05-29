@@ -16,6 +16,11 @@ class EloquentPackageRepository implements PackageRepository
             ->get();
     }
 
+    public function getPremiumPackages(): Collection
+    {
+        return Package::premium()->get();
+    }
+
     public function getPendingPackages(): Collection
     {
         return Package::openSource()

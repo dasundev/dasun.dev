@@ -2,9 +2,11 @@
 
 namespace App\Livewire;
 
+use App\Repositories\Contracts\PackageRepository;
 use App\Repositories\Contracts\PostRepository;
 use Artesaos\SEOTools\Facades\SEOMeta;
 use Illuminate\Contracts\View\View;
+use Illuminate\Support\Facades\Cache;
 use Livewire\Attributes\Title;
 use Livewire\Component;
 
@@ -21,6 +23,9 @@ class Welcome extends Component
     {
         return view('livewire.welcome', [
             'posts' => app(PostRepository::class)->getLatestPost(),
+            'premiumPackages' => Cache::remember('premium_packages', 60 * 60, function () {
+                return app(PackageRepository::class)->getPremiumPackages();
+            }),
         ]);
     }
 }

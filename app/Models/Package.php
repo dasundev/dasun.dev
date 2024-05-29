@@ -35,6 +35,11 @@ class Package extends Model
         $query->where('is_premium', false);
     }
 
+    public function scopePremium(Builder $query): void
+    {
+        $query->where('is_premium', true);
+    }
+
     public function lines(): MorphMany
     {
         return $this->morphMany(OrderLine::class, 'purchasable');
