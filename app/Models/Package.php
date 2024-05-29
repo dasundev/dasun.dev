@@ -14,7 +14,7 @@ class Package extends Model
     use SoftDeletes;
 
     protected $fillable = [
-        'name',
+        'composer_package',
         'slug',
         'description',
         'downloads_total',
@@ -22,6 +22,7 @@ class Package extends Model
         'is_premium',
         'price',
         'anystack_product_id',
+        'thumbnail'
     ];
 
     public function isPremium(): bool
