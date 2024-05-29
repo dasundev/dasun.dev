@@ -1,0 +1,12 @@
+# Models: Introduction
+
+Laravel PayHere comes with `Payment` and `Subscription` models, which are required to store PayHere payments and subscriptions.
+
+However, these models alone are not sufficient to start accepting payments. Therefore, Laravel PayHere also requires the following models:
+
+- `Product`
+- `Order`
+- `OrderLine`
+
+> [!NOTE]
+> These models may already exist in your application or will need to be created if they don't exist yet.
