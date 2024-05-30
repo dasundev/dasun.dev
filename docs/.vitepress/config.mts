@@ -107,6 +107,7 @@ export default defineConfig({
                             text: 'APIs',
                             items: [
                                 { text: 'Checkout API', link: '/laravel-payhere/api/checkout-api' },
+                                { text: 'Recurring API', link: '/laravel-payhere/api/recurring-api' },
                             ]
                         }
                     ]
