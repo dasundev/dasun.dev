@@ -91,6 +91,7 @@ export default defineConfig({
                             text: 'Models',
                             items: [
                                 { text: 'Introduction', link: '/laravel-payhere/models/introduction' },
+                                { text: 'User', link: '/laravel-payhere/models/user-model' },
                                 { text: 'Order', link: '/laravel-payhere/models/order-model' }
                             ]
                         },
