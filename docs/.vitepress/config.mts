@@ -90,8 +90,8 @@ export default defineConfig({
                         {
                             text: 'Configuration',
                             items: [
-                                { text: 'Environment', link: '/laravel-payhere/environment' },
-                                { text: 'Views', link: '/laravel-payhere/environment' },
+                                { text: 'Environment', link: '/laravel-payhere/configuration/environment' },
+                                { text: 'Views', link: '/laravel-payhere/configuration/views' },
                             ]
                         },
                         {
