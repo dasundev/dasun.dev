@@ -1,14 +1,16 @@
 # Models: User
 
-Laravel PayHere uses your `User` model to get the data needed to start the checkout process.
-
-To use Laravel PayHere with your `User` model, you need to implement the `PayHereCustomer` contract. Here’s how you can do this:
+To utilize Laravel PayHere with your `User` model, ensure that you implement the `PayHereCustomer` contract and use the `Billable` trait. The `Billable` trait provides convenient methods for handling billing-related functionality.
 
 ```php
 use Dasundev\PayHere\Models\Contracts\PayHereCustomer;
+use Illuminate\Database\Eloquent\Model;
+use Dasundev\PayHere\Billable;
 
 class User extends Model implements PayHereCustomer
 {
+    use Billable;
+
     /**
      * Get the first name of the customer.
      * 
@@ -81,9 +83,7 @@ class User extends Model implements PayHereCustomer
 }
 ```
 
-The `PayHereCustomer` contract requires these methods to provide the needed data.
-
-By default, Laravel PayHere expects your `User` model to be the `App\Models\User` class. If you want to use a different model, you can specify it with the `useCustomerModel` method in the `boot` method of your `AppServiceProvider` class, like this:
+By default, Laravel PayHere expects your `User` model to be the `App\Models\User` class. However, if you wish to use a different model, you can specify it with the `useCustomerModel` method within the `boot` method of your `AppServiceProvider` class:
 
 ```php
 use App\Models\PayHere\Customer;
@@ -98,4 +98,4 @@ public function boot(): void
 }
 ```
 
-This configuration ensures Laravel PayHere will correctly use your custom `User` model or any other specified model to get the customer data needed for checkout.
+This configuration ensures that Laravel PayHere correctly utilizes your custom `User` model or any other specified model to retrieve the necessary customer data for checkout.
