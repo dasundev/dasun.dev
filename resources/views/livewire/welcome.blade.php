@@ -21,7 +21,12 @@
                         <span class="bg-green-400 dark:bg-green-600 font-normal text-green-800 dark:text-green-950 px-2 py-1 rounded-full text-xs lg:text-sm">20% OFF</span>
                     </div>
                     <p class="text-gray-500 text-md lg:text-lg">{{ $premiumPackage->description }}</p>
-                    <a href="{{ route('checkout', ['package' => $premiumPackage->slug]) }}" class="text-primary-700 text-md font-normal">{{ __('Buy for :price', ['price' => Number::currency($premiumPackage->price, config('payhere.currency'))]) }}</a>
+                    <a href="{{ route('checkout', ['package' => $premiumPackage->slug]) }}" class="text-primary-700 text-md font-normal inline-flex items-center gap-1">
+                        {{ __('Buy for :price', ['price' => Number::currency($premiumPackage->price, config('payhere.currency'))]) }}
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="size-4">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
+                        </svg>
+                    </a>
                 </div>
             </div>
         @endforeach
