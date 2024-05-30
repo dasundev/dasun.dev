@@ -1,6 +1,6 @@
 # Authorize API
 
-PayHere [Authorize API](https://support.payhere.lk/api-&-mobile-sdk/authorize-api) enables you to obtain customer authorization specifically for Hold on Card payments.
+The PayHere [Authorize API](https://support.payhere.lk/api-&-mobile-sdk/authorize-api) enables you to obtain customer authorization specifically for Hold on Card payments.
 
 ```php{13}
 use Illuminate\Http\Request;
