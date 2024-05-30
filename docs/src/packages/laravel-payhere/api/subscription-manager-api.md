@@ -6,7 +6,8 @@ This API has three endpoints:
 
 - [List all subscriptions](#list-all-subscriptions)
 - [List all payments of a subscription](#list-all-payments-of-a-subscription)
-- Retry a subscription
+- [Retry a subscription](#retry-a-subscription)
+- [Cancel a subscription](#cancel-a-subscription)
 
 ## List all subscriptions
 
