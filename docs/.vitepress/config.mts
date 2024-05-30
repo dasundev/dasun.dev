@@ -115,6 +115,7 @@ export default defineConfig({
                                 { text: 'Capture API', link: '/laravel-payhere/api/capture-api' },
                                 { text: 'Charging API', link: '/laravel-payhere/api/charging-api' },
                                 { text: 'Retrieval API', link: '/laravel-payhere/api/retrieval-api' },
+                                { text: 'Refund API', link: '/laravel-payhere/api/refund-api' },
                                 { text: 'Subscription Manager API', link: '/laravel-payhere/api/subscription-manager-api' },
                             ]
                         },
