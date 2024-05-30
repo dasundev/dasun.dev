@@ -111,6 +111,7 @@ export default defineConfig({
                                 { text: 'Preapproval API', link: '/laravel-payhere/api/preapproval-api' },
                                 { text: 'Authorize API', link: '/laravel-payhere/api/authorize-api' },
                                 { text: 'Charging API', link: '/laravel-payhere/api/charging-api' },
+                                { text: 'Retrieval API', link: '/laravel-payhere/api/retrieval-api' },
                             ]
                         }
                     ]
