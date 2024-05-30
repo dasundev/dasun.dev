@@ -1,12 +1,12 @@
 # Checkout API
 
-The checkout API is the most used one, in order to process a checkout using this API, you just call the following method within your controller:
+The [checkout API](https://support.payhere.lk/api-&-mobile-sdk/checkout-api) is the most commonly used method for processing a checkout. To process a checkout using this API, call the following method within your controller:
 
-```php
+```php{10-13}
 use Illuminate\Http\Request;
 use App\Models\Order;
 
-CheckoutController extends Controller
+class CheckoutController extends Controller
 {
     public function checkout(Request $request)
     {
