@@ -25,6 +25,8 @@
             </div>
         </div>
 
+        @livewireScriptConfig
+
         <script>
             if (localStorage.getItem('darkMode_on') === 'true' || (!('darkMode_on' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
                 document.querySelector('html').classList.add('dark');
