@@ -96,6 +96,12 @@ export default defineConfig({
                                 { text: 'OrderLine', link: '/laravel-payhere/models/order-line-model' },
                             ]
                         },
+                        {
+                            text: 'APIs',
+                            items: [
+                                { text: 'Checkout API', link: '/laravel-payhere/api/checkout-api' },
+                            ]
+                        },
                     ]
                 }
             ],
