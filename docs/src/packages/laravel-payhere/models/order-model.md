@@ -37,3 +37,18 @@ public function boot(): void
     PayHere::useOrderModel(Order::class);
 }
 ```
+
+And also, Laravel PayHere assumes your order lines relationship will be the `lines` relationship. If you wish to change this, you may specify a different relationship via the `useOrderLinesRelationship` method. This method should typically be called in the `boot` method of your `AppServiceProvider` class:
+
+```php
+use App\Models\PayHere\Order;
+use Dasundev\PayHere\PayHere;
+ 
+/**
+ * Bootstrap any application services.
+ */
+public function boot(): void
+{
+    PayHere::useOrderLinesRelationship(Order::class);
+}
+```
