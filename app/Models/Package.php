@@ -23,6 +23,7 @@ class Package extends Model
         'price',
         'anystack_product_id',
         'thumbnail',
+        'documentation_url'
     ];
 
     public function isPremium(): bool
