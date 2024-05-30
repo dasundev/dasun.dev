@@ -112,6 +112,7 @@ export default defineConfig({
                                 { text: 'Recurring API', link: '/laravel-payhere/api/recurring-api' },
                                 { text: 'Preapproval API', link: '/laravel-payhere/api/preapproval-api' },
                                 { text: 'Authorize API', link: '/laravel-payhere/api/authorize-api' },
+                                { text: 'Capture API', link: '/laravel-payhere/api/capture-api' },
                                 { text: 'Charging API', link: '/laravel-payhere/api/charging-api' },
                                 { text: 'Retrieval API', link: '/laravel-payhere/api/retrieval-api' },
                                 { text: 'Subscription Manager API', link: '/laravel-payhere/api/subscription-manager-api' },
