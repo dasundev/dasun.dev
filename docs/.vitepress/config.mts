@@ -81,6 +81,45 @@ export default defineConfig({
                     ]
                 }
             ],
+            '/laravel-payhere/': [
+                {
+                    text: 'Laravel PayHere',
+                    items: [
+                        { text: 'Introduction', link: '/laravel-payhere/introduction' },
+                        { text: 'Installation', link: '/laravel-payhere/installation' },
+                        {
+                            text: 'Configuration',
+                            items: [
+                                { text: 'Environment', link: '/laravel-payhere/configuration/environment' },
+                                { text: 'Views', link: '/laravel-payhere/configuration/views' },
+                            ]
+                        },
+                        {
+                            text: 'Models',
+                            items: [
+                                { text: 'Introduction', link: '/laravel-payhere/models/introduction' },
+                                { text: 'User', link: '/laravel-payhere/models/user-model' },
+                                { text: 'Order', link: '/laravel-payhere/models/order-model' },
+                                { text: 'OrderLine', link: '/laravel-payhere/models/order-line-model' },
+                                { text: 'Payment', link: '/laravel-payhere/models/payment-model' },
+                                { text: 'Subscription', link: '/laravel-payhere/models/subscription-model' },
+                            ]
+                        },
+                        {
+                            text: 'APIs',
+                            items: [
+                                { text: 'Checkout API', link: '/laravel-payhere/api/checkout-api' },
+                                { text: 'Recurring API', link: '/laravel-payhere/api/recurring-api' },
+                                { text: 'Preapproval API', link: '/laravel-payhere/api/preapproval-api' },
+                                { text: 'Authorize API', link: '/laravel-payhere/api/authorize-api' },
+                                { text: 'Charging API', link: '/laravel-payhere/api/charging-api' },
+                                { text: 'Retrieval API', link: '/laravel-payhere/api/retrieval-api' },
+                                { text: 'Subscription Manager API', link: '/laravel-payhere/api/subscription-manager-api' },
+                            ]
+                        }
+                    ]
+                }
+            ],
         },
         footer: {
             message: 'Released under the MIT License.',
