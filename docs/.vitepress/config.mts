@@ -88,6 +88,13 @@ export default defineConfig({
                         { text: 'Introduction', link: '/laravel-payhere/introduction' },
                         { text: 'Installation', link: '/laravel-payhere/installation' },
                         {
+                            text: 'Configuration',
+                            items: [
+                                { text: 'Environment', link: '/laravel-payhere/environment' },
+                                { text: 'Views', link: '/laravel-payhere/environment' },
+                            ]
+                        },
+                        {
                             text: 'Models',
                             items: [
                                 { text: 'Introduction', link: '/laravel-payhere/models/introduction' },
@@ -101,7 +108,7 @@ export default defineConfig({
                             items: [
                                 { text: 'Checkout API', link: '/laravel-payhere/api/checkout-api' },
                             ]
-                        },
+                        }
                     ]
                 }
             ],
