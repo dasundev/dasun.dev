@@ -6,9 +6,7 @@
                     class="text-primary-700">Laravel</span> Developer</h1>
             <p class="max-w-lg lg:max-w-xl mx-auto text-center text-lg text-gray-500 mt-5">I craft web applications,
                 courses & open source packages with the Laravel ecosystem — Let's create something awesome!</p>
-            <a
-                href="mailto:hello@dasun.dev?subject=Interested in hiring you&body=Hi Dasun,%0D%0A%0D%0AI'm interested in hiring you for my project. Are you currently available?"><x-button
-                    class="mt-7">Work with me</x-button></a>
+            <a href="{{ route('register') }}"><x-button class="mt-7">Register and Buy</x-button></a>
         </div>
     </section>
     <section class="bg-white dark:bg-black">
