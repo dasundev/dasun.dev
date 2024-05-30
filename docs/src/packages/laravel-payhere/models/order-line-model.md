@@ -1,14 +1,14 @@
 # Models: Order Line
 
-The table schema for the `OrderLine` model may vary based on your application's requirements. However, Laravel PayHere will utilize your `OrderLine` model to retrieve specific data necessary to initiate the checkout process.
+The table schema for the `OrderLine` model may vary based on your application's requirements. However, Laravel PayHere will utilize your `OrderLine` model to retrieve specific data for order lines necessary to initiate the checkout process.
 
-Therefore, it's essential to implement the `PayHereItem` contract within your `OrderLine` model, as demonstrated below:
+Therefore, it's essential to implement the `PayHereOrderLine` contract within your `OrderLine` model, as demonstrated below:
 
 ```php
 use Dasundev\PayHere\Models\Contracts\PayHereOrderLine;
 
 class OrderLine extends Model implements PayHereOrderLine
-
+{
     /**
      * Get the unique identifier of the order line.
      * 
@@ -32,7 +32,7 @@ class OrderLine extends Model implements PayHereOrderLine
     /**
      * Get the quantity of the order line.
      * 
-     * @return string
+     * @return int
      */
     public function payHereOrderLineQty(): int
     {
@@ -42,7 +42,7 @@ class OrderLine extends Model implements PayHereOrderLine
     /**
      * Get the total amount for the order line.
      * 
-     * @return string
+     * @return float
      */
     public function payHereOrderLineTotal(): float
     {
@@ -52,7 +52,7 @@ class OrderLine extends Model implements PayHereOrderLine
     /**
      * Get the unit amount for the order line.
      * 
-     * @return string
+     * @return float
      */
     public function payHereOrderLineUnitPrice(): float
     {
