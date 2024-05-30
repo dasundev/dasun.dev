@@ -32,7 +32,7 @@ Replace `:id` with the subscription ID.
 To retry a subscription, use the following endpoint:
 
 ```http request
-GET /payhere/api/subscriptions/:id/retry
+POST /payhere/api/subscriptions/:id/retry
 ```
 
 Replace `:id` with the subscription ID.
