@@ -32,7 +32,7 @@ class CheckoutController extends Controller
         ]);
 
         try {
-            return $request 
+            return $request
                 ->user()
                 ->newOrder($order)
                 ->item($package->name)
