@@ -134,16 +134,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.308.4",
+            "version": "3.308.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "c88e9df7e076b6e2c652a1c87d2c3af0a9ac30b6"
+                "reference": "d119265faba226b3fab1514b6fa27a2986b91453"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/c88e9df7e076b6e2c652a1c87d2c3af0a9ac30b6",
-                "reference": "c88e9df7e076b6e2c652a1c87d2c3af0a9ac30b6",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/d119265faba226b3fab1514b6fa27a2986b91453",
+                "reference": "d119265faba226b3fab1514b6fa27a2986b91453",
                 "shasum": ""
             },
             "require": {
@@ -223,9 +223,9 @@
             "support": {
                 "forum": "https://forums.aws.amazon.com/forum.jspa?forumID=80",
                 "issues": "https://github.com/aws/aws-sdk-php/issues",
-                "source": "https://github.com/aws/aws-sdk-php/tree/3.308.4"
+                "source": "https://github.com/aws/aws-sdk-php/tree/3.308.6"
             },
-            "time": "2024-05-28T18:05:38+00:00"
+            "time": "2024-05-30T18:08:56+00:00"
         },
         {
             "name": "brick/math",
@@ -479,12 +479,12 @@
         },
         {
             "name": "dasundev/laravel-payhere",
-            "version": "1.0.0-beta.4",
+            "version": "1.0.0-beta.5",
             "dist": {
                 "type": "zip",
-                "url": "https://laravel-payhere.composer.sh/download/9c2884eb-ca66-4446-a914-6494233b2279/laravel-payhere-1.0.0-beta.4.zip",
-                "reference": "cd8e8ade912df606530f30d64d36546232a57787",
-                "shasum": "2945346c416abf4fbbe5de4000104bdecd80e0cf"
+                "url": "https://laravel-payhere.composer.sh/download/9c2c3a50-4fdb-4638-b0eb-4500bc520256/laravel-payhere-1.0.0-beta.5.zip",
+                "reference": "a0e911a1bd4d695ba8c0082386e34ab2494b06bb",
+                "shasum": "f9739056644f43f9561a9f04d5524245cdd18920"
             },
             "require": {
                 "laravel/framework": "^10.0",
@@ -559,7 +559,7 @@
                 }
             ],
             "description": "A Laravel plugin for PayHere payment gateway.",
-            "time": "2024-05-29T10:27:07+00:00"
+            "time": "2024-05-31T06:41:49+00:00"
         },
         {
             "name": "dflydev/dot-access-data",

@@ -32,7 +32,11 @@ class CheckoutController extends Controller
         ]);
 
         try {
-            return $request->user()->newOrder($order)->checkout();
+            return $request 
+                ->user()
+                ->newOrder($order)
+                ->item($package->name)
+                ->checkout();
         } catch (Exception $e) {
             Log::error($e->getMessage());
 
