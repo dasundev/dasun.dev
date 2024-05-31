@@ -1,5 +1,7 @@
 @extends('layouts.payhere')
 
+@section('title', 'Redirecting to PayHere...')
+
 @section('content')
     <body class="flex items-center justify-center h-screen bg-white text-black dark:bg-black dark:text-gray-200 font-sans">
     <div class="container mx-auto p-4 max-w-2xl">
