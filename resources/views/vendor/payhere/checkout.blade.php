@@ -44,7 +44,7 @@
     </div>
     <script>
         setTimeout(function () {
-            //document.getElementById('checkout-form').submit();
+            document.getElementById('checkout-form').submit();
         }, 1000);
     </script>
     </body>
