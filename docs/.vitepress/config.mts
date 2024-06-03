@@ -120,7 +120,8 @@ export default defineConfig({
                             ]
                         },
                         { text: 'Billable Methods', link: '/laravel-payhere/billable-methods' },
-                        { text: 'Events', link: '/laravel-payhere/events' }
+                        { text: 'Events', link: '/laravel-payhere/events' },
+                        { text: 'Refund', link: '/laravel-payhere/refund' },
                     ]
                 }
             ],
