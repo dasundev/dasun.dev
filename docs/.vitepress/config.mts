@@ -119,8 +119,8 @@ export default defineConfig({
                                 { text: 'Subscription Manager API', link: '/laravel-payhere/api/subscription-manager-api' },
                             ]
                         },
-                        { text: 'Events', link: '/laravel-payhere/events' }
-                    ]
+                        { text: 'Billable Methods', link: '/laravel-payhere/billable-methods' },
+                        { text: 'Events', link: '/laravel-payhere/events' }]
                 }
             ],
         },
