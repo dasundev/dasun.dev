@@ -88,7 +88,11 @@ class Package extends Resource
                 ->hide()
                 ->dependsOn('is_premium', function (Text $field, NovaRequest $request, FormData $formData) {
                     if ($formData->boolean('is_premium') === true) {
-                        $field->show()->rules('required', 'string');
+                        $field
+                            ->show()
+                            ->rules('required', 'string')
+                            ->creationRules('unique:packages,anystack_product_id')
+                            ->updateRules('unique:packages,anystack_product_id,{{resourceId}}');
                     }
                 })
                 ->hideFromIndex(),
