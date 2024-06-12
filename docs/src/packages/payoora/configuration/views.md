@@ -5,5 +5,5 @@ Payoora provides default checkout and return pages, but you can customize them t
 To publish the views, run the following command:
 
 ```bash
-php artisan vendor:publish --tag=payhere-views
+php artisan vendor:publish --tag=payoora-views
 ```
