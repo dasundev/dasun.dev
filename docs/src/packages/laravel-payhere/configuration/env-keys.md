@@ -54,16 +54,16 @@ Customize the currency settings according to your preferences. PayHere supports 
 - `GBP`
 - `AUD`
 
-Laravel PayHere uses a default currency of `LKR`.
+Payoora uses a default currency of `LKR`.
 
 ## `PAYHERE_NOTIFY_URL` (optional)
 
-Laravel PayHere uses a default secure notify URL. You can set a new notify URL only if needed.
+Payoora uses a default secure notify URL. You can set a new notify URL only if needed.
 
 ## `PAYHERE_RETURN_URL` (optional)
 
-Laravel PayHere uses a default secure return URL. You can set a new return URL only if needed.
+Payoora uses a default secure return URL. You can set a new return URL only if needed.
 
 ## `PAYHERE_CANCEL_URL` (optional)
 
-Laravel PayHere uses a default cancel URL. You can set a new cancel URL only if needed.
+Payoora uses a default cancel URL. You can set a new cancel URL only if needed.

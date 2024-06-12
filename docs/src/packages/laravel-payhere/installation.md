@@ -1,7 +1,7 @@
 # Installation via Composer
 
 > [!IMPORTANT]
-> Laravel PayHere is a **premium** plugin and requires a license for installation. If you don't have a license key, please purchase one [here](https://www.dasun.dev/checkout/laravel-payhere). To make a purchase, log in to [Dasun's website](https://www.dasun.dev/login) and complete the payment. If you don't have an account, you can register [here](https://www.dasun.dev/register). Once the payment is completed, you can obtain the license key from the [dashboard](https://www.dasun.dev/dashboard).
+> Payoora is a **premium** plugin and requires a license for installation. If you don't have a license key, please purchase one [here](https://www.dasun.dev/checkout/laravel-payhere). To make a purchase, log in to [Dasun's website](https://www.dasun.dev/login) and complete the payment. If you don't have an account, you can register [here](https://www.dasun.dev/register). Once the payment is completed, you can obtain the license key from the [dashboard](https://www.dasun.dev/dashboard).
 
 To install the package, add the following lines to the `repositories` key in your `composer.json` file to gain access to the private package:
 

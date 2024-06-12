@@ -1,6 +1,6 @@
 # Models: User
 
-To utilize Laravel PayHere with your `User` model, ensure that you implement the `PayHereCustomer` contract and use the `Billable` trait. The `Billable` trait provides convenient methods for handling billing-related functionality.
+To utilize Payoora with your `User` model, ensure that you implement the `PayHereCustomer` contract and use the `Billable` trait. The `Billable` trait provides convenient methods for handling billing-related functionality.
 
 ```php
 use Dasundev\PayHere\Models\Contracts\PayHereCustomer;
@@ -83,7 +83,7 @@ class User extends Model implements PayHereCustomer
 }
 ```
 
-By default, Laravel PayHere expects your `User` model to be the `App\Models\User` class. However, if you wish to use a different model, you can specify it with the `useCustomerModel` method within the `boot` method of your `AppServiceProvider` class:
+By default, Payoora expects your `User` model to be the `App\Models\User` class. However, if you wish to use a different model, you can specify it with the `useCustomerModel` method within the `boot` method of your `AppServiceProvider` class:
 
 ```php
 use App\Models\PayHere\Customer;
@@ -98,4 +98,4 @@ public function boot(): void
 }
 ```
 
-This configuration ensures that Laravel PayHere correctly utilizes your custom `User` model or any other specified model to retrieve the necessary customer data for checkout.
+This configuration ensures that Payoora correctly utilizes your custom `User` model or any other specified model to retrieve the necessary customer data for checkout.

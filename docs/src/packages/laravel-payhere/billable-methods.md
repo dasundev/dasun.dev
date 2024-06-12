@@ -4,7 +4,7 @@ Billable methods allow you to attach additional data to the PayHere checkout pro
 
 ## `item()`
 
-Use the `item` method to customize the item name during checkout. By default, Laravel PayHere names it `Order #{$order->id}`.
+Use the `item` method to customize the item name during checkout. By default, Payoora names it `Order #{$order->id}`.
 
 ```php{4}
 $request
