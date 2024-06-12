@@ -5,7 +5,7 @@ The PayHere [Capture API](https://support.payhere.lk/api-&-mobile-sdk/capture-ap
 This REST API requires an HTTP call to the following endpoint:
 
 ```http request
-POST /payhere/api/payments/capture
+POST /payoora/api/payments/capture
 ```
 
 Parameters:

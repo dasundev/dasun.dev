@@ -5,7 +5,7 @@ The PayHere [Charging API](https://support.payhere.lk/api-&-mobile-sdk/charging-
 This REST API requires an HTTP call to the following endpoint:
 
 ```http request
-POST /payhere/api/payments/charge
+POST /payoora/api/payments/charge
 ```
 
 Parameters:

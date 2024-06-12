@@ -5,7 +5,7 @@ The PayHere [Retrieval API](https://support.payhere.lk/api-&-mobile-sdk/retrieva
 This REST API requires an HTTP call to the following endpoint:
 
 ```http request
-GET /payhere/api/payments/search
+GET /payoora/api/payments/search
 ```
 
 Parameters:
