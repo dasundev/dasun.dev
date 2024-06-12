@@ -5,7 +5,7 @@ The table schema for the `OrderLine` model may vary based on your application's 
 Therefore, it's essential to implement the `PayHereOrderLine` contract within your `OrderLine` model, as demonstrated below:
 
 ```php
-use Dasundev\PayHere\Models\Contracts\PayHereOrderLine;
+use Dasundev\Payoora\Models\Contracts\PayHereOrderLine;
 
 class OrderLine extends Model implements PayHereOrderLine
 {

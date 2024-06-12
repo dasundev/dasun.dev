@@ -3,9 +3,9 @@
 To utilize Payoora with your `User` model, ensure that you implement the `PayHereCustomer` contract and use the `Billable` trait. The `Billable` trait provides convenient methods for handling billing-related functionality.
 
 ```php
-use Dasundev\PayHere\Models\Contracts\PayHereCustomer;
+use Dasundev\Payoora\Models\Contracts\PayHereCustomer;
 use Illuminate\Database\Eloquent\Model;
-use Dasundev\PayHere\Billable;
+use Dasundev\Payoora\Billable;
 
 class User extends Model implements PayHereCustomer
 {
@@ -87,7 +87,7 @@ By default, Payoora expects your `User` model to be the `App\Models\User` class.
 
 ```php
 use App\Models\PayHere\Customer;
-use Dasundev\PayHere\PayHere;
+use Dasundev\Payoora\PayHere;
  
 /**
  * Bootstrap any application services.

@@ -5,7 +5,7 @@ The table schema for the `Order` model may vary based on your application's requ
 To use Payoora with your `Order` model, you need to implement the `PayHereOrder` contract. Here’s how you can do this:
 
 ```php
-use Dasundev\PayHere\Models\Contracts\PayHereOrder;
+use Dasundev\Payoora\Models\Contracts\PayHereOrder;
 
 class Order extends Model implements PayHereOrder
 {
@@ -27,7 +27,7 @@ Payoora assumes your `Order` model will be the `App\Models\Order` class. If you 
 
 ```php{9}
 use App\Models\Order;
-use Dasundev\PayHere\PayHere;
+use Dasundev\Payoora\PayHere;
 
 /**
  * Bootstrap any application services.
@@ -42,7 +42,7 @@ Additionally, Payoora assumes your order lines relationship will be the `lines`.
 
 ```php{10}
 use App\Models\Order;
-use Dasundev\PayHere\PayHere;
+use Dasundev\Payoora\PayHere;
 
 /**
  * Bootstrap any application services.
