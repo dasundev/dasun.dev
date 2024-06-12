@@ -45,7 +45,7 @@ class Package extends Resource
 
             Text::make('Documentation URL', 'documentation_url')
                 ->rules('url')
-                ->creationRules('required', 'string', 'unique:documentation_url,slug')
+                ->creationRules('required', 'string', 'unique:packages,documentation_url')
                 ->updateRules('required', 'string', 'unique:packages,documentation_url,{{resourceId}}')
                 ->hideFromIndex(),
 
