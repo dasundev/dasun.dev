@@ -24,7 +24,7 @@ composer require dasundev/payoora
 
 After installing the package via Composer, you need to install the plugin. The best way to do this is by running the following command:
 ```bash
-php artisan payhere:install
+php artisan payoora:install
 ```
 
 This command will publish the migrations, configuration file, and migrate the database.
