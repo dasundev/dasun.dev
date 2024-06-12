@@ -81,47 +81,47 @@ export default defineConfig({
                     ]
                 }
             ],
-            '/laravel-payhere/': [
+            '/payoora/': [
                 {
                     text: 'Payoora',
                     items: [
-                        { text: 'Introduction', link: '/laravel-payhere/introduction' },
-                        { text: 'Installation', link: '/laravel-payhere/installation' },
+                        { text: 'Introduction', link: '/payoora/introduction' },
+                        { text: 'Installation', link: '/payoora/installation' },
                         {
                             text: 'Configuration',
                             items: [
-                                { text: 'Env Keys', link: '/laravel-payhere/configuration/env-keys' },
-                                { text: 'Views', link: '/laravel-payhere/configuration/views' },
+                                { text: 'Env Keys', link: '/payoora/configuration/env-keys' },
+                                { text: 'Views', link: '/payoora/configuration/views' },
                             ]
                         },
                         {
                             text: 'Models',
                             items: [
-                                { text: 'Introduction', link: '/laravel-payhere/models/introduction' },
-                                { text: 'User', link: '/laravel-payhere/models/user-model' },
-                                { text: 'Order', link: '/laravel-payhere/models/order-model' },
-                                { text: 'OrderLine', link: '/laravel-payhere/models/order-line-model' },
-                                { text: 'Payment', link: '/laravel-payhere/models/payment-model' },
-                                { text: 'Subscription', link: '/laravel-payhere/models/subscription-model' },
+                                { text: 'Introduction', link: '/payoora/models/introduction' },
+                                { text: 'User', link: '/payoora/models/user-model' },
+                                { text: 'Order', link: '/payoora/models/order-model' },
+                                { text: 'OrderLine', link: '/payoora/models/order-line-model' },
+                                { text: 'Payment', link: '/payoora/models/payment-model' },
+                                { text: 'Subscription', link: '/payoora/models/subscription-model' },
                             ]
                         },
                         {
                             text: 'APIs',
                             items: [
-                                { text: 'Checkout API', link: '/laravel-payhere/api/checkout-api' },
-                                { text: 'Recurring API', link: '/laravel-payhere/api/recurring-api' },
-                                { text: 'Preapproval API', link: '/laravel-payhere/api/preapproval-api' },
-                                { text: 'Authorize API', link: '/laravel-payhere/api/authorize-api' },
-                                { text: 'Capture API', link: '/laravel-payhere/api/capture-api' },
-                                { text: 'Charging API', link: '/laravel-payhere/api/charging-api' },
-                                { text: 'Retrieval API', link: '/laravel-payhere/api/retrieval-api' },
-                                { text: 'Refund API', link: '/laravel-payhere/api/refund-api' },
-                                { text: 'Subscription Manager API', link: '/laravel-payhere/api/subscription-manager-api' },
+                                { text: 'Checkout API', link: '/payoora/api/checkout-api' },
+                                { text: 'Recurring API', link: '/payoora/api/recurring-api' },
+                                { text: 'Preapproval API', link: '/payoora/api/preapproval-api' },
+                                { text: 'Authorize API', link: '/payoora/api/authorize-api' },
+                                { text: 'Capture API', link: '/payoora/api/capture-api' },
+                                { text: 'Charging API', link: '/payoora/api/charging-api' },
+                                { text: 'Retrieval API', link: '/payoora/api/retrieval-api' },
+                                { text: 'Refund API', link: '/payoora/api/refund-api' },
+                                { text: 'Subscription Manager API', link: '/payoora/api/subscription-manager-api' },
                             ]
                         },
-                        { text: 'Billable Methods', link: '/laravel-payhere/billable-methods' },
-                        { text: 'Events', link: '/laravel-payhere/events' },
-                        { text: 'Refund', link: '/laravel-payhere/refund' },
+                        { text: 'Billable Methods', link: '/payoora/billable-methods' },
+                        { text: 'Events', link: '/payoora/events' },
+                        { text: 'Refund', link: '/payoora/refund' },
                     ]
                 }
             ],

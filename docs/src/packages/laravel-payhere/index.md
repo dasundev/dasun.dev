@@ -1,1 +1,1 @@
-<meta http-equiv="refresh" content="0;url=/docs/laravel-payhere/introduction.html" />
+<meta http-equiv="refresh" content="0;url=/docs/payoora/introduction.html" />
