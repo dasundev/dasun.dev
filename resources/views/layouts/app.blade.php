@@ -39,14 +39,23 @@
     {{ $slot }}
 
     <footer class="max-w-7xl mx-auto dark:bg-black mt-10">
-        <div class="border-t border-gray-100 dark:border-gray-900 py-5 mx-5 dark:bg-black">
-            <p class="text-gray-500 text-xs lg:text-sm">
-                Copyright © 2020-{{ now()->format('Y') }}. All Rights Reserved.
-            </p>
-            <p class="text-gray-500 text-xs lg:text-sm mt-2">
-                Code highlighting provided by <a href="https://torchlight.dev/" target="_blank"
-                    class="underline duration-300 transition-colors dark:hover:text-gray-400">Torchlight</a>
-            </p>
+        <div class="flex flex-wrap justify-between border-t border-gray-100 dark:border-gray-900 py-5 mx-5 dark:bg-black">
+            <div>
+                <p class="text-gray-500 text-xs lg:text-sm">
+                    Copyright © 2020-{{ now()->format('Y') }}. All Rights Reserved.
+                </p>
+                <p class="text-gray-500 text-xs lg:text-sm mt-2">
+                    Code highlighting provided by <a href="https://torchlight.dev/" target="_blank"
+                                                     class="underline duration-300 transition-colors dark:hover:text-gray-400">Torchlight</a>
+                </p>
+            </div>
+            <div class="inline-flex gap-3 mt-3 lg:mt-0 text-gray-500 items-center">
+                <a class="text-gray-500 hover:text-gray-600 text-xs lg:text-sm dark:hover:text-gray-400" href="{{ route('terms-of-condition') }}" wire:navigate.hover>Terms and Conditions</a>
+                ·
+                <a class="text-gray-500 hover:text-gray-600 text-xs lg:text-sm dark:hover:text-gray-400" href="{{ route('refund-policy') }}" wire:navigate.hover>Refund Policy</a>
+                ·
+                <a class="text-gray-500 hover:text-gray-600 text-xs lg:text-sm dark:hover:text-gray-400" href="{{ route('privacy-policy') }}" wire:navigate.hover>Privacy Policy</a>
+            </div>
         </div>
     </footer>
 
