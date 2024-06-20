@@ -8,6 +8,8 @@ return new class extends Migration
 {
     public function up(): void
     {
+        Schema::disableForeignKeyConstraints();
+
         Schema::table('users', function (Blueprint $table) {
             $table->dropColumn([
                 'phone',
@@ -16,6 +18,8 @@ return new class extends Migration
                 'country',
             ]);
         });
+
+        Schema::enableForeignKeyConstraints();
     }
 
     public function down(): void
