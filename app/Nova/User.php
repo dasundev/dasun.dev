@@ -61,28 +61,6 @@ class User extends Resource
                 ->onlyOnForms()
                 ->creationRules('required', Rules\Password::defaults())
                 ->updateRules('nullable', Rules\Password::defaults()),
-
-            Text::make('Phone')
-                ->sortable()
-                ->rules('required', 'max:254')
-                ->creationRules('unique:users,phone')
-                ->updateRules('unique:users,phone,{{resourceId}}')
-                ->hideFromIndex(),
-
-            Textarea::make('Address')
-                ->sortable()
-                ->rules('required', 'max:254')
-                ->hideFromIndex(),
-
-            Text::make('City')
-                ->sortable()
-                ->rules('required', 'max:254')
-                ->hideFromIndex(),
-
-            Text::make('Country')
-                ->sortable()
-                ->rules('required', 'max:254')
-                ->hideFromIndex(),
         ];
     }
 }
