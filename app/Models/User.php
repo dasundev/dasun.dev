@@ -57,39 +57,39 @@ class User extends Authenticatable implements MustVerifyEmail, PayHereCustomer
         return $this->email === 'hello@dasun.dev';
     }
 
-    public function payHereFirstName(): string
+    public function payHereFirstName(): ?string
     {
         return explode(' ', trim($this->name))[0];
     }
 
-    public function payHereLastName(): string
+    public function payHereLastName(): ?string
     {
         return explode(' ', trim($this->name))[1];
     }
 
-    public function payHereEmail(): string
+    public function payHereEmail(): ?string
     {
         return $this->email;
     }
 
-    public function payHerePhone(): string
+    public function payHerePhone(): ?string
     {
-        return $this->phone;
+        return null;
     }
 
-    public function payHereAddress(): string
+    public function payHereAddress(): ?string
     {
-        return $this->address;
+        return null;
     }
 
-    public function payHereCity(): string
+    public function payHereCity(): ?string
     {
-        return $this->city;
+        return null;
     }
 
-    public function payHereCountry(): string
+    public function payHereCountry(): ?string
     {
-        return $this->country;
+        return null;
     }
 
     public function licenses(): HasMany
