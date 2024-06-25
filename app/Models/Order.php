@@ -24,7 +24,7 @@ class Order extends Model
         'status' => OrderStatus::class,
     ];
 
-    public function payherePayment(): HasOne
+    public function payment(): HasOne
     {
         return $this->hasOne(Payment::class);
     }
