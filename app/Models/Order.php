@@ -3,7 +3,6 @@
 namespace App\Models;
 
 use App\Enums\OrderStatus;
-use Dasundev\PayHere\Models\Contracts\PayHereOrder;
 use Dasundev\PayHere\Models\Payment;
 use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -13,7 +12,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Order extends Model implements PayHereOrder
+class Order extends Model
 {
     use HasFactory;
     use HasUuids;
