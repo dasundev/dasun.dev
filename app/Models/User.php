@@ -4,6 +4,7 @@ namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Dasundev\PayHere\Billable;
+use Dasundev\PayHere\Filament\Contracts\PayHerePanelUser;
 use Dasundev\PayHere\Models\Contracts\PayHereCustomer;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -13,7 +14,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
-class User extends Authenticatable implements MustVerifyEmail, PayHereCustomer
+class User extends Authenticatable implements MustVerifyEmail, PayHereCustomer, PayHerePanelUser
 {
     use Billable, HasApiTokens, HasFactory, Notifiable, SoftDeletes;
 
@@ -95,5 +96,10 @@ class User extends Authenticatable implements MustVerifyEmail, PayHereCustomer
     public function licenses(): HasMany
     {
         return $this->hasMany(License::class);
+    }
+
+    public function canAccessPayHerePanel(): bool
+    {
+        return $this->email === 'hello@dasun.dev';
     }
 }
