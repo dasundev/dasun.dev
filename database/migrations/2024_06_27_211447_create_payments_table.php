@@ -10,10 +10,11 @@ return new class extends Migration
     {
         Schema::create('payments', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id');
-            $table->foreignUuid('order_id');
+            $table->foreignId('user_id')->nullable();
+            $table->foreignId('order_id');
             $table->string('merchant_id');
             $table->string('payment_id')->unique()->nullable();
+            $table->boolean('refunded')->default(false);
             $table->string('authorization_token')->nullable();
             $table->string('subscription_id')->unique()->nullable();
             $table->float('payhere_amount');
