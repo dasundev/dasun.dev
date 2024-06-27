@@ -1,5 +1,22 @@
 # Changelog
 
+## v3.0.0 - 2024-06-27
+
+### What's Changed
+
+* fix: SEO description typo by @dasundev in https://github.com/dasundev/dasun.dev/pull/75
+* feat: Integrate PayHere payment gateway by @dasundev in https://github.com/dasundev/dasun.dev/pull/76
+* fix: get only open-source packages by @dasundev in https://github.com/dasundev/dasun.dev/pull/77
+* feat: implement authentication by @dasundev in https://github.com/dasundev/dasun.dev/pull/78
+* feat: add premium packages by @dasundev in https://github.com/dasundev/dasun.dev/pull/79
+* feat: add laravel payhere plugin docs by @dasundev in https://github.com/dasundev/dasun.dev/pull/80
+* feat: add documentation url to package by @dasundev in https://github.com/dasundev/dasun.dev/pull/81
+* fix: login bug by @dasundev in https://github.com/dasundev/dasun.dev/pull/82
+* feat: update payhere default views by @dasundev in https://github.com/dasundev/dasun.dev/pull/83
+* feat: add policy docs by @dasundev in https://github.com/dasundev/dasun.dev/pull/84
+
+**Full Changelog**: https://github.com/dasundev/dasun.dev/compare/v2.1.0...v3.0.0
+
 ## v2.1.1 - 2024-06-27
 
 ### What's Changed
