@@ -25,7 +25,7 @@ class FetchComposerPackages extends Command
 
         foreach ($packages as $package) {
             DB::transaction(function () use ($packagist, $package, $packageRepository) {
-                $response = $packagist->send(new GetPackageDataRequest(Str::replace('dasundev/', '', $package->name)));
+                $response = $packagist->send(new GetPackageDataRequest(Str::replace('dasundev/', '', $package->composer_package)));
 
                 $data = $response->json();
 
