@@ -5,5 +5,5 @@ Laravel PayHere provides default checkout and return pages, but you can customiz
 To publish the views, run the following command:
 
 ```bash
-php artisan vendor:publish --tag=payoora-views
+php artisan vendor:publish --tag=payhere-views
 ```
