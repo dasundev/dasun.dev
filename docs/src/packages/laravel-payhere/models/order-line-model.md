@@ -1,11 +1,11 @@
 # Models: Order Line
 
-The table schema for the `OrderLine` model may vary based on your application's requirements. However, Payoora will utilize your `OrderLine` model to retrieve specific data for order lines necessary to initiate the checkout process.
+The table schema for the `OrderLine` model may vary based on your application's requirements. However, Laravel PayHere will utilize your `OrderLine` model to retrieve specific data for order lines necessary to initiate the checkout process.
 
 Therefore, it's essential to implement the `PayHereOrderLine` contract within your `OrderLine` model, as demonstrated below:
 
 ```php
-use Dasundev\Payoora\Models\Contracts\PayHereOrderLine;
+use Dasundev\PayHere\Models\Contracts\PayHereOrderLine;
 
 class OrderLine extends Model implements PayHereOrderLine
 {

@@ -14,7 +14,7 @@ This API has three endpoints:
 To list all subscriptions, use the following endpoint:
 
 ```http request
-GET /payoora/api/subscriptions
+GET /payhere/api/subscriptions
 ```
 
 ## List all payments of a subscription
@@ -22,7 +22,7 @@ GET /payoora/api/subscriptions
 To list all payments of a specific subscription, use the following endpoint:
 
 ```http request
-GET /payoora/api/subscriptions/:id
+GET /payhere/api/subscriptions/:id
 ```
 
 Replace `:id` with the subscription ID.
@@ -32,7 +32,7 @@ Replace `:id` with the subscription ID.
 To retry a subscription, use the following endpoint:
 
 ```http request
-POST /payoora/api/subscriptions/:id/retry
+POST /payhere/api/subscriptions/:id/retry
 ```
 
 Replace `:id` with the subscription ID.
@@ -42,7 +42,7 @@ Replace `:id` with the subscription ID.
 To cancel a subscription, use the following endpoint:
 
 ```http request
-DELETE /payoora/api/subscriptions/:id
+DELETE /payhere/api/subscriptions/:id
 ```
 
 Replace `:id` with the subscription ID.

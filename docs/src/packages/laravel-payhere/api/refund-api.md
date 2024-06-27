@@ -5,7 +5,7 @@ The PayHere [Refund API](https://support.payhere.lk/api-&-mobile-sdk/refund-api)
 This REST API requires an HTTP call to the following endpoint:
 
 ```http request
-POST /payoora/api/payments/refund
+POST /payhere/api/payments/refund
 ```
 
 Parameters:

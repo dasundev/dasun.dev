@@ -31,7 +31,7 @@
 @yield('content')
 
 <div class="mt-10 text-gray-500 text-xs md:text-sm">
-    Powered by <a href="https://dasun.dev/docs/laravel-payhere" target="_blank" class="text-primary-700">Payoora</a>
+    Powered by <a href="https://dasun.dev/docs/laravel-payhere" target="_blank" class="text-primary-700">Laravel PayHere</a>
 </div>
 
 @livewireScriptConfig
