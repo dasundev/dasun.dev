@@ -15,8 +15,9 @@ return new class extends Migration
             $table->string('merchant_id');
             $table->string('payment_id')->unique()->nullable();
             $table->boolean('refunded')->default(false);
+            $table->string('refund_reason')->nullable();
             $table->string('authorization_token')->nullable();
-            $table->string('subscription_id')->unique()->nullable();
+            $table->string('subscription_id')->nullable();
             $table->float('payhere_amount');
             $table->float('captured_amount')->nullable();
             $table->string('payhere_currency');
@@ -35,9 +36,9 @@ return new class extends Migration
                 'HNB',
                 'FRIMI',
             ]);
-            $table->string('card_holder_name');
-            $table->string('card_no');
-            $table->string('card_expiry');
+            $table->string('card_holder_name')->nullable();
+            $table->string('card_no')->nullable();
+            $table->string('card_expiry')->nullable();
             $table->enum('recurring', [0, 1])->default(0);
             $table->enum('message_type', [
                 'AUTHORIZATION_SUCCESS',
