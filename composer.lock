@@ -800,12 +800,12 @@
         },
         {
             "name": "dasundev/laravel-payhere",
-            "version": "1.0.0-beta.14",
+            "version": "1.0.0-beta.15",
             "dist": {
                 "type": "zip",
-                "url": "https://laravel-payhere.composer.sh/download/9c69048d-9e71-4063-acb4-1ade3ac4ab5d/laravel-payhere-1.0.0-beta.14.zip",
-                "reference": "30f50ef9348cbe028cc3a1dc222b6badd16b7228",
-                "shasum": "389f67d4c5197eb1edec54d707910d7e53a9ec67"
+                "url": "https://laravel-payhere.composer.sh/download/9c6b09da-6374-4493-b75a-5b92799c5ff5/laravel-payhere-1.0.0-beta.15.zip",
+                "reference": "254a37ecb7bf9b6df75b300b7513ec931926a3e4",
+                "shasum": "33ca4ef702063f6bfa9db100cbcef1763dea0c2f"
             },
             "require": {
                 "filament/filament": "^3.2",
@@ -884,7 +884,7 @@
                 }
             ],
             "description": "A Laravel plugin for PayHere payment gateway.",
-            "time": "2024-06-30T11:57:00+00:00"
+            "time": "2024-07-01T12:03:28+00:00"
         },
         {
             "name": "dflydev/dot-access-data",
