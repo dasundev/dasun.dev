@@ -38,4 +38,9 @@ class License extends Model
     {
         return $this->morphTo();
     }
+
+    public function isExpired(): bool
+    {
+        return $this->expires_at->isPast();
+    }
 }
