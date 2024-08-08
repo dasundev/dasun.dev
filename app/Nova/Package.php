@@ -83,20 +83,6 @@ class Package extends Resource
                 })
                 ->hideFromIndex(),
 
-            Text::make('Anystack Product ID', 'anystack_product_id')
-                ->sortable()
-                ->hide()
-                ->dependsOn('is_premium', function (Text $field, NovaRequest $request, FormData $formData) {
-                    if ($formData->boolean('is_premium') === true) {
-                        $field
-                            ->show()
-                            ->rules('required', 'string')
-                            ->creationRules('unique:packages,anystack_product_id')
-                            ->updateRules('unique:packages,anystack_product_id,{{resourceId}}');
-                    }
-                })
-                ->hideFromIndex(),
-
             Currency::make('Price', 'price')
                 ->sortable()
                 ->hide()
