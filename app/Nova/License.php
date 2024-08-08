@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\Date;
 use Laravel\Nova\Fields\ID;
+use Laravel\Nova\Fields\MorphTo;
 use Laravel\Nova\Fields\Text;
 
 class License extends Resource
@@ -27,7 +28,14 @@ class License extends Resource
             BelongsTo::make('User', 'user', User::class)
                 ->searchable(),
 
+            MorphTo::make('Purchasable', 'purchasable')
+                ->types([
+                    Package::class
+                ])
+                ->searchable(),
+
             BelongsTo::make('Order', 'order', Order::class)
+                ->nullable()
                 ->searchable(),
 
             Text::make('Licence name', 'name')
