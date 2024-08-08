@@ -30,7 +30,7 @@ class License extends Resource
 
             MorphTo::make('Purchasable', 'purchasable')
                 ->types([
-                    Package::class
+                    Package::class,
                 ])
                 ->searchable(),
 
