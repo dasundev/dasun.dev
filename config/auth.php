@@ -41,8 +41,8 @@ return [
             'provider' => 'users',
         ],
         'license-api' => [
-            'driver' => 'license-key'
-        ]
+            'driver' => 'license-key',
+        ],
     ],
 
     /*
