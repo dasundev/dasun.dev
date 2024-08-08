@@ -38,7 +38,7 @@ class SatisAuthenticationController extends Controller
 
         preg_match('#^/dist/(?<package>dasundev/[^/]*)/#', $originalUrl, $matches);
 
-        if (! key_exists('package', $matches)) {
+        if (! array_key_exists('package', $matches)) {
             abort(401, 'Missing X-Original-URI header');
         }
 

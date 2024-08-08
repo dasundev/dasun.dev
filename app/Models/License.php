@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Events\LicenseCreated;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -39,8 +40,18 @@ class License extends Model
         return $this->morphTo();
     }
 
+    public function scopeWhereNotExpired(Builder $query): void
+    {
+        $query->where('expires_at', '<=', now());
+    }
+
     public function isExpired(): bool
     {
         return $this->expires_at->isPast();
+    }
+
+    public function getRouteKeyName(): string
+    {
+        return 'key';
     }
 }
