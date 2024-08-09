@@ -14,9 +14,9 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class License extends Model implements AuthenticatableContract
 {
+    use Authenticatable;
     use HasFactory;
     use SoftDeletes;
-    use Authenticatable;
 
     protected $guarded = [];
 
