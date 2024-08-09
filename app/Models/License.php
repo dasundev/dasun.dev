@@ -3,6 +3,8 @@
 namespace App\Models;
 
 use App\Events\LicenseCreated;
+use Illuminate\Auth\Authenticatable;
+use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -10,10 +12,11 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class License extends Model
+class License extends Model implements AuthenticatableContract
 {
     use HasFactory;
     use SoftDeletes;
+    use Authenticatable;
 
     protected $guarded = [];
 
@@ -47,6 +50,10 @@ class License extends Model
 
     public function isExpired(): bool
     {
+        if (is_null($this->expires_at)) {
+            return false;
+        }
+
         return $this->expires_at->isPast();
     }
 
