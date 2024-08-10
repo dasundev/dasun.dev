@@ -7,8 +7,8 @@ I am pleased to inform you that a new license has been issued to you. Here are t
 
 - License name: {{ $license->name }}
 - License key: {{ $license->key }}
-- Applicable Package(s): {{ $license->purchasable->name }}
-- Expiration Date: {{ $license->expires_at->format('M 5, Y H:i:s A') }}
+- Applicable package(s): {{ $license->purchasable->name }}
+- Expires at: {{ $license->expires_at->format('M 5, Y H:i:s A') }}
 
 @component('mail::button', ['url' => route('dashboard')])
 View License
