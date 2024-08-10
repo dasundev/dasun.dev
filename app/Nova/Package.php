@@ -49,6 +49,12 @@ class Package extends Resource
                 ->updateRules('required', 'string', 'unique:packages,documentation_url,{{resourceId}}')
                 ->hideFromIndex(),
 
+            Text::make('Website URL', 'website_url')
+                ->rules('url')
+                ->creationRules('required', 'string', 'unique:packages,website_url')
+                ->updateRules('required', 'string', 'unique:packages,website_url,{{resourceId}}')
+                ->hideFromIndex(),
+
             Boolean::make('Premium', 'is_premium')
                 ->sortable()
                 ->rules('sometimes', 'boolean'),
