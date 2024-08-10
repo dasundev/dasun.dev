@@ -10,6 +10,8 @@ I am pleased to inform you that a new license has been issued to you. Here are t
 - Applicable package(s): {{ $license->purchasable->name }}
 - Expires at: {{ $license->expires_at->format('M 5, Y H:i:s A') }}
 
+All licenses are managed through your account on [dasun.dev](https://www.dasun.dev). If an account hasn’t been created for you yet, one will be automatically generated. You can reset your password and log in to access your dashboard.
+
 @component('mail::button', ['url' => route('dashboard')])
 View License
 @endcomponent
