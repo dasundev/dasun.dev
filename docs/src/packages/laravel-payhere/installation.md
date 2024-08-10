@@ -10,7 +10,7 @@ To install the package, add the following lines to the `repositories` key in you
     "repositories": [
         {
             "type": "composer",
-            "url": "https://laravel-payhere.composer.sh"
+            "url": "https://satis.dasun.dev"
         }
     ]
 }
