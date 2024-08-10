@@ -32,6 +32,9 @@ state([
                         {{ __('Key') }}
                     </th>
                     <th scope="col" class="px-6 py-3">
+                        {{ __('Applicable package(s)') }}
+                    </th>
+                    <th scope="col" class="px-6 py-3">
                         {{ __('Purchase date') }}
                     </th>
                     <th scope="col" class="px-6 py-3">
@@ -47,6 +50,9 @@ state([
                         </th>
                         <td class="px-6 py-4">
                             <span class="bg-gray-100 text-gray-500 px-3 py-1 rounded-full dark:bg-gray-800 whitespace-nowrap">{{ $license->key }}</span>
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap">
+                            {{ $license->purchasable->name }}
                         </td>
                         <td class="px-6 py-4 whitespace-nowrap">
                             {{ \Illuminate\Support\Carbon::parse($license->created_at)->format('M d, Y') }}
