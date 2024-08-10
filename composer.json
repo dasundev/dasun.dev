@@ -97,7 +97,7 @@
         },
         {
             "type": "composer",
-            "url": "https://laravel-payhere.composer.sh"
+            "url": "https://satis.dasun.dev"
         }
     ]
 }
