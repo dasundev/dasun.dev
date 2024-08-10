@@ -16,8 +16,14 @@ class SatisAuthenticationController extends Controller
             abort(401);
         }
 
+        // Validate that the request's user matches the license owner
+        if ($license->user->email !== $request->getUser()) {
+            abort(401, "The requested user doesn't have access to this license.");
+        }
+
         $package = $this->getRequestedPackage($request);
 
+        // Check if the user has a valid, non-expired license for the requested package
         $hasAccess = License::query()
             ->with(['purchasable'])
             ->whereNotExpired()
