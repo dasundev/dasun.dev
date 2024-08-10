@@ -27,6 +27,15 @@ class Package extends Model
         'documentation_url',
     ];
 
+    protected static function boot(): void
+    {
+        parent::boot();
+
+        static::updating(function () {
+            Cache::delete('premium_packages');
+        });
+    }
+
     public function isPremium(): bool
     {
         return $this->is_premium;
@@ -50,14 +59,5 @@ class Package extends Model
     public function getRouteKeyName(): string
     {
         return 'slug';
-    }
-
-    protected static function boot(): void
-    {
-        parent::boot();
-
-        static::updating(function () {
-            Cache::delete('premium_packages');
-        });
     }
 }
