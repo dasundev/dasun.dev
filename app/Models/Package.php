@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Facades\Cache;
 
 class Package extends Model
 {
@@ -25,6 +26,15 @@ class Package extends Model
         'thumbnail',
         'documentation_url',
     ];
+
+    protected static function boot(): void
+    {
+        parent::boot();
+
+        static::updating(function () {
+            Cache::delete('premium_packages');
+        });
+    }
 
     public function isPremium(): bool
     {
@@ -49,5 +59,10 @@ class Package extends Model
     public function getRouteKeyName(): string
     {
         return 'slug';
+    }
+
+    public function hasWebsiteUrl(): bool
+    {
+        return ! is_null($this->website_url);
     }
 }
