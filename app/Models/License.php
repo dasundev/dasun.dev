@@ -45,7 +45,7 @@ class License extends Model implements AuthenticatableContract
 
     public function scopeWhereNotExpired(Builder $query): void
     {
-        $query->where('expires_at', '<=', now());
+        $query->where('expires_at', '>=', now());
     }
 
     public function isExpired(): bool
