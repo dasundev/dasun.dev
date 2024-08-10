@@ -4,9 +4,11 @@ namespace App\Nova;
 
 use App\Models\License as LicenseModel;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\Date;
 use Laravel\Nova\Fields\ID;
+use Laravel\Nova\Fields\MorphTo;
 use Laravel\Nova\Fields\Text;
 
 class License extends Resource
@@ -27,7 +29,14 @@ class License extends Resource
             BelongsTo::make('User', 'user', User::class)
                 ->searchable(),
 
+            MorphTo::make('Purchasable', 'purchasable')
+                ->types([
+                    Package::class,
+                ])
+                ->searchable(),
+
             BelongsTo::make('Order', 'order', Order::class)
+                ->nullable()
                 ->searchable(),
 
             Text::make('Licence name', 'name')
@@ -36,7 +45,9 @@ class License extends Resource
 
             Text::make('License key', 'key')
                 ->sortable()
-                ->rules('required', 'string'),
+                ->rules('required', 'uuid')
+                ->default(fn () => Str::uuid())
+                ->copyable(),
 
             Date::make('Expires At', 'expires_at')
                 ->sortable()
