@@ -4,6 +4,7 @@ namespace App\Nova;
 
 use App\Models\License as LicenseModel;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\Date;
 use Laravel\Nova\Fields\ID;
@@ -44,7 +45,9 @@ class License extends Resource
 
             Text::make('License key', 'key')
                 ->sortable()
-                ->rules('required', 'string'),
+                ->rules('required', 'uuid')
+                ->default(fn () => Str::uuid())
+                ->copyable(),
 
             Date::make('Expires At', 'expires_at')
                 ->sortable()
