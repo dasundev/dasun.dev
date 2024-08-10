@@ -7,6 +7,7 @@ I am pleased to inform you that a new license has been issued to you. Here are t
 
 - License name: {{ $license->name }}
 - License key: {{ $license->key }}
+- Applicable Package(s): {{ $license->purchasable->name }}
 
 @component('mail::button', ['url' => route('dashboard')])
 View License
