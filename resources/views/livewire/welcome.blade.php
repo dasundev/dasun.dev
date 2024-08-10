@@ -15,7 +15,7 @@
                 <img src="{{ Storage::url($premiumPackage->thumbnail) }}" class="w-full md:w-1/2 lg:w-1/3" alt="{{ $premiumPackage->name }}">
                 <div class="flex flex-col gap-4">
                     <div>
-                        <a href="{{ $premiumPackage->documentation_url }}"><h3 class="text-2xl lg:text-3xl dark:text-white hover:text-gray-700  hover:dark:text-gray-300 transition-colors">{{ $premiumPackage->name }}</h3></a>
+                        <a href="{{ $premiumPackage->website_url ?? $premiumPackage->documentation_url }}"><h3 class="text-2xl lg:text-3xl dark:text-white hover:text-gray-700  hover:dark:text-gray-300 transition-colors">{{ $premiumPackage->name }}</h3></a>
                         <span class="bg-green-400 dark:bg-green-600 font-normal text-green-800 dark:text-green-950 px-2 py-1 rounded-full text-xs lg:text-sm">20% OFF</span>
                     </div>
                     <p class="text-gray-500 text-md lg:text-lg">{{ $premiumPackage->description }}</p>
