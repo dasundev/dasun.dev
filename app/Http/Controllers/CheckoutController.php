@@ -6,12 +6,16 @@ use App\Models\Order;
 use App\Models\Package;
 use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Log;
 
 class CheckoutController extends Controller
 {
     public function checkout(Package $package, Request $request)
     {
+        // If the package has a website URL, the user is not allowed to buy it.
+        Gate::allowIf(! $package->hasWebsiteUrl());
+
         // Check if the package is premium
         if (! $package->isPremium()) {
             return back()->with('error', 'Open-source packages are not purchasable!');

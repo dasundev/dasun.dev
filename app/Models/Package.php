@@ -60,4 +60,9 @@ class Package extends Model
     {
         return 'slug';
     }
+
+    public function hasWebsiteUrl(): bool
+    {
+        return ! is_null($this->website_url);
+    }
 }
