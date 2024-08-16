@@ -30,7 +30,7 @@ class SatisAuthenticationController extends Controller
             ->where('user_id', $license->user_id)
             ->get()
             ->contains(
-                fn (License $license) => $license->purchasable->composer_package === $package
+                fn (License $license) => $license->purchasable?->composer_package === $package['name']
             );
 
         abort_unless($hasAccess, 401, 'The requested license could not be used for the requested package.');
@@ -38,16 +38,20 @@ class SatisAuthenticationController extends Controller
         return response('valid');
     }
 
-    protected function getRequestedPackage(Request $request): string
+    protected function getRequestedPackage(Request $request): array
     {
         $originalUrl = $request->header('X-Original-URI', '');
 
-        preg_match('#/dist/(?<package>dasundev/[^/]*)/#', $originalUrl, $matches);
+        preg_match('#/dist/(?<package>dasundev/[^/]*)/dasundev-[^/]*-(?<hash>[a-f0-9]{40})#', $originalUrl, $matches);
 
-        if (! array_key_exists('package', $matches)) {
-            abort(401, 'Missing X-Original-URI header');
+        if (! array_key_exists('package', $matches) || ! array_key_exists('hash', $matches)) {
+            abort(401, 'Missing or invalid X-Original-URI header');
         }
 
-        return $matches['package'];
+        return [
+            'name' => $matches['package'],
+            'hash' => $matches['hash'],
+        ];
     }
+
 }
