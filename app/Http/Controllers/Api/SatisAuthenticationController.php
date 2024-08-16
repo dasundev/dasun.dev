@@ -29,9 +29,7 @@ class SatisAuthenticationController extends Controller
             ->whereNotExpired()
             ->where('user_id', $license->user_id)
             ->get()
-            ->contains(
-                fn (License $license) => $license->purchasable?->composer_package === $package['name']
-            );
+            ->contains(fn (License $license) => $license->purchasable?->composer_package === $package['name']);
 
         abort_unless($hasAccess, 401, 'The requested license could not be used for the requested package.');
 
@@ -53,5 +51,4 @@ class SatisAuthenticationController extends Controller
             'hash' => $matches['hash'],
         ];
     }
-
 }
