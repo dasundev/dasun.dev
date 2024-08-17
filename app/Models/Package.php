@@ -25,6 +25,7 @@ class Package extends Model
         'anystack_product_id',
         'thumbnail',
         'documentation_url',
+        'tags'
     ];
 
     protected static function boot(): void

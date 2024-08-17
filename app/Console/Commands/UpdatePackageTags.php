@@ -4,13 +4,8 @@ namespace App\Console\Commands;
 
 use App\Http\Integrations\GitHub\GitHubConnector;
 use App\Http\Integrations\GitHub\Requests\ListRepositoryTags;
-use App\Http\Integrations\Packagist\PackagistConnector;
-use App\Http\Integrations\Packagist\Requests\GetPackageDataRequest;
 use App\Models\Package;
-use App\Repositories\Contracts\PackageRepository;
 use Illuminate\Console\Command;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Str;
 
 class UpdatePackageTags extends Command
 {
