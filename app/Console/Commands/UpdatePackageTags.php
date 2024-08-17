@@ -21,9 +21,7 @@ class UpdatePackageTags extends Command
     public function handle(): void
     {
         Package::all()->each(function ($package) {
-            $tags = GitHub::fetchRepositoryTags($package);
-
-            $package->update(['tags' => $tags]);
+            $package->update(['tags' => GitHub::fetchRepositoryTags($package)]);
         });
     }
 }
