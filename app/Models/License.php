@@ -69,9 +69,7 @@ class License extends Model implements AuthenticatableContract
             return true;
         }
 
-        $fallbackVersion = $this->fallback_version ?? null;
-
-        if (! $fallbackVersion) {
+        if (! $fallbackVersion = $this->fallback_version ?? null) {
             return false;
         }
 
