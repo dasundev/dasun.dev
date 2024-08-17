@@ -11,10 +11,12 @@ use Saloon\Exceptions\Request\RequestException;
 final readonly class GitHub
 {
     /**
+     * Fetch all tags for the given repository from GitHub.
+     *
      * @throws FatalRequestException
      * @throws RequestException
      */
-    public static function fetchRepositoryTags(string $repository): Collection
+    public static function fetchAllRepositoryTags(string $repository): Collection
     {
         $connector = new GitHubConnector;
 
