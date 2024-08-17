@@ -65,26 +65,26 @@ class License extends Model implements AuthenticatableContract
 
     /**
      * Check if the requested version can be accessed based on the license's fallback version.
-     *
-     * @param string $sha
-     * @return bool
      */
-    public function hasVersionAccess(string $sha): bool
+    public function hasPerpetualLicenseAccess(string $sha): bool
     {
         if (! $this->isExpired()) {
             return true;
         }
 
-        // Get the fallback version if it exists
-        if (! $fallbackVersion = $this->fallback_version ?? null) {
+        $fallbackVersion = $this->fallback_version['name'] ?? null;
+
+        if ($fallbackVersion === null) {
             return false;
         }
 
-        // Check if the requested version exists in the tags collection
-        if (! $requestedVersion = collect($this->purchasable->tags)->first(fn ($tag) => $tag['sha'] === $sha)) {
+        $requestedVersion = collect($this->purchasable->tags)
+            ->first(fn ($tag) => $tag['sha'] === $sha);
+
+        if ($requestedVersion === null) {
             return false;
         }
 
-        return version_compare($fallbackVersion['name'], $requestedVersion['name'], '>=');
+        return version_compare($requestedVersion['name'], $fallbackVersion, '<=');
     }
 }
