@@ -28,6 +28,10 @@ class Package extends Model
         'tags',
     ];
 
+    protected $casts = [
+        'tags' => 'array'
+    ];
+
     protected static function boot(): void
     {
         parent::boot();

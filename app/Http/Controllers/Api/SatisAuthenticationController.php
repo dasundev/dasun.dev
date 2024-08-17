@@ -25,12 +25,10 @@ class SatisAuthenticationController extends Controller
 
         // Check if the user has a valid, non-expired license for the requested package
         $hasAccess = License::query()
-            ->with(['purchasable'])
-            ->whereNotExpired()
             ->where('user_id', $license->user_id)
             ->get()
             ->contains(
-                fn (License $license) => $license->purchasable?->composer_package === $package['name']
+                fn (License $license) => $license->hasVersionAccess($package['sha'])
             );
 
         abort_unless($hasAccess, 401, 'The requested license could not be used for the requested package.');

@@ -62,4 +62,23 @@ class License extends Model implements AuthenticatableContract
     {
         return 'key';
     }
+
+    public function hasVersionAccess(string $sha): bool
+    {
+        $fallbackVersion = $this->fallback_version ?? null;
+
+        if (! $fallbackVersion) {
+            return false;
+        }
+
+        $requestedVersion = collect($this->purchasable->tags)
+            ->first(fn($tag) => $tag['sha'] === $sha);
+
+        if (! $requestedVersion) {
+            return false;
+        }
+
+        return version_compare($fallbackVersion['name'], $requestedVersion['name'], '>=');
+    }
+
 }
