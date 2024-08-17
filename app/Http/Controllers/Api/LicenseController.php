@@ -3,12 +3,23 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Integrations\GitHub\GitHubConnector;
+use App\Http\Integrations\GitHub\Requests\ListRepositoryTags;
+use App\Models\Package;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
 class LicenseController extends Controller
 {
+    /**
+     * Store a new license.
+     *
+     * @return \Illuminate\Http\Response
+     *
+     * @throws \Saloon\Exceptions\Request\FatalRequestException
+     * @throws \Saloon\Exceptions\Request\RequestException
+     */
     public function store(Request $request)
     {
         $request->validate([
@@ -17,7 +28,7 @@ class LicenseController extends Controller
             'license' => ['required', 'string', 'max:255'],
             'purchasable_type' => ['required', 'string', 'max:255'],
             'purchasable_id' => ['required', 'string', 'max:255'],
-            'expires_at' => ['required', 'date'],
+            'expires_at' => ['required', 'date', 'after:today'],
         ]);
 
         $user = User::whereEmail($request->email)->firstOrCreate(
@@ -34,17 +45,14 @@ class LicenseController extends Controller
             return response('The purchasable type is not valid.', 422);
         }
 
-        // Instantiate a new purchasable instance.
-        $purchasable = new $request->purchasable_type;
+        // Find the purchasable instance.
+        $purchasable = ($request->purchasable_type)::find($request->purchasable_id);
 
-        // Check if the purchasable item exists in the database.
-        $isPurchasableExists = $purchasable::find($request->purchasable_id)->exists();
-
-        if (! $isPurchasableExists) {
+        if (! $purchasable->exists()) {
             return response('The purchasable item could not be found.', 404);
         }
 
-        $user->licenses()->create([
+        $license = $user->licenses()->create([
             'name' => $request->license,
             'purchasable_type' => $request->purchasable_type,
             'purchasable_id' => $request->purchasable_id,
@@ -52,6 +60,38 @@ class LicenseController extends Controller
             'expires_at' => $request->expires_at,
         ]);
 
+        if ($purchasable instanceof Package) {
+            $latestVersion = $this->fetchLatestPurchasableVersion($purchasable);
+
+            $license->update([
+                'fallback_version' => $latestVersion,
+            ]);
+        }
+
         return response('License issued successfully.', 200);
+    }
+
+    /**
+     * Fetch the latest version information for the given package from GitHub.
+     *
+     * @return array
+     *
+     * @throws \Saloon\Exceptions\Request\FatalRequestException
+     * @throws \Saloon\Exceptions\Request\RequestException
+     */
+    private function fetchLatestPurchasableVersion(Package $package)
+    {
+        $connector = new GitHubConnector;
+
+        $response = $connector->send(new ListRepositoryTags($package->composer_package));
+
+        $tags = $response->collect();
+
+        $latestTag = $tags->first();
+
+        return [
+            'name' => $latestTag['name'],
+            'sha' => $latestTag['commit']['sha'],
+        ];
     }
 }
