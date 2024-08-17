@@ -61,10 +61,8 @@ class LicenseController extends Controller
         ]);
 
         if ($purchasable instanceof Package) {
-            $latestVersion = $this->fetchLatestPurchasableVersion($purchasable);
-
             $license->update([
-                'fallback_version' => $latestVersion,
+                'fallback_version' => $this->fetchLatestPurchasableVersion($purchasable),
             ]);
         }
 
