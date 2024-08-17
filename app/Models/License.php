@@ -73,10 +73,7 @@ class License extends Model implements AuthenticatableContract
             return false;
         }
 
-        $requestedVersion = collect($this->purchasable->tags)
-            ->first(fn ($tag) => $tag['sha'] === $sha);
-
-        if (! $requestedVersion) {
+        if (! $requestedVersion = collect($this->purchasable->tags)->first(fn ($tag) => $tag['sha'] === $sha)) {
             return false;
         }
 
