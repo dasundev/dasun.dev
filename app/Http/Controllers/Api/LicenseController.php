@@ -26,7 +26,7 @@ class LicenseController extends Controller
                 'email' => $request->email,
             ],
             [
-                'password' => Str::password()
+                'password' => Str::password(),
             ]
         );
 
@@ -37,10 +37,9 @@ class LicenseController extends Controller
         // Instantiate a new purchasable instance.
         $purchasable = new $request->purchasable_type;
 
-        // Check if the purchasable is exits in database.
+        // Check if the purchasable item exists in the database.
         $isPurchasableExists = $purchasable::find($request->purchasable_id)->exists();
 
-        // Issue a license if the purchasable is existed.
         if (! $isPurchasableExists) {
             return response('The purchasable item could not be found.', 404);
         }

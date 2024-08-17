@@ -2,7 +2,6 @@
 
 use App\Http\Controllers\Api\LicenseController;
 use App\Http\Controllers\Api\SatisAuthenticationController;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
