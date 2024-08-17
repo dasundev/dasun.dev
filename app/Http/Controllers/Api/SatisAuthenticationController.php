@@ -42,15 +42,15 @@ class SatisAuthenticationController extends Controller
     {
         $originalUrl = $request->header('X-Original-URI', '');
 
-        preg_match('#/dist/(?<package>dasundev/[^/]*)/dasundev-[^/]*-(?<hash>[a-f0-9]{40})#', $originalUrl, $matches);
+        preg_match('#/dist/(?<package>dasundev/[^/]*)/dasundev-[^/]*-(?<sha>[a-f0-9]{40})#', $originalUrl, $matches);
 
-        if (! array_key_exists('package', $matches) || ! array_key_exists('hash', $matches)) {
+        if (! array_key_exists('package', $matches) || ! array_key_exists('sha', $matches)) {
             abort(401, 'Missing or invalid X-Original-URI header');
         }
 
         return [
             'name' => $matches['package'],
-            'hash' => $matches['hash'],
+            'sha' => $matches['sha'],
         ];
     }
 }
