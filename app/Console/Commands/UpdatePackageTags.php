@@ -10,8 +10,5 @@ class UpdatePackageTags extends Command
 
     protected $description = 'Fetch and update all tags for packages from GitHub.';
 
-    public function handle(): void
-    {
-
-    }
+    public function handle(): void {}
 }
