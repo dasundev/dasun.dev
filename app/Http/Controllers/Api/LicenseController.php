@@ -74,28 +74,4 @@ class LicenseController extends Controller
 
         return response('License issued successfully.', 200);
     }
-
-    /**
-     * Fetch the latest version information for the given package from GitHub.
-     *
-     * @return array
-     *
-     * @throws FatalRequestException
-     * @throws RequestException
-     */
-    private function fetchLatestPurchasableVersion(Package $package)
-    {
-        $connector = new GitHubConnector;
-
-        $response = $connector->send(new ListRepositoryTags($package->composer_package));
-
-        $tags = $response->collect();
-
-        $latestTag = $tags->first();
-
-        return [
-            'name' => $latestTag['name'],
-            'sha' => $latestTag['commit']['sha'],
-        ];
-    }
 }
