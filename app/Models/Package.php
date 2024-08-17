@@ -29,7 +29,7 @@ class Package extends Model
     ];
 
     protected $casts = [
-        'tags' => 'array'
+        'tags' => 'array',
     ];
 
     protected static function boot(): void

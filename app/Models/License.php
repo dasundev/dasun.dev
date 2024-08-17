@@ -72,7 +72,7 @@ class License extends Model implements AuthenticatableContract
         }
 
         $requestedVersion = collect($this->purchasable->tags)
-            ->first(fn($tag) => $tag['sha'] === $sha);
+            ->first(fn ($tag) => $tag['sha'] === $sha);
 
         if (! $requestedVersion) {
             return false;
@@ -80,5 +80,4 @@ class License extends Model implements AuthenticatableContract
 
         return version_compare($fallbackVersion['name'], $requestedVersion['name'], '>=');
     }
-
 }
