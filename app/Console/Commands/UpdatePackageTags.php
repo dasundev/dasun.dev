@@ -2,8 +2,6 @@
 
 namespace App\Console\Commands;
 
-use App\Http\Integrations\GitHub\GitHubConnector;
-use App\Http\Integrations\GitHub\Requests\ListRepositoryTags;
 use App\Models\Package;
 use App\Services\GitHub;
 use Illuminate\Console\Command;
