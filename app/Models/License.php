@@ -68,6 +68,10 @@ class License extends Model implements AuthenticatableContract
      */
     public function hasPerpetualLicenseAccess(array $package): bool
     {
+        if ($this->purchasable->composer_package !== $package['name']) {
+            return false;
+        }
+
         if (! $this->isExpired()) {
             return true;
         }
