@@ -40,8 +40,8 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
-        'satis' => [
-            'driver' => 'license-key',
+        'license-api' => [
+            'driver' => 'satis',
         ],
     ],
 

@@ -24,7 +24,7 @@ class AuthServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        Auth::viaRequest('license-key', function (Request $request) {
+        Auth::viaRequest('satis', function (Request $request) {
             $license = License::query()
                 ->where('key', $request->getPassword())
                 ->first();
