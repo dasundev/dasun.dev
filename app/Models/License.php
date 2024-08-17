@@ -65,6 +65,10 @@ class License extends Model implements AuthenticatableContract
 
     public function hasVersionAccess(string $sha): bool
     {
+        if (! $this->isExpired()) {
+            return true;
+        }
+
         $fallbackVersion = $this->fallback_version ?? null;
 
         if (! $fallbackVersion) {
