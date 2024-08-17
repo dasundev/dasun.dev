@@ -17,4 +17,4 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware('api')->post('license', [LicenseController::class, 'store']);
 
-Route::middleware('auth:license-api')->post('/satis/authenticate', SatisAuthenticationController::class);
+Route::middleware('auth:satis')->post('/satis/authenticate', SatisAuthenticationController::class);
