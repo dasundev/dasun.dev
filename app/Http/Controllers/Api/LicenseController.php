@@ -9,17 +9,20 @@ use App\Models\Package;
 use App\Models\User;
 use App\Services\GitHub;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use Illuminate\Support\Str;
+use Saloon\Exceptions\Request\FatalRequestException;
+use Saloon\Exceptions\Request\RequestException;
 
 class LicenseController extends Controller
 {
     /**
      * Store a new license.
      *
-     * @return \Illuminate\Http\Response
+     * @return Response
      *
-     * @throws \Saloon\Exceptions\Request\FatalRequestException
-     * @throws \Saloon\Exceptions\Request\RequestException
+     * @throws FatalRequestException
+     * @throws RequestException
      */
     public function store(Request $request)
     {
@@ -77,8 +80,8 @@ class LicenseController extends Controller
      *
      * @return array
      *
-     * @throws \Saloon\Exceptions\Request\FatalRequestException
-     * @throws \Saloon\Exceptions\Request\RequestException
+     * @throws FatalRequestException
+     * @throws RequestException
      */
     private function fetchLatestPurchasableVersion(Package $package)
     {
