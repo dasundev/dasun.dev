@@ -14,8 +14,9 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule): void
     {
         $schedule->call(new PruneStaleAttachments)->daily();
-        $schedule->command('composer:fetch-packages')->hourly();
-        $schedule->command('sitemap:generate')->hourly();
+        $schedule->command('package:update-stats')->everyFiveMinutes();
+        $schedule->command('package:update-tags')->everyFiveMinutes();
+        $schedule->command('sitemap:generate')->everyFifteenMinutes();
         $schedule->command('backup:clean')->daily()->at('01:00');
         $schedule->command('backup:run')->daily()->at('01:30');
     }

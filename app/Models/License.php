@@ -22,7 +22,7 @@ class License extends Model implements AuthenticatableContract
 
     protected $casts = [
         'expires_at' => 'datetime',
-        'fallback_version' => 'array'
+        'fallback_version' => 'array',
     ];
 
     protected $dispatchesEvents = [
