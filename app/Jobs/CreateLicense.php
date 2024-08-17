@@ -24,8 +24,7 @@ class CreateLicense implements ShouldQueue
     public function __construct(
         private readonly Package $package,
         private readonly User $user
-    ) {
-    }
+    ) {}
 
     /**
      * @throws FatalRequestException

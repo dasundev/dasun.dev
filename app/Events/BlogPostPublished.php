@@ -13,6 +13,5 @@ class BlogPostPublished
 
     public function __construct(
         public readonly Post $post
-    ) {
-    }
+    ) {}
 }

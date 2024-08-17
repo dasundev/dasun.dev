@@ -13,6 +13,5 @@ class LicenseCreated
 
     public function __construct(
         public readonly License $license
-    ) {
-    }
+    ) {}
 }

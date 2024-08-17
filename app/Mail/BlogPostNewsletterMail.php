@@ -17,8 +17,7 @@ class BlogPostNewsletterMail extends Mailable
     public function __construct(
         public readonly Post $post,
         private readonly NewsletterSubscriber $newsletterSubscriber
-    ) {
-    }
+    ) {}
 
     public function envelope(): Envelope
     {

@@ -15,8 +15,7 @@ class NewLicenseEmail extends Mailable
 
     public function __construct(
         public readonly License $license
-    ) {
-    }
+    ) {}
 
     public function envelope(): Envelope
     {

@@ -12,6 +12,5 @@ class NewsletterSubscribed
 
     public function __construct(
         public string $subscriber
-    ) {
-    }
+    ) {}
 }
