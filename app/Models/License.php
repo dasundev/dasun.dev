@@ -66,7 +66,7 @@ class License extends Model implements AuthenticatableContract
     /**
      * Check if the requested version can be accessed based on the license's fallback version.
      */
-    public function hasPerpetualLicenseAccess(string $sha): bool
+    public function hasPerpetualLicenseAccess(array $package): bool
     {
         if (! $this->isExpired()) {
             return true;
@@ -79,7 +79,7 @@ class License extends Model implements AuthenticatableContract
         }
 
         $requestedVersion = collect($this->purchasable->tags)
-            ->first(fn ($tag) => $tag['sha'] === $sha);
+            ->first(fn ($tag) => $tag['sha'] === $package['sha']);
 
         if ($requestedVersion === null) {
             return false;

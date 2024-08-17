@@ -28,7 +28,8 @@ class SatisAuthenticationController extends Controller
             ->where('user_id', $license->user_id)
             ->get()
             ->contains(
-                fn (License $license) => $license->hasPerpetualLicenseAccess($package['sha'])
+                fn (License $license) => $license->purchasable->composer_package !== $package['name']
+                    && $license->hasPerpetualLicenseAccess($package)
             );
 
         abort_unless($hasAccess, 401, 'The requested license could not be used for the requested package.');
