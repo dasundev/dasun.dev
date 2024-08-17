@@ -7,6 +7,7 @@ use App\Http\Integrations\GitHub\GitHubConnector;
 use App\Http\Integrations\GitHub\Requests\ListRepositoryTags;
 use App\Models\Package;
 use App\Models\User;
+use App\Services\GitHub;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
@@ -61,8 +62,10 @@ class LicenseController extends Controller
         ]);
 
         if ($purchasable instanceof Package) {
+            $version = GitHub::fetchRepositoryTags($purchasable->composer_package)->first();
+
             $license->update([
-                'fallback_version' => $this->fetchLatestPurchasableVersion($purchasable),
+                'fallback_version' => $version,
             ]);
         }
 
