@@ -12,6 +12,6 @@ class UpdatePackageTags extends Command
 
     public function handle(): void
     {
-        // Your command logic here.
+
     }
 }
