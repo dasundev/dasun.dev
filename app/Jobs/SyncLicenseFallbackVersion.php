@@ -19,7 +19,6 @@ class SyncLicenseFallbackVersion implements ShouldQueue
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
     public function __construct(
-        private readonly Model $purchasable,
         private readonly License $license,
     ) {}
 
@@ -31,11 +30,7 @@ class SyncLicenseFallbackVersion implements ShouldQueue
      */
     public function handle(): void
     {
-        if (! $this->purchasable instanceof Package) {
-            return;
-        }
-
-        $latestTag = GitHub::fetchAllRepositoryTags($this->purchasable->composer_package)->first();
+        $latestTag = GitHub::fetchAllRepositoryTags($this->license->purchasable->composer_package)->first();
 
         $this->license->update([
             'fallback_version' => $latestTag,

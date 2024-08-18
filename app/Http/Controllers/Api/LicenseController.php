@@ -3,9 +3,9 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Jobs\SyncLicenseFallbackVersion;
 use App\Models\Package;
 use App\Models\User;
-use App\Services\GitHub;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Str;
@@ -62,7 +62,7 @@ class LicenseController extends Controller
             'expires_at' => $request->expires_at,
         ]);
 
-
+        SyncLicenseFallbackVersion::dispatchIf($purchasable instanceof Package, $license);
 
         return response('License issued successfully.', 200);
     }
