@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
 return [
 
     /*
@@ -43,7 +41,7 @@ return [
             'provider' => 'users',
         ],
         'license-api' => [
-            'driver' => 'satis',
+            'driver' => 'license-key',
         ],
     ],
 

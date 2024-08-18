@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
@@ -16,7 +14,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
-final class User extends Authenticatable implements MustVerifyEmail, PayHereCustomer, PayHerePanelUser
+class User extends Authenticatable implements MustVerifyEmail, PayHereCustomer, PayHerePanelUser
 {
     use Billable, HasApiTokens, HasFactory, Notifiable, SoftDeletes;
 

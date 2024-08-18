@@ -1,14 +1,12 @@
 <?php
 
-declare(strict_types=1);
-
 namespace App\Repositories;
 
 use App\Models\Post;
 use App\Repositories\Contracts\PostRepository;
 use Illuminate\Support\Collection;
 
-final class EloquentPostRepository implements PostRepository
+class EloquentPostRepository implements PostRepository
 {
     public function getPublishedPosts(): Collection
     {

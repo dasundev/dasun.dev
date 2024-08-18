@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
 namespace Tests\Feature\Livewire;
 
 use App\Livewire\Packages;
@@ -10,7 +8,7 @@ use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Livewire\Livewire;
 use Tests\TestCase;
 
-final class PackagesTest extends TestCase
+class PackagesTest extends TestCase
 {
     use DatabaseMigrations;
 

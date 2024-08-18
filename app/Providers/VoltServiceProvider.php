@@ -1,13 +1,11 @@
 <?php
 
-declare(strict_types=1);
-
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Livewire\Volt\Volt;
 
-final class VoltServiceProvider extends ServiceProvider
+class VoltServiceProvider extends ServiceProvider
 {
     /**
      * Register services.

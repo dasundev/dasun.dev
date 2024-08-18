@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
 namespace App\Http\Controllers;
 
 use App\Models\Order;
@@ -11,7 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Log;
 
-final class CheckoutController
+class CheckoutController extends Controller
 {
     public function checkout(Package $package, Request $request)
     {

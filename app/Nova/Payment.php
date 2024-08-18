@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
 namespace App\Nova;
 
 use Dasundev\PayHere\Models\Payment as PaymentModel;
@@ -11,7 +9,7 @@ use Laravel\Nova\Fields\Currency;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Text;
 
-final class Payment extends Resource
+class Payment extends Resource
 {
     public static string $model = PaymentModel::class;
 
@@ -27,11 +25,6 @@ final class Payment extends Resource
         'card_no',
         'card_expiry',
     ];
-
-    public static function authorizedToCreate(Request $request): bool
-    {
-        return false;
-    }
 
     public function fields(Request $request): array
     {
@@ -76,6 +69,11 @@ final class Payment extends Resource
                 ->hideWhenCreating()
                 ->hideWhenUpdating(),
         ];
+    }
+
+    public static function authorizedToCreate(Request $request): bool
+    {
+        return false;
     }
 
     public function authorizedToUpdate(Request $request): bool

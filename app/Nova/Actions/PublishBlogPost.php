@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
 namespace App\Nova\Actions;
 
 use App\Mail\BlogPostNewsletterMail;
@@ -16,7 +14,7 @@ use Laravel\Nova\Actions\Action;
 use Laravel\Nova\Fields\ActionFields;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
-final class PublishBlogPost extends Action implements ShouldQueue
+class PublishBlogPost extends Action implements ShouldQueue
 {
     use InteractsWithQueue, Queueable;
 

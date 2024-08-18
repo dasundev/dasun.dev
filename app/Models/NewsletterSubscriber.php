@@ -1,14 +1,12 @@
 <?php
 
-declare(strict_types=1);
-
 namespace App\Models;
 
 use App\Models\Scopes\EmailVerified;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-final class NewsletterSubscriber extends Model
+class NewsletterSubscriber extends Model
 {
     use HasFactory;
 
@@ -20,6 +18,6 @@ final class NewsletterSubscriber extends Model
 
     protected static function booted(): void
     {
-        self::addGlobalScope(new EmailVerified);
+        static::addGlobalScope(new EmailVerified);
     }
 }

@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
 namespace App\Nova;
 
 use App\Models\License as LicenseModel;
@@ -13,7 +11,7 @@ use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\MorphTo;
 use Laravel\Nova\Fields\Text;
 
-final class License extends Resource
+class License extends Resource
 {
     public static string $model = LicenseModel::class;
 

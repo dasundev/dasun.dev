@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
 namespace App\Livewire\Forms;
 
 use Illuminate\Auth\Events\Lockout;
@@ -12,7 +10,7 @@ use Illuminate\Validation\ValidationException;
 use Livewire\Attributes\Validate;
 use Livewire\Form;
 
-final class LoginForm extends Form
+class LoginForm extends Form
 {
     #[Validate('required|string|email')]
     public string $email = '';
@@ -26,7 +24,7 @@ final class LoginForm extends Form
     /**
      * Attempt to authenticate the request's credentials.
      *
-     * @throws ValidationException
+     * @throws \Illuminate\Validation\ValidationException
      */
     public function authenticate(): void
     {

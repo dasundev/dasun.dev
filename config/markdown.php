@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
 use App\Torchlight\TorchlightWithCopyExtension;
 use League\CommonMark\Extension\Attributes\AttributesExtension;
 

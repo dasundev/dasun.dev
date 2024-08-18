@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
 namespace App\Nova;
 
 use Laravel\Nova\Fields\Date;
@@ -9,7 +7,7 @@ use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
-final class NewsletterSubscriber extends Resource
+class NewsletterSubscriber extends Resource
 {
     /**
      * The model the resource corresponds to.

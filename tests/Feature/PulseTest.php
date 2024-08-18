@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
 use App\Models\User;
 
 test('guest users should be forbidden from accessing the pulse dashboard', function () {

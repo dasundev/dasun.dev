@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
 namespace App\Nova;
 
 use App\Models\OrderLine as OrderLineModel;
@@ -12,7 +10,7 @@ use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\MorphTo;
 use Laravel\Nova\Fields\Number;
 
-final class OrderLine extends Resource
+class OrderLine extends Resource
 {
     public static string $model = OrderLineModel::class;
 
@@ -21,11 +19,6 @@ final class OrderLine extends Resource
     public static $search = [
         'id', 'order_id', 'purchasable_type',
     ];
-
-    public static function authorizedToCreate(Request $request): bool
-    {
-        return false;
-    }
 
     public function fields(Request $request): array
     {
@@ -46,6 +39,11 @@ final class OrderLine extends Resource
             Currency::make('Total', 'total')
                 ->sortable(),
         ];
+    }
+
+    public static function authorizedToCreate(Request $request): bool
+    {
+        return false;
     }
 
     public function authorizedToDelete(Request $request): bool

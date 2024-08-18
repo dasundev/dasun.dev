@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
 namespace App\Providers;
 
 use App\Nova\Dashboards\Main;
@@ -19,7 +17,7 @@ use Laravel\Nova\Menu\MenuSection;
 use Laravel\Nova\Nova;
 use Laravel\Nova\NovaApplicationServiceProvider;
 
-final class NovaServiceProvider extends NovaApplicationServiceProvider
+class NovaServiceProvider extends NovaApplicationServiceProvider
 {
     /**
      * Bootstrap any application services.
@@ -31,26 +29,6 @@ final class NovaServiceProvider extends NovaApplicationServiceProvider
         parent::boot();
 
         $this->registerMenus();
-    }
-
-    /**
-     * Get the tools that should be listed in the Nova sidebar.
-     *
-     * @return array
-     */
-    public function tools()
-    {
-        return [];
-    }
-
-    /**
-     * Register any application services.
-     *
-     * @return void
-     */
-    public function register()
-    {
-        //
     }
 
     /**
@@ -90,8 +68,18 @@ final class NovaServiceProvider extends NovaApplicationServiceProvider
     protected function dashboards()
     {
         return [
-            new Main,
+            new \App\Nova\Dashboards\Main,
         ];
+    }
+
+    /**
+     * Get the tools that should be listed in the Nova sidebar.
+     *
+     * @return array
+     */
+    public function tools()
+    {
+        return [];
     }
 
     /**
@@ -126,5 +114,15 @@ final class NovaServiceProvider extends NovaApplicationServiceProvider
                 ])->icon('cash')->collapsable(),
             ];
         });
+    }
+
+    /**
+     * Register any application services.
+     *
+     * @return void
+     */
+    public function register()
+    {
+        //
     }
 }

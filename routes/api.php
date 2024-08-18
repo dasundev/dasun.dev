@@ -1,9 +1,7 @@
 <?php
 
-declare(strict_types=1);
-
-use App\Http\Controllers\Api\LicenseController;
 use App\Http\Controllers\Api\SatisAuthenticationController;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,6 +15,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:license-api')->post('/satis/authenticate', SatisAuthenticationController::class);
+Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+    return $request->user();
+});
 
-Route::middleware(['auth:sanctum', 'abilities:license:store'])->post('license', [LicenseController::class, 'store']);
+Route::middleware('auth:license-api')->post('/satis/authenticate', SatisAuthenticationController::class);

@@ -1,13 +1,11 @@
 <?php
 
-declare(strict_types=1);
-
 namespace App\Http\Integrations\Packagist\Requests;
 
 use Saloon\Enums\Method;
 use Saloon\Http\Request;
 
-final class GetPackageDataRequest extends Request
+class GetPackageDataRequest extends Request
 {
     /**
      * The HTTP method of the request

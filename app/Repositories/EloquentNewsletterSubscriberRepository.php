@@ -1,14 +1,12 @@
 <?php
 
-declare(strict_types=1);
-
 namespace App\Repositories;
 
 use App\Models\NewsletterSubscriber;
 use App\Repositories\Contracts\NewsletterSubscriberRepository;
 use Illuminate\Support\Collection;
 
-final class EloquentNewsletterSubscriberRepository implements NewsletterSubscriberRepository
+class EloquentNewsletterSubscriberRepository implements NewsletterSubscriberRepository
 {
     public function createSubscriber(array $attributes): NewsletterSubscriber
     {

@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
 namespace App\Console\Commands;
 
 use App\Repositories\Contracts\PostRepository;
@@ -10,7 +8,7 @@ use Illuminate\Support\Facades\Log;
 use Spatie\Sitemap\Sitemap;
 use Spatie\Sitemap\Tags\Url;
 
-final class GenerateSitemap extends Command
+class GenerateSitemap extends Command
 {
     protected $signature = 'sitemap:generate';
 

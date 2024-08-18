@@ -1,13 +1,11 @@
 <?php
 
-declare(strict_types=1);
-
 namespace App\Livewire\Actions;
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 
-final class Logout
+class Logout
 {
     /**
      * Log the current user out of the application.

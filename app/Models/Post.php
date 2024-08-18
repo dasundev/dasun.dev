@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
 namespace App\Models;
 
 use App\Repositories\Contracts\PostRepository;
@@ -13,7 +11,7 @@ use Illuminate\Support\Collection;
 use Spatie\Feed\Feedable;
 use Spatie\Feed\FeedItem;
 
-final class Post extends Model implements Feedable
+class Post extends Model implements Feedable
 {
     use HasFactory;
     use SoftDeletes;
@@ -50,7 +48,7 @@ final class Post extends Model implements Feedable
     public function toFeedItem(): FeedItem
     {
         return FeedItem::create()
-            ->id((string) $this->id)
+            ->id($this->id)
             ->title($this->title)
             ->summary($this->excerpt)
             ->updated($this->published_at)
@@ -102,6 +100,6 @@ final class Post extends Model implements Feedable
 
     public function hasSentNewsletter(): bool
     {
-        return $this->newsletter_sent === true;
+        return $this->newsletter_sent == true;
     }
 }

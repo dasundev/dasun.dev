@@ -1,14 +1,12 @@
 <?php
 
-declare(strict_types=1);
-
 namespace App\Torchlight;
 
 use Closure;
 use Torchlight\Block;
 use Torchlight\Commonmark\V2\TorchlightExtension;
 
-final class TorchlightWithCopyExtension extends TorchlightExtension
+class TorchlightWithCopyExtension extends TorchlightExtension
 {
     public function defaultBlockRenderer(): Closure
     {

@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
 namespace App\Models;
 
 use App\Events\LicenseCreated;
@@ -14,7 +12,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-final class License extends Model implements AuthenticatableContract
+class License extends Model implements AuthenticatableContract
 {
     use Authenticatable;
     use HasFactory;
@@ -24,7 +22,6 @@ final class License extends Model implements AuthenticatableContract
 
     protected $casts = [
         'expires_at' => 'datetime',
-        'fallback_version' => 'array',
     ];
 
     protected $dispatchesEvents = [
@@ -60,46 +57,8 @@ final class License extends Model implements AuthenticatableContract
         return $this->expires_at->isPast();
     }
 
-    public function isPerpetualLicense(): bool
-    {
-        return ! is_null($this->fallback_version);
-    }
-
     public function getRouteKeyName(): string
     {
         return 'key';
-    }
-
-    /**
-     * Check if the requested version can be accessed based on the license's fallback version.
-     */
-    public function hasLicenseAccess(array $package): bool
-    {
-        if (! $this->isExpired()) {
-            return true;
-        }
-
-        if ($this->isPerpetualLicense()) {
-            if ($this->purchasable->composer_package !== $package['name']) {
-                return false;
-            }
-
-            $fallbackVersion = $this->fallback_version ?? null;
-
-            if ($fallbackVersion === null) {
-                return false;
-            }
-
-            $requestedVersion = collect($this->purchasable->tags)
-                ->first(fn ($tag) => $tag['sha'] === $package['sha']);
-
-            if ($requestedVersion === null) {
-                return false;
-            }
-
-            return version_compare($fallbackVersion['name'], $requestedVersion['name'], '>=');
-        }
-
-        return false;
     }
 }

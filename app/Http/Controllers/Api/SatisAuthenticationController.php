@@ -1,14 +1,13 @@
 <?php
 
-declare(strict_types=1);
-
 namespace App\Http\Controllers\Api;
 
+use App\Http\Controllers\Controller;
 use App\Models\License;
 use Illuminate\Contracts\Auth\Authenticatable;
 use Illuminate\Http\Request;
 
-final class SatisAuthenticationController
+class SatisAuthenticationController extends Controller
 {
     public function __invoke(Authenticatable $license, Request $request)
     {
@@ -26,30 +25,29 @@ final class SatisAuthenticationController
 
         // Check if the user has a valid, non-expired license for the requested package
         $hasAccess = License::query()
+            ->with(['purchasable'])
+            ->whereNotExpired()
             ->where('user_id', $license->user_id)
             ->get()
             ->contains(
-                fn (License $license) => $license->hasLicenseAccess($package)
+                fn (License $license) => $license->purchasable->composer_package === $package
             );
 
-        abort_unless($hasAccess, 401, 'The requested license could not be used for the requested package or version.');
+        abort_unless($hasAccess, 401, 'The requested license could not be used for the requested package.');
 
         return response('valid');
     }
 
-    private function getRequestedPackage(Request $request): array
+    protected function getRequestedPackage(Request $request): string
     {
         $originalUrl = $request->header('X-Original-URI', '');
 
-        preg_match('#/dist/(?<package>dasundev/[^/]*)/dasundev-[^/]*-(?<sha>[a-f0-9]{40})#', $originalUrl, $matches);
+        preg_match('#/dist/(?<package>dasundev/[^/]*)/#', $originalUrl, $matches);
 
-        if (! array_key_exists('package', $matches) || ! array_key_exists('sha', $matches)) {
-            abort(401, 'Missing or invalid X-Original-URI header');
+        if (! array_key_exists('package', $matches)) {
+            abort(401, 'Missing X-Original-URI header');
         }
 
-        return [
-            'name' => $matches['package'],
-            'sha' => $matches['sha'],
-        ];
+        return $matches['package'];
     }
 }

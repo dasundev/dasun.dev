@@ -1,13 +1,11 @@
 <?php
 
-declare(strict_types=1);
-
 namespace App\Http\Controllers;
 
 use App\Repositories\Contracts\NewsletterSubscriberRepository;
 use Illuminate\Http\Request;
 
-final class NewsletterController
+class NewsletterController extends Controller
 {
     public function confirmSubscription(Request $request)
     {

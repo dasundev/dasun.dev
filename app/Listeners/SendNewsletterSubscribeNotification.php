@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
 namespace App\Listeners;
 
 use App\Events\NewsletterSubscribed;
@@ -10,7 +8,7 @@ use Illuminate\Contracts\Events\ShouldHandleEventsAfterCommit;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Support\Facades\Mail;
 
-final class SendNewsletterSubscribeNotification implements ShouldHandleEventsAfterCommit, ShouldQueue
+class SendNewsletterSubscribeNotification implements ShouldHandleEventsAfterCommit, ShouldQueue
 {
     public function handle(NewsletterSubscribed $event): void
     {

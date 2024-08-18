@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\NewsletterController;
 use App\Livewire\About;

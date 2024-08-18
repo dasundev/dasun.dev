@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
 namespace App\Nova\Actions;
 
 use Illuminate\Bus\Queueable;
@@ -11,7 +9,7 @@ use Laravel\Nova\Actions\Action;
 use Laravel\Nova\Actions\ActionResponse;
 use Laravel\Nova\Fields\ActionFields;
 
-final class PreviewBlogPost extends Action
+class PreviewBlogPost extends Action
 {
     use InteractsWithQueue, Queueable;
 
