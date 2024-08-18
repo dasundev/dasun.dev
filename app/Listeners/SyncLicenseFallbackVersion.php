@@ -11,8 +11,8 @@ use Saloon\Exceptions\Request\RequestException;
 readonly class SyncLicenseFallbackVersion implements ShouldQueue
 {
     /**
-     * @throws FatalRequestException
-     * @throws RequestException
+     * @throws \Saloon\Exceptions\Request\FatalRequestException
+     * @throws \Saloon\Exceptions\Request\RequestException
      */
     public function handle(LicenseCreated $event): void
     {
