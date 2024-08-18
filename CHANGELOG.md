@@ -1,5 +1,15 @@
 # Changelog
 
+## v3.1.0 - 2024-08-18
+
+### What's Changed
+
+* feat: add satis authentication for manage private packages by @dasundev in https://github.com/dasundev/dasun.dev/pull/85
+* feat: enhance license issuance process for premium packages by @dasundev in https://github.com/dasundev/dasun.dev/pull/86
+* feat: implement support for perpetual licenses with version control by @dasundev in https://github.com/dasundev/dasun.dev/pull/87
+
+**Full Changelog**: https://github.com/dasundev/dasun.dev/compare/v3.0.0...v3.1.0
+
 ## v3.0.0 - 2024-06-27
 
 ### What's Changed
