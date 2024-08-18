@@ -2,6 +2,7 @@
 
 namespace App\Listeners;
 
+use App\Events\LicenseCreated;
 use App\Models\License;
 use App\Services\GitHub;
 use Illuminate\Contracts\Queue\ShouldQueue;
@@ -10,21 +11,17 @@ use Saloon\Exceptions\Request\RequestException;
 
 readonly class SyncLicenseFallbackVersion implements ShouldQueue
 {
-    public function __construct(
-        private License $license,
-    ) {}
-
     /**
-     * Execute the job.
-     *
      * @throws FatalRequestException
      * @throws RequestException
      */
-    public function handle(): void
+    public function handle(LicenseCreated $event): void
     {
-        $latestTag = GitHub::fetchAllRepositoryTags($this->license->purchasable->composer_package)->first();
+        $license = $event->license;
 
-        $this->license->update([
+        $latestTag = GitHub::fetchAllRepositoryTags($license->purchasable->composer_package)->first();
+
+        $license->update([
             'fallback_version' => $latestTag,
         ]);
     }
