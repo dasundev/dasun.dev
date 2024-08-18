@@ -58,6 +58,11 @@ class License extends Model implements AuthenticatableContract
         return $this->expires_at->isPast();
     }
 
+    public function isPerpetualLicense(): bool
+    {
+        return ! is_null($this->fallback_version);
+    }
+
     public function getRouteKeyName(): string
     {
         return 'key';
@@ -66,29 +71,33 @@ class License extends Model implements AuthenticatableContract
     /**
      * Check if the requested version can be accessed based on the license's fallback version.
      */
-    public function hasPerpetualLicenseAccess(array $package): bool
+    public function hasLicenseAccess(array $package): bool
     {
-        if ($this->purchasable->composer_package !== $package['name']) {
-            return false;
-        }
-
         if (! $this->isExpired()) {
             return true;
         }
 
-        $fallbackVersion = $this->fallback_version ?? null;
+        if ($this->isPerpetualLicense()) {
+            if ($this->purchasable->composer_package !== $package['name']) {
+                return false;
+            }
 
-        if ($fallbackVersion === null) {
-            return false;
+            $fallbackVersion = $this->fallback_version ?? null;
+
+            if ($fallbackVersion === null) {
+                return false;
+            }
+
+            $requestedVersion = collect($this->purchasable->tags)
+                ->first(fn ($tag) => $tag['sha'] === $package['sha']);
+
+            if ($requestedVersion === null) {
+                return false;
+            }
+
+            return version_compare($requestedVersion['name'], $fallbackVersion['name'], '<=');
         }
 
-        $requestedVersion = collect($this->purchasable->tags)
-            ->first(fn ($tag) => $tag['sha'] === $package['sha']);
-
-        if ($requestedVersion === null) {
-            return false;
-        }
-
-        return version_compare($requestedVersion['name'], $fallbackVersion['name'], '<=');
+        return false;
     }
 }
