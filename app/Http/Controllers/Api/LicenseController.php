@@ -62,13 +62,7 @@ class LicenseController extends Controller
             'expires_at' => $request->expires_at,
         ]);
 
-        if ($purchasable instanceof Package) {
-            $latestTag = GitHub::fetchAllRepositoryTags($purchasable->composer_package)->first();
 
-            $license->update([
-                'fallback_version' => $latestTag,
-            ]);
-        }
 
         return response('License issued successfully.', 200);
     }
