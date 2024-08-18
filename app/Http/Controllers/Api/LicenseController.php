@@ -62,8 +62,6 @@ class LicenseController extends Controller
             'expires_at' => $request->expires_at,
         ]);
 
-        SyncLicenseFallbackVersion::dispatchIf($purchasable instanceof Package, $license);
-
         return response('License issued successfully.', 200);
     }
 }
