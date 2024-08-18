@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Tests\Feature\Livewire;
 
 use App\Livewire\OpenSource;
@@ -7,7 +9,7 @@ use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Livewire\Livewire;
 use Tests\TestCase;
 
-class OpenSourceTest extends TestCase
+final class OpenSourceTest extends TestCase
 {
     use DatabaseMigrations;
 

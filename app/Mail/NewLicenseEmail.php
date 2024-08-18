@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Mail;
 
 use App\Models\License;
@@ -9,14 +11,13 @@ use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
 
-class NewLicenseEmail extends Mailable
+final class NewLicenseEmail extends Mailable
 {
     use Queueable, SerializesModels;
 
     public function __construct(
         public readonly License $license
-    ) {
-    }
+    ) {}
 
     public function envelope(): Envelope
     {

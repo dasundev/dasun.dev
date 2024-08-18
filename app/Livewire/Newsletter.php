@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Livewire;
 
 use App\Events\NewsletterSubscribed;
@@ -9,7 +11,7 @@ use Illuminate\Support\Facades\RateLimiter;
 use Livewire\Attributes\Validate;
 use Livewire\Component;
 
-class Newsletter extends Component
+final class Newsletter extends Component
 {
     #[Validate('required|email')]
     public $email = '';

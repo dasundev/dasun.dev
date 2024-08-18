@@ -1,11 +1,13 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Livewire\Blog;
 
 use Illuminate\Contracts\View\View;
 use Livewire\Component;
 
-class Post extends Component
+final class Post extends Component
 {
     public $post;
 

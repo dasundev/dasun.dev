@@ -1,12 +1,14 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Console;
 
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 use Laravel\Nova\Fields\Attachments\PruneStaleAttachments;
 
-class Kernel extends ConsoleKernel
+final class Kernel extends ConsoleKernel
 {
     /**
      * Define the application's command schedule.
@@ -14,8 +16,9 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule): void
     {
         $schedule->call(new PruneStaleAttachments)->daily();
-        $schedule->command('composer:fetch-packages')->hourly();
-        $schedule->command('sitemap:generate')->hourly();
+        $schedule->command('package:update-stats')->everyFiveMinutes();
+        $schedule->command('package:update-tags')->everyFiveMinutes();
+        $schedule->command('sitemap:generate')->everyFifteenMinutes();
         $schedule->command('backup:clean')->daily()->at('01:00');
         $schedule->command('backup:run')->daily()->at('01:30');
     }

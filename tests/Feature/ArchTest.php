@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 arch('verify that dd() and dump() are not being utilized in the application')
     ->expect(['dd', 'dump'])
     ->not->toBeUsed();

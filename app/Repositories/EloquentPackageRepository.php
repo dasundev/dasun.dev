@@ -1,12 +1,14 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Repositories;
 
 use App\Models\Package;
 use App\Repositories\Contracts\PackageRepository;
 use Illuminate\Support\Collection;
 
-class EloquentPackageRepository implements PackageRepository
+final class EloquentPackageRepository implements PackageRepository
 {
     public function getOpenSourcePackages(): Collection
     {

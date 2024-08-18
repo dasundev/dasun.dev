@@ -1,12 +1,14 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Repositories;
 
 use App\Models\License;
 use App\Repositories\Contracts\LicenseRepository;
 use Illuminate\Support\Collection;
 
-class EloquentLicenseRepository implements LicenseRepository
+final class EloquentLicenseRepository implements LicenseRepository
 {
     public function getLicenses(): Collection
     {
