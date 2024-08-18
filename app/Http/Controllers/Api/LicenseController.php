@@ -63,10 +63,10 @@ class LicenseController extends Controller
         ]);
 
         if ($purchasable instanceof Package) {
-            $version = GitHub::fetchAllRepositoryTags($purchasable->composer_package)->first();
+            $latestTag = GitHub::fetchAllRepositoryTags($purchasable->composer_package)->first();
 
             $license->update([
-                'fallback_version' => $version,
+                'fallback_version' => $latestTag,
             ]);
         }
 
