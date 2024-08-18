@@ -60,6 +60,8 @@ class LicenseController extends Controller
             'expires_at' => $request->expires_at,
         ]);
 
+        // Once the license is created, the LicenseCreated event will fire.
+
         return response('License issued successfully.', 200);
     }
 }

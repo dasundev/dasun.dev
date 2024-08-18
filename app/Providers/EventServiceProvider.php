@@ -7,6 +7,7 @@ use App\Events\NewsletterSubscribed;
 use App\Listeners\OrderPaid;
 use App\Listeners\SendLicenseCreatedNotification;
 use App\Listeners\SendNewsletterSubscribeNotification;
+use App\Listeners\SyncLicenseFallbackVersion;
 use Dasundev\PayHere\Events\PaymentVerified;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
@@ -31,6 +32,7 @@ class EventServiceProvider extends ServiceProvider
             OrderPaid::class,
         ],
         LicenseCreated::class => [
+            SyncLicenseFallbackVersion::class,
             SendLicenseCreatedNotification::class,
         ],
     ];

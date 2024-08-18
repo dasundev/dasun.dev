@@ -2,7 +2,6 @@
 
 namespace App\Events;
 
-use App\Jobs\SyncLicenseFallbackVersion;
 use App\Models\License;
 use Illuminate\Broadcasting\InteractsWithSockets;
 use Illuminate\Foundation\Events\Dispatchable;
@@ -14,7 +13,5 @@ class LicenseCreated
 
     public function __construct(
         public readonly License $license
-    ) {
-        SyncLicenseFallbackVersion::dispatch($license);
-    }
+    ) {}
 }
