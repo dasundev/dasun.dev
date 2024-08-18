@@ -5,20 +5,12 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
-use Illuminate\Http\Response;
 use Illuminate\Support\Str;
-use Saloon\Exceptions\Request\FatalRequestException;
-use Saloon\Exceptions\Request\RequestException;
 
 class LicenseController extends Controller
 {
     /**
      * Store a new license.
-     *
-     * @return Response
-     *
-     * @throws FatalRequestException
-     * @throws RequestException
      */
     public function store(Request $request)
     {
