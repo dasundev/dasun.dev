@@ -3,8 +3,6 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use App\Jobs\SyncLicenseFallbackVersion;
-use App\Models\Package;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
