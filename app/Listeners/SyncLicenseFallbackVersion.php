@@ -5,8 +5,6 @@ namespace App\Listeners;
 use App\Events\LicenseCreated;
 use App\Services\GitHub;
 use Illuminate\Contracts\Queue\ShouldQueue;
-use Saloon\Exceptions\Request\FatalRequestException;
-use Saloon\Exceptions\Request\RequestException;
 
 readonly class SyncLicenseFallbackVersion implements ShouldQueue
 {
