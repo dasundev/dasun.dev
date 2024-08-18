@@ -11,7 +11,6 @@ readonly class SyncLicenseFallbackVersion implements ShouldQueue
     /**
      * Handle the event.
      *
-     * @param \App\Events\LicenseCreated $event
      * @throws \Saloon\Exceptions\Request\FatalRequestException
      * @throws \Saloon\Exceptions\Request\RequestException
      */
