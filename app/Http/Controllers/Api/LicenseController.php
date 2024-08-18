@@ -52,7 +52,7 @@ class LicenseController extends Controller
             return response('The purchasable item could not be found.', 404);
         }
 
-        $license = $user->licenses()->updateOrCreate([
+        $user->licenses()->updateOrCreate([
             'name' => $request->license,
             'purchasable_type' => $request->purchasable_type,
             'purchasable_id' => $request->purchasable_id,
