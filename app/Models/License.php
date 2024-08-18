@@ -76,7 +76,7 @@ class License extends Model implements AuthenticatableContract
             return true;
         }
 
-        $fallbackVersion = $this->fallback_version['name'] ?? null;
+        $fallbackVersion = $this->fallback_version ?? null;
 
         if ($fallbackVersion === null) {
             return false;
@@ -89,6 +89,6 @@ class License extends Model implements AuthenticatableContract
             return false;
         }
 
-        return version_compare($requestedVersion['name'], $fallbackVersion, '<=');
+        return version_compare($requestedVersion['name'], $fallbackVersion['name'], '<=');
     }
 }
