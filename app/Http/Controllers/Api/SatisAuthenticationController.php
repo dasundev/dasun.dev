@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace App\Http\Controllers\Api;
 
-use App\Http\Controllers\Controller;
 use App\Models\License;
 use Illuminate\Contracts\Auth\Authenticatable;
 use Illuminate\Http\Request;
@@ -38,7 +37,7 @@ final class SatisAuthenticationController
         return response('valid');
     }
 
-    protected function getRequestedPackage(Request $request): array
+    private function getRequestedPackage(Request $request): array
     {
         $originalUrl = $request->header('X-Original-URI', '');
 
