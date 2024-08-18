@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Listeners;
 
 use Dasundev\PayHere\Events\PaymentVerified;
 
-class OrderPaid
+final class OrderPaid
 {
     public function handle(PaymentVerified $event): void
     {

@@ -1,11 +1,13 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Http\Integrations\Packagist;
 
 use Saloon\Http\Connector;
 use Saloon\Traits\Plugins\AcceptsJson;
 
-class PackagistConnector extends Connector
+final class PackagistConnector extends Connector
 {
     use AcceptsJson;
 

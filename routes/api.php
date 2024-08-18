@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 use App\Http\Controllers\Api\LicenseController;
 use App\Http\Controllers\Api\SatisAuthenticationController;
 use Illuminate\Support\Facades\Route;

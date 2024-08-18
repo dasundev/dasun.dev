@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Console\Commands;
 
 use App\Models\Package;
@@ -8,7 +10,7 @@ use Illuminate\Console\Command;
 use Saloon\Exceptions\Request\FatalRequestException;
 use Saloon\Exceptions\Request\RequestException;
 
-class UpdatePackageTags extends Command
+final class UpdatePackageTags extends Command
 {
     protected $signature = 'package:update-tags';
 

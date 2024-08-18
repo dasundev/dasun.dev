@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Database\Factories;
 
 use App\Models\Order;
@@ -7,7 +9,7 @@ use App\Models\OrderLine;
 use App\Models\Package;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class OrderLineFactory extends Factory
+final class OrderLineFactory extends Factory
 {
     protected $model = OrderLine::class;
 

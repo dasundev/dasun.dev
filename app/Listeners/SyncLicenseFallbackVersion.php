@@ -1,12 +1,14 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Listeners;
 
 use App\Events\LicenseCreated;
 use App\Services\GitHub;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
-readonly class SyncLicenseFallbackVersion implements ShouldQueue
+final readonly class SyncLicenseFallbackVersion implements ShouldQueue
 {
     /**
      * Handle the event.

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Console\Commands;
 
 use App\Http\Integrations\Packagist\PackagistConnector;
@@ -9,7 +11,7 @@ use Illuminate\Console\Command;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 
-class UpdatePackageStats extends Command
+final class UpdatePackageStats extends Command
 {
     protected $signature = 'package:update-stats';
 

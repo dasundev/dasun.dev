@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Livewire;
 
 use App\Repositories\Contracts\PackageRepository;
@@ -10,7 +12,7 @@ use Illuminate\Support\Facades\Cache;
 use Livewire\Attributes\Title;
 use Livewire\Component;
 
-class Welcome extends Component
+final class Welcome extends Component
 {
     public function mount(): void
     {

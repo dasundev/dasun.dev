@@ -1,11 +1,13 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Http\Integrations\GitHub\Requests;
 
 use Saloon\Enums\Method;
 use Saloon\Http\Request;
 
-class ListRepositoryTags extends Request
+final class ListRepositoryTags extends Request
 {
     /**
      * The HTTP method of the request

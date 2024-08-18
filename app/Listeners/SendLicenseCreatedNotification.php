@@ -1,11 +1,13 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Listeners;
 
 use App\Mail\NewLicenseEmail;
 use Illuminate\Support\Facades\Mail;
 
-class SendLicenseCreatedNotification
+final class SendLicenseCreatedNotification
 {
     public function handle($event): void
     {
