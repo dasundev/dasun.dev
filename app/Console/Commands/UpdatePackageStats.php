@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Console\Commands;
 
 use App\Http\Integrations\Packagist\PackagistConnector;
@@ -9,11 +11,11 @@ use Illuminate\Console\Command;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 
-class FetchComposerPackages extends Command
+final class UpdatePackageStats extends Command
 {
-    protected $signature = 'composer:fetch-packages';
+    protected $signature = 'package:update-stats';
 
-    protected $description = 'Fetch all packages from packagist';
+    protected $description = 'Fetch and update data for all packages from Packagist.';
 
     public function handle(): void
     {

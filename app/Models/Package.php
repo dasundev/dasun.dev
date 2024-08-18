@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Builder;
@@ -9,7 +11,7 @@ use Illuminate\Database\Eloquent\Relations\MorphMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Facades\Cache;
 
-class Package extends Model
+final class Package extends Model
 {
     use HasFactory;
     use SoftDeletes;
@@ -25,16 +27,12 @@ class Package extends Model
         'anystack_product_id',
         'thumbnail',
         'documentation_url',
+        'tags',
     ];
 
-    protected static function boot(): void
-    {
-        parent::boot();
-
-        static::updating(function () {
-            Cache::delete('premium_packages');
-        });
-    }
+    protected $casts = [
+        'tags' => 'array',
+    ];
 
     public function isPremium(): bool
     {
@@ -64,5 +62,14 @@ class Package extends Model
     public function hasWebsiteUrl(): bool
     {
         return ! is_null($this->website_url);
+    }
+
+    protected static function boot(): void
+    {
+        parent::boot();
+
+        self::updating(function () {
+            Cache::delete('premium_packages');
+        });
     }
 }

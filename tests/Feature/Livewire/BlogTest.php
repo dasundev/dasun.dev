@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Tests\Feature\Livewire;
 
 use App\Livewire\Blog;
@@ -9,7 +11,7 @@ use Illuminate\Support\Str;
 use Livewire\Livewire;
 use Tests\TestCase;
 
-class BlogTest extends TestCase
+final class BlogTest extends TestCase
 {
     use DatabaseMigrations;
 

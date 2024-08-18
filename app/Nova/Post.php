@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Nova;
 
 use Laravel\Nova\Fields\Date;
@@ -12,7 +14,7 @@ use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Fields\URL;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
-class Post extends Resource
+final class Post extends Resource
 {
     /**
      * The model the resource corresponds to.

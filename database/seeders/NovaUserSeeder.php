@@ -1,11 +1,13 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Database\Seeders;
 
 use App\Models\User;
 use Illuminate\Database\Seeder;
 
-class NovaUserSeeder extends Seeder
+final class NovaUserSeeder extends Seeder
 {
     public function run(): void
     {

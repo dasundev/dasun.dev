@@ -1,12 +1,14 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Database\Factories;
 
 use App\Models\Package;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 
-class PackageFactory extends Factory
+final class PackageFactory extends Factory
 {
     protected $model = Package::class;
 

@@ -1,27 +1,28 @@
 <?php
 
-namespace App\Http\Integrations\Anystack\Requests;
+declare(strict_types=1);
+
+namespace App\Http\Integrations\GitHub\Requests;
 
 use Saloon\Enums\Method;
 use Saloon\Http\Request;
 
-class GetPoliciesRequest extends Request
+final class ListRepositoryTags extends Request
 {
-    public function __construct(
-        private readonly string $productId
-    ) {
-    }
-
     /**
      * The HTTP method of the request
      */
     protected Method $method = Method::GET;
+
+    public function __construct(
+        private readonly string $repository
+    ) {}
 
     /**
      * The endpoint for the request
      */
     public function resolveEndpoint(): string
     {
-        return "/products/$this->productId/policies";
+        return "/repos/$this->repository/tags";
     }
 }

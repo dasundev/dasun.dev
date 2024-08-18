@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Livewire;
 
 use App\Repositories\Contracts\PostRepository;
@@ -9,7 +11,7 @@ use Illuminate\Contracts\View\View;
 use Livewire\Attributes\Title;
 use Livewire\Component;
 
-class Blog extends Component
+final class Blog extends Component
 {
     public function mount(): void
     {

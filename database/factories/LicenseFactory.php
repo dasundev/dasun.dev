@@ -1,11 +1,13 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Database\Factories;
 
 use App\Models\License;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class LicenseFactory extends Factory
+final class LicenseFactory extends Factory
 {
     protected $model = License::class;
 

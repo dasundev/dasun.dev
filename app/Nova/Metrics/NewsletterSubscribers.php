@@ -1,12 +1,14 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Nova\Metrics;
 
 use App\Models\NewsletterSubscriber;
 use Laravel\Nova\Http\Requests\NovaRequest;
 use Laravel\Nova\Metrics\Value;
 
-class NewsletterSubscribers extends Value
+final class NewsletterSubscribers extends Value
 {
     /**
      * Calculate the value of the metric.

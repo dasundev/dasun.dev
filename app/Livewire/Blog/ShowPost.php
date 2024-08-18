@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Livewire\Blog;
 
 use App\Models\Post;
@@ -9,7 +11,7 @@ use Illuminate\Contracts\View\View;
 use Illuminate\Support\Facades\Storage;
 use Livewire\Component;
 
-class ShowPost extends Component
+final class ShowPost extends Component
 {
     public Post $post;
 

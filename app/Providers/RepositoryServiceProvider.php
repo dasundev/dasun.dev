@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Providers;
 
 use App\Repositories\Contracts\LicenseRepository;
@@ -12,7 +14,7 @@ use App\Repositories\EloquentPackageRepository;
 use App\Repositories\EloquentPostRepository;
 use Illuminate\Support\ServiceProvider;
 
-class RepositoryServiceProvider extends ServiceProvider
+final class RepositoryServiceProvider extends ServiceProvider
 {
     public function register(): void
     {

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Mail;
 
 use Illuminate\Bus\Queueable;
@@ -9,7 +11,7 @@ use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Support\Facades\URL;
 
-class NewsletterSubscriberVerifyEmail extends Mailable
+final class NewsletterSubscriberVerifyEmail extends Mailable
 {
     use Queueable, SerializesModels;
 
