@@ -3,7 +3,6 @@
 namespace App\Listeners;
 
 use App\Events\LicenseCreated;
-use App\Models\License;
 use App\Services\GitHub;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Saloon\Exceptions\Request\FatalRequestException;
