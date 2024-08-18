@@ -3,11 +3,9 @@
 namespace App\Jobs;
 
 use App\Models\License;
-use App\Models\Package;
 use App\Services\GitHub;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
