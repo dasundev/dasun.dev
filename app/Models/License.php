@@ -95,7 +95,7 @@ class License extends Model implements AuthenticatableContract
                 return false;
             }
 
-            return version_compare($requestedVersion['name'], $fallbackVersion['name'], '<=');
+            return version_compare($fallbackVersion['name'], $requestedVersion['name'], '>=');
         }
 
         return false;

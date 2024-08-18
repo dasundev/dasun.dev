@@ -31,7 +31,7 @@ class SatisAuthenticationController extends Controller
                 fn (License $license) => $license->hasLicenseAccess($package)
             );
 
-        abort_unless($hasAccess, 401, 'The requested license could not be used for the requested package.');
+        abort_unless($hasAccess, 401, 'The requested license could not be used for the requested package or version.');
 
         return response('valid');
     }

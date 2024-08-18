@@ -33,10 +33,6 @@ class AuthServiceProvider extends ServiceProvider
                 abort(401, 'License key invalid');
             }
 
-            if ($license->isExpired()) {
-                abort(401, 'This license is expired');
-            }
-
             $license->increment('satis_authentication_count');
 
             return $license;
