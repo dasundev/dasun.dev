@@ -12,7 +12,7 @@
         "@tailwindcss/forms": "^0.5.2",
         "@tailwindcss/typography": "^0.5.10",
         "autoprefixer": "^10.4.2",
-        "axios": "^1.6.4",
+        "axios": "^1.7.4",
         "husky": "^9.0.11",
         "laravel-vite-plugin": "^1.0.0",
         "postcss": "^8.4.31",
