@@ -12,7 +12,6 @@
         "artesaos/seotools": "^1.2",
         "aws/aws-sdk-php": "^3.301",
         "creativeorange/gravatar": "^1.0",
-        "dasundev/laravel-payhere": "^1.0@beta",
         "guzzlehttp/guzzle": "^7.2",
         "larabug/larabug": "^3.0",
         "laravel/framework": "^10.10",
@@ -90,14 +89,10 @@
     },
     "minimum-stability": "beta",
     "prefer-stable": true,
-    "repositories": [
-        {
+    "repositories": {
+        "nova": {
             "type": "composer",
             "url": "https://nova.laravel.com"
-        },
-        {
-            "type": "composer",
-            "url": "https://satis.dasun.dev"
         }
-    ]
+    }
 }

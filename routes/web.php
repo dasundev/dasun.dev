@@ -38,7 +38,6 @@ Route::get('/privacy-policy', PrivacyPolicy::class)->name('privacy-policy');
 Route::get('/terms', Terms::class)->name('terms-of-condition');
 Route::get('/newsletter/confirm-subscription', [NewsletterController::class, 'confirmSubscription'])->middleware('signed')->name('newsletter.confirm-subscription');
 Route::get('/newsletter/unsubscribe', [NewsletterController::class, 'unsubscribe'])->name('newsletter.unsubscribe');
-Route::get('/checkout/{package}', [CheckoutController::class, 'checkout'])->middleware(['auth', 'verified'])->name('checkout');
 Volt::route('dashboard', 'dashboard')->middleware(['auth', 'verified'])->name('dashboard');
 Route::view('profile', 'livewire.profile')->middleware(['auth'])->name('profile');
 

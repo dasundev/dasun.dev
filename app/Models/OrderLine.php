@@ -4,14 +4,13 @@ declare(strict_types=1);
 
 namespace App\Models;
 
-use Dasundev\PayHere\Models\Contracts\PayHereOrderLine;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-final class OrderLine extends Model implements PayHereOrderLine
+final class OrderLine extends Model
 {
     use HasFactory;
     use SoftDeletes;
