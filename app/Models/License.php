@@ -36,11 +36,6 @@ final class License extends Model implements AuthenticatableContract
         return $this->belongsTo(User::class);
     }
 
-    public function order(): BelongsTo
-    {
-        return $this->belongsTo(Order::class);
-    }
-
     public function purchasable(): MorphTo
     {
         return $this->morphTo();
