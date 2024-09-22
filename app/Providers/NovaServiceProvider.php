@@ -119,11 +119,6 @@ final class NovaServiceProvider extends NovaApplicationServiceProvider
                 MenuSection::make('Newsletter', [
                     MenuItem::resource(NewsletterSubscriber::class),
                 ])->icon('mail')->collapsable(),
-
-                MenuSection::make('PayHere', [
-                    MenuItem::resource(Order::class),
-                    MenuItem::resource(Payment::class),
-                ])->icon('cash')->collapsable(),
             ];
         });
     }

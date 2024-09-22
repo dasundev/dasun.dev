@@ -37,10 +37,6 @@ final class License extends Resource
                 ])
                 ->searchable(),
 
-            BelongsTo::make('Order', 'order', Order::class)
-                ->nullable()
-                ->searchable(),
-
             Text::make('Licence name', 'name')
                 ->sortable()
                 ->rules('required', 'string'),
