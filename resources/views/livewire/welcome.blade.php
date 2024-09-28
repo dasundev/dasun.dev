@@ -6,7 +6,7 @@
                     class="text-primary-700">Laravel</span> Developer</h1>
             <p class="max-w-lg lg:max-w-xl mx-auto text-center text-lg text-gray-500 mt-5">I craft web applications,
                 courses & open source packages with the Laravel ecosystem — Let's create something awesome!</p>
-            <a href="{{ route('register') }}"><x-button class="mt-7">Register and Buy</x-button></a>
+            <a href="{{ route('register') }}"><x-button class="mt-7">Register</x-button></a>
         </div>
     </section>
     <section class="bg-white dark:bg-black">
