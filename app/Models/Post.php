@@ -22,6 +22,8 @@ final class Post extends Model implements Feedable
         'published_at' => 'datetime',
     ];
 
+    protected $guarded = [];
+
     public function getRouteKeyName(): string
     {
         return 'slug';
