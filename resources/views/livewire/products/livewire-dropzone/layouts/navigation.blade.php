@@ -71,5 +71,12 @@ $logout = function (Logout $logout) {
                 </button>
             </div>
         </div>
+        <div x-ref="links"
+             class="static lg:absolute order-none lg:order-2 hidden lg:inline-flex justify-center flex-col lg:flex-row gap-x-0 lg:gap-x-6 h-full w-full">
+            <a class="text-md inline-flex leading-none items-center font-light hover:text-gray-200 text-white border-b border-gray-100 dark:border-gray-900 first:border-t lg:first:border-0 lg:border-0 px-6 py-6 lg:p-0"
+               href="#">Documentation</a>
+            <a class="text-md inline-flex leading-none items-center font-light hover:text-gray-200 text-white border-b border-gray-100 dark:border-gray-900 lg:border-0 px-6 py-6 lg:p-0"
+               href="{{ route('blog') }}" wire:navigate.hover>GitHub</a>
+        </div>
     </div>
 </nav>
