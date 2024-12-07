@@ -16,8 +16,8 @@ $logout = function (Logout $logout) {
                 $refs.links.style.display = 'inline-flex' :
                 $refs.links.style.display = 'none'
         })"
-     class="relative flex-col justify-center items-center p-0 lg:px-5 lg:py-5">
-    <div class="max-w-7xl mx-auto flex justify-between flex-wrap lg:flex-nowrap items-center w-full">
+     class="relative max-w-7xl mx-auto flex-col justify-center items-center p-0 lg:px-5 lg:py-5 bg-primary-700">
+    <div class="flex justify-between flex-wrap lg:flex-nowrap items-center w-full">
         <button type="button" class="block lg:hidden p-5" @click="open = !open">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                  stroke="currentColor"
@@ -34,6 +34,9 @@ $logout = function (Logout $logout) {
         </div>
         <div class="flex items-center order-none lg:order-3">
             <div class="z-0 lg:z-10 inline-flex gap-0 lg:gap-5 items-center">
+                @persist('search')
+                <div id="search"></div>
+                @endpersist
                 @auth
                     <div class="sm:flex sm:items-center">
                         <x-dropdown align="right" width="48">

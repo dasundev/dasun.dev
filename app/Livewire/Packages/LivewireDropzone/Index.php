@@ -6,6 +6,7 @@ namespace App\Livewire\Packages\LivewireDropzone;
 
 use Artesaos\SEOTools\Facades\SEOMeta;
 use Illuminate\Contracts\View\View;
+use Livewire\Attributes\Layout;
 use Livewire\Attributes\Title;
 use Livewire\Component;
 
@@ -18,6 +19,7 @@ final class Index extends Component
     }
 
     #[Title('Livewire Dropzone Themes')]
+    #[Layout('livewire.products.livewire-dropzone.layouts.app')]
     public function render(): View
     {
         return view('livewire.products.livewire-dropzone.index');
