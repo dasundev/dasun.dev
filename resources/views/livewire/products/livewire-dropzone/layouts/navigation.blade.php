@@ -34,9 +34,6 @@ $logout = function (Logout $logout) {
         </div>
         <div class="flex items-center order-none lg:order-3">
             <div class="z-0 lg:z-10 inline-flex gap-0 lg:gap-5 items-center">
-                @persist('search')
-                <div id="search"></div>
-                @endpersist
                 @auth
                     <div class="sm:flex sm:items-center">
                         <x-dropdown align="right" width="48">

@@ -22,7 +22,7 @@
     @googlefonts('overpass')
 
     <!-- Scripts -->
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @vite(['resources/css/app.css', 'resources/js/app.js', 'resources/js/docsearch.js'])
 </head>
 
 <body class="antialiased dark:selection:text-white dark:selection:bg-primary-900 bg-white dark:bg-black">
