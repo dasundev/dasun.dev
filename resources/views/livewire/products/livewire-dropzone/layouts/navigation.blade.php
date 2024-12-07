@@ -16,8 +16,8 @@ $logout = function (Logout $logout) {
                 $refs.links.style.display = 'inline-flex' :
                 $refs.links.style.display = 'none'
         })"
-     class="relative max-w-7xl mx-auto flex-col justify-center items-center p-0 lg:px-5 lg:py-5 bg-primary-700">
-    <div class="flex justify-between flex-wrap lg:flex-nowrap items-center w-full">
+     class="relative flex-col justify-center items-center p-0 bg-primary-700 lg:px-5 lg:py-5">
+    <div class="max-w-7xl mx-auto flex justify-between flex-wrap lg:flex-nowrap items-center w-full">
         <button type="button" class="block lg:hidden p-5" @click="open = !open">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                  stroke="currentColor"
@@ -35,7 +35,7 @@ $logout = function (Logout $logout) {
         <div class="flex items-center order-none lg:order-3">
             <div class="z-0 lg:z-10 inline-flex gap-0 lg:gap-5 items-center">
                 @persist('search')
-                <div id="search" style="display: none"></div>
+                <div id="search"></div>
                 @endpersist
                 @auth
                     <div class="sm:flex sm:items-center">
@@ -75,12 +75,12 @@ $logout = function (Logout $logout) {
             </div>
         </div>
         <div x-ref="links"
-             class="static lg:absolute order-none lg:order-2 hidden lg:inline-flex justify-center flex-col lg:flex-row gap-x-0 lg:gap-x-6 h-full w-full">
-            <a class="text-md inline-flex leading-none items-center font-light hover:text-gray-600 dark:hover:text-gray-300 border-b border-gray-100 dark:border-gray-900 first:border-t lg:first:border-0 lg:border-0 px-6 py-6 lg:p-0 {{ request()->is('open-source') ? 'text-black font-normal dark:text-white bg-gray-50 lg:bg-white dark:bg-gray-900 lg:dark:bg-black' : 'text-white' }}"
+             class="static order-none lg:order-2 hidden lg:inline-flex justify-center flex-col lg:flex-row gap-x-0 lg:gap-x-6 h-full w-full">
+            <a class="text-md inline-flex leading-none items-center font-light hover:text-gray-600 dark:text-white dark:hover:text-gray-300 border-b border-gray-100 dark:border-gray-900 first:border-t lg:first:border-0 lg:border-0 px-6 py-6 lg:p-0"
                href="{{ route('open-source.index') }}" wire:navigate.hover>Open Source</a>
-            <a class="text-md inline-flex leading-none items-center font-light hover:text-gray-600 dark:text-gray-400 dark:hover:text-gray-300 border-b border-gray-100 dark:border-gray-900 lg:border-0 px-6 py-6 lg:p-0 {{ request()->is('blog', 'blog/*') ? 'text-black font-normal dark:text-white bg-gray-50 lg:bg-white dark:bg-gray-900 lg:dark:bg-black' : 'text-white' }}"
+            <a class="text-md inline-flex leading-none items-center font-light hover:text-gray-600 dark:text-white dark:hover:text-gray-300 border-b border-gray-100 dark:border-gray-900 lg:border-0 px-6 py-6 lg:p-0"
                href="{{ route('blog') }}" wire:navigate.hover>Blog</a>
-            <a class="text-md inline-flex leading-none items-center font-light hover:text-gray-600 dark:text-gray-400 dark:hover:text-gray-300 border-b border-gray-100 dark:border-gray-900 lg:border-0 px-6 py-6 lg:p-0 {{ request()->is('about') ? 'text-black font-normal dark:text-white bg-gray-50 lg:bg-white dark:bg-gray-900 lg:dark:bg-black' : 'text-white' }}"
+            <a class="text-md inline-flex leading-none items-center font-light hover:text-gray-600 dark:text-white dark:hover:text-gray-300 border-b border-gray-100 dark:border-gray-900 lg:border-0 px-6 py-6 lg:p-0"
                href="{{ route('about') }}" wire:navigate.hover>About</a>
         </div>
     </div>
