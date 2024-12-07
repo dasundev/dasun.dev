@@ -39,7 +39,7 @@
 {{ $slot }}
 
 <footer class="max-w-7xl mx-auto dark:bg-black mt-10">
-    <div class="flex flex-wrap justify-between border-t border-gray-100 dark:border-gray-900 py-5 mx-5 dark:bg-black">
+    <div class="flex flex-wrap justify-between border-t border-gray-100 dark:border-gray-900 py-5 dark:bg-black">
         <div>
             <p class="text-gray-500 text-xs lg:text-sm">
                 Copyright © 2020-{{ now()->format('Y') }}. All Rights Reserved.
