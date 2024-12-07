@@ -30,7 +30,7 @@ $logout = function (Logout $logout) {
             </svg>
         </button>
         <div class="absolute lg:relative top-0 left-1/2 lg:left-0 -ml-[75px] lg:m-0 z-0 lg:z-10 p-5 lg:p-0 order-none lg:order-1">
-            <a href="/" class="text-2xl font-normal dark:text-white" wire:navigate.hover>dasun.dev</a>
+            <a href="/" class="text-2xl font-normal text-white" wire:navigate.hover>dasun.dev</a>
         </div>
         <div class="flex items-center order-none lg:order-3">
             <div class="z-0 lg:z-10 inline-flex gap-0 lg:gap-5 items-center">
@@ -60,7 +60,7 @@ $logout = function (Logout $logout) {
                     </div>
                 @endauth
                 <button type="button" @click="$store.darkMode.toggle()"
-                        class="bg-gray-50 dark:bg-gray-800 hover:dark:bg-gray-700 hover:bg-gray-100 cursor-pointer text-yellow-500 p-2 m-5 lg:m-0 rounded-full">
+                        class="bg-black bg-opacity-10 hover:bg-opacity-15 transition-colors cursor-pointer text-yellow-500 p-2 m-5 lg:m-0 rounded-full">
                     <svg x-data xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                          stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                         <path x-cloak x-show="!$store.darkMode.on" stroke-linecap="round" stroke-linejoin="round"
@@ -70,15 +70,6 @@ $logout = function (Logout $logout) {
                     </svg>
                 </button>
             </div>
-        </div>
-        <div x-ref="links"
-             class="static lg:absolute order-none lg:order-2 hidden lg:inline-flex justify-center flex-col lg:flex-row gap-x-0 lg:gap-x-6 h-full w-full">
-            <a class="text-md inline-flex leading-none items-center font-light hover:text-gray-600 dark:text-white dark:hover:text-gray-300 border-b border-gray-100 dark:border-gray-900 first:border-t lg:first:border-0 lg:border-0 px-6 py-6 lg:p-0"
-               href="{{ route('open-source.index') }}" wire:navigate.hover>Open Source</a>
-            <a class="text-md inline-flex leading-none items-center font-light hover:text-gray-600 dark:text-white dark:hover:text-gray-300 border-b border-gray-100 dark:border-gray-900 lg:border-0 px-6 py-6 lg:p-0"
-               href="{{ route('blog') }}" wire:navigate.hover>Blog</a>
-            <a class="text-md inline-flex leading-none items-center font-light hover:text-gray-600 dark:text-white dark:hover:text-gray-300 border-b border-gray-100 dark:border-gray-900 lg:border-0 px-6 py-6 lg:p-0"
-               href="{{ route('about') }}" wire:navigate.hover>About</a>
         </div>
     </div>
 </nav>
