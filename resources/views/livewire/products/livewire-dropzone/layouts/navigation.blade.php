@@ -16,8 +16,8 @@ $logout = function (Logout $logout) {
                 $refs.links.style.display = 'inline-flex' :
                 $refs.links.style.display = 'none'
         })"
-     class="relative flex-col justify-center items-center p-0 bg-primary-700 lg:px-5 lg:py-5">
-    <div class="max-w-7xl mx-auto flex justify-between flex-wrap lg:flex-nowrap items-center w-full">
+     class="flex-col justify-center items-center p-0 lg:px-5 lg:py-5 bg-primary-700">
+    <div class="relative max-w-7xl mx-auto flex justify-between flex-wrap lg:flex-nowrap items-center">
         <button type="button" class="block lg:hidden p-5" @click="open = !open">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                  stroke="currentColor"
@@ -75,7 +75,7 @@ $logout = function (Logout $logout) {
             </div>
         </div>
         <div x-ref="links"
-             class="static order-none lg:order-2 hidden lg:inline-flex justify-center flex-col lg:flex-row gap-x-0 lg:gap-x-6 h-full w-full">
+             class="static lg:absolute order-none lg:order-2 hidden lg:inline-flex justify-center flex-col lg:flex-row gap-x-0 lg:gap-x-6 h-full w-full">
             <a class="text-md inline-flex leading-none items-center font-light hover:text-gray-600 dark:text-white dark:hover:text-gray-300 border-b border-gray-100 dark:border-gray-900 first:border-t lg:first:border-0 lg:border-0 px-6 py-6 lg:p-0"
                href="{{ route('open-source.index') }}" wire:navigate.hover>Open Source</a>
             <a class="text-md inline-flex leading-none items-center font-light hover:text-gray-600 dark:text-white dark:hover:text-gray-300 border-b border-gray-100 dark:border-gray-900 lg:border-0 px-6 py-6 lg:p-0"
