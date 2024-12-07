@@ -7,6 +7,7 @@ use App\Livewire\About;
 use App\Livewire\Blog;
 use App\Livewire\Blog\ShowPost;
 use App\Livewire\OpenSource;
+use App\Livewire\Packages\LivewireDropzone\Index as LivewireDropzoneThemes;
 use App\Livewire\PrivacyPolicy;
 use App\Livewire\RefundPolicy;
 use App\Livewire\Terms;
@@ -39,5 +40,7 @@ Route::get('/newsletter/confirm-subscription', [NewsletterController::class, 'co
 Route::get('/newsletter/unsubscribe', [NewsletterController::class, 'unsubscribe'])->name('newsletter.unsubscribe');
 Volt::route('dashboard', 'dashboard')->middleware(['auth', 'verified'])->name('dashboard');
 Route::view('profile', 'livewire.profile')->middleware(['auth'])->name('profile');
+
+Route::get('products/livewire-dropzone-themes', LivewireDropzoneThemes::class)->name('products.livewire-dropzone-themes');
 
 require __DIR__.'/auth.php';
