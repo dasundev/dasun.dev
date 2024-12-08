@@ -60,7 +60,7 @@ $logout = function (Logout $logout) {
                     </div>
                 @endauth
                 <button type="button" @click="$store.darkMode.toggle()"
-                        class="bg-black bg-opacity-10 hover:bg-opacity-15 transition-colors cursor-pointer text-yellow-500 p-2 m-5 lg:m-0 rounded-full">
+                        class="bg-white bg-opacity-10 hover:bg-opacity-15 transition-colors cursor-pointer text-yellow-500 p-2 m-5 lg:m-0 rounded-full">
                     <svg x-data xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                          stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                         <path x-cloak x-show="!$store.darkMode.on" stroke-linecap="round" stroke-linejoin="round"
@@ -73,9 +73,9 @@ $logout = function (Logout $logout) {
         </div>
         <div x-ref="links"
              class="static lg:absolute order-none lg:order-2 hidden lg:inline-flex justify-center flex-col lg:flex-row gap-x-0 lg:gap-x-6 h-full w-full">
-            <a class="text-md inline-flex leading-none items-center font-light hover:text-gray-200 text-white border-b border-white border-opacity-10 first:border-t lg:first:border-0 lg:border-0 px-6 py-6 lg:p-0"
+            <a class="text-md inline-flex leading-none items-center font-normal hover:text-gray-200 text-white border-b border-white border-opacity-10 first:border-t lg:first:border-0 lg:border-0 px-6 py-6 lg:p-0"
                href="https://www.dasun.dev/docs/livewire-dropzone" target="_blank">Documentation</a>
-            <a class="text-md inline-flex leading-none items-center font-light hover:text-gray-200 text-white border-b border-white border-opacity-10 lg:border-0 px-6 py-6 lg:p-0"
+            <a class="text-md inline-flex leading-none items-center font-normal hover:text-gray-200 text-white border-b border-white border-opacity-10 lg:border-0 px-6 py-6 lg:p-0"
                href="https://github.com/dasundev/livewire-dropzone" target="_blank" rel="noreferrer">GitHub</a>
         </div>
     </div>
