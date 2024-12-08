@@ -10,7 +10,7 @@ use Livewire\Attributes\Layout;
 use Livewire\Attributes\Title;
 use Livewire\Component;
 
-final class Index extends Component
+final class Welcome extends Component
 {
     public function mount(): void
     {

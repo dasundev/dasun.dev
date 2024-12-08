@@ -7,7 +7,7 @@ use App\Livewire\About;
 use App\Livewire\Blog;
 use App\Livewire\Blog\ShowPost;
 use App\Livewire\OpenSource;
-use App\Livewire\Packages\LivewireDropzone\Index as LivewireDropzoneThemes;
+use App\Livewire\Packages\LivewireDropzone\Welcome as LivewireDropzoneThemes;
 use App\Livewire\PrivacyPolicy;
 use App\Livewire\RefundPolicy;
 use App\Livewire\Terms;
