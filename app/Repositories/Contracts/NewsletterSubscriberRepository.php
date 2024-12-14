@@ -13,7 +13,7 @@ interface NewsletterSubscriberRepository
 
     public function isEmailVerified(string $email): bool;
 
-    public function verifyEmail(string $email): bool;
+    public function verifyEmail(string $email): void;
 
     public function deleteSubscriber(string $email): bool;
 

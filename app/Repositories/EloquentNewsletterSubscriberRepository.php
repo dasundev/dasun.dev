@@ -22,9 +22,9 @@ final class EloquentNewsletterSubscriberRepository implements NewsletterSubscrib
             ->exists();
     }
 
-    public function verifyEmail(string $email): bool
+    public function verifyEmail(string $email): void
     {
-        return NewsletterSubscriber::whereEmail($email)->update([
+        NewsletterSubscriber::whereEmail($email)->update([
             'email_verified_at' => now(),
         ]);
     }
