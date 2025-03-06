@@ -1,10 +1,11 @@
 <?php
 
-use Illuminate\Foundation\Console\ClosureCommand;
-use Illuminate\Foundation\Inspiring;
-use Illuminate\Support\Facades\Artisan;
+declare(strict_types=1);
 
-Artisan::command('inspire', function () {
-    /** @var ClosureCommand $this */
-    $this->comment(Inspiring::quote());
-})->purpose('Display an inspiring quote');
+use Illuminate\Support\Facades\Schedule;
+
+Schedule::everyTenMinutes()
+    ->group(function () {
+        Schedule::command('sync:packagist');
+        Schedule::command('generate:sitemap');
+    });
