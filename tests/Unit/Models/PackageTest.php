@@ -9,12 +9,13 @@ test('to array', function () {
 
     expect(array_keys($package->toArray()))->toBe([
         'id',
-        'name',
+        'identifier',
         'description',
         'downloads',
         'github_stars',
         'repository',
         'created_at',
         'updated_at',
+        'documentation',
     ]);
 });

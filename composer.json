@@ -14,9 +14,11 @@
         "livewire/volt": "^1.7",
         "spatie/laravel-feed": "^4.4",
         "spatie/laravel-markdown": "^2.7",
-        "spatie/laravel-sitemap": "^7.3"
+        "spatie/laravel-sitemap": "^7.3",
+        "spatie/sheets": "^1.12"
     },
     "require-dev": {
+        "barryvdh/laravel-debugbar": "^3.15",
         "fakerphp/faker": "^1.23",
         "laravel/envoy": "^2.10",
         "laravel/pail": "^1.2.2",

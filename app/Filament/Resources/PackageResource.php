@@ -22,9 +22,11 @@ final class PackageResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('name')
+                Forms\Components\TextInput::make('identifier')
                     ->required()
                     ->unique(ignoreRecord: true),
+                Forms\Components\Toggle::make('documentation')
+                    ->required(),
             ]);
     }
 
@@ -38,6 +40,8 @@ final class PackageResource extends Resource
                     ->numeric(),
                 Tables\Columns\TextColumn::make('github_stars')
                     ->numeric(),
+                Tables\Columns\IconColumn::make('documentation')
+                    ->boolean(),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()

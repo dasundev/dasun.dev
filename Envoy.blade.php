@@ -6,7 +6,6 @@ update-code
 install-dev-dependencies
 migrate-database
 build-assets
-build-docs
 install-prod-dependencies
 optimize
 reload-php-fpm
@@ -58,9 +57,4 @@ php artisan up
 
 @task('reload-php-fpm')
 sudo service php8.2-fpm reload
-@endtask
-
-@task('build-docs')
-cd /home/forge/www.dasun.dev/docs
-npm run docs:build
 @endtask

@@ -15,11 +15,12 @@ final class PackageFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => fake()->name(),
+            'identifier' => 'dasundev/'.fake()->name(),
             'description' => fake()->text(),
             'downloads' => fake()->randomNumber(),
             'github_stars' => fake()->randomNumber(),
             'repository' => fake()->name(),
+            'documentation' => fake()->boolean(),
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
         ];

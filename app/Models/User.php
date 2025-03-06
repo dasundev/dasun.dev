@@ -37,6 +37,11 @@ final class User extends Authenticatable implements FilamentUser
         'remember_token',
     ];
 
+    public function canAccessPanel(Panel $panel): bool
+    {
+        return $this->email === 'hello@dasun.dev';
+    }
+
     /**
      * Get the attributes that should be cast.
      *
@@ -48,10 +53,5 @@ final class User extends Authenticatable implements FilamentUser
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
-    }
-
-    public function canAccessPanel(Panel $panel): bool
-    {
-        return $this->email === 'hello@dasun.dev';
     }
 }

@@ -10,7 +10,7 @@ it('can get a valid package', function () {
     expect($data)
         ->toBeArray()
         ->toMatchArray([
-            'name' => 'laravel-payhere/laravel-payhere',
+            'identifier' => 'laravel-payhere/laravel-payhere',
         ]);
 });
 
