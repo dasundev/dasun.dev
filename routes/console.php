@@ -9,3 +9,5 @@ Schedule::everyTenMinutes()
         Schedule::command('sync:packagist');
         Schedule::command('generate:sitemap');
     });
+
+Schedule::command('import:docs')->everyTwoHours();

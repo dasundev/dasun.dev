@@ -1,15 +1,15 @@
-<div x-data="{ open: false }" x-init="$watch('open', value => console.log(value))" class="relative mt-8 mb-15 flex justify-between">
-    <nav class="flex justify-between w-full">
+<div x-data="{ open: false }" x-init="$watch('open', value => console.log(value))" class="my-8 flex justify-between">
+    <nav class="flex justify-between w-full items-center">
         <a class="text-xl md:text-2xl font-normal text-zinc-100" href="/" wire:navigate>dasun.dev</a>
         <!-- Desktop Navigation -->
-        <ul class="lg:flex gap-8 hidden">
-            <li><a href="{{ route('about') }}" class="text-base font-normal text-zinc-300 hover:text-zinc-100 transition-colors" wire:current.exact="underline" wire:navigate>About</a></li>
-            <li><a href="{{ route('blog') }}" class="text-base font-normal text-zinc-300 hover:text-zinc-100 transition-colors" wire:current.exact="underline" wire:navigate>Blog</a></li>
-            <li><a href="{{ route('open-source') }}" class="text-base font-normal text-zinc-300 hover:text-zinc-100 transition-colors" wire:current.exact="underline" wire:navigate>Open Source</a></li>
+        <ul class="lg:flex gap-8 hidden text-zinc-300">
+            <li><a href="{{ route('about') }}" class="text-base font-normal hover:text-zinc-100 transition-colors" wire:current.exact="text-zinc-100" wire:navigate>About</a></li>
+            <li><a href="{{ route('blog') }}" class="text-base font-normal hover:text-zinc-100 transition-colors" wire:current="text-zinc-100" wire:navigate>Blog</a></li>
+            <li><a href="{{ route('open-source') }}" class="text-base font-normal hover:text-zinc-100 transition-colors" wire:current.exact="text-zinc-100" wire:navigate>Open Source</a></li>
         </ul>
         <!-- Mobile Navigation -->
         <div class="w-full absolute hidden" :class="{ 'hidden' : !open }">
-            <div class="fixed inset-x-4 top-8 z-50 origin-top rounded-3xl p-8 ring-1 bg-zinc-950 ring-zinc-800">
+            <div class="fixed inset-x-4 top-8 z-10 origin-top rounded-3xl p-8 ring-1 bg-zinc-950 ring-zinc-800">
                 <div class="flex flex-row-reverse items-center justify-between">
                     <button aria-label="Close menu" class="-m-1 p-1" type="button" @click="open = !open">
                         <svg viewBox="0 0 24 24" aria-hidden="true" class="h-6 w-6 text-zinc-500 dark:text-zinc-400">

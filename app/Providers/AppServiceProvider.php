@@ -82,8 +82,6 @@ final class AppServiceProvider extends ServiceProvider
 
     /**
      * Configure the application's URL.
-     *
-     * @return void
      */
     private function configureUrl(): void
     {
