@@ -1,0 +1,19 @@
+.markdown a {
+    @apply text-primary text-base;
+}
+
+.markdown blockquote {
+    @apply border-zinc-900 text-zinc-300 text-base;
+}
+
+.markdown :where(blockquote, pre, p) {
+    @apply my-3;
+}
+
+.markdown img {
+    @apply m-0;
+}
+
+.markdown :is(p > code) {
+    @apply bg-zinc-800 p-1 font-normal text-zinc-100;
+}
