@@ -10,8 +10,14 @@
     "license": "MIT",
     "require": {
         "php": "^8.2",
+        "laravel/folio": "^1.1",
         "laravel/framework": "^12.0",
-        "laravel/tinker": "^2.10.1"
+        "laravel/tinker": "^2.10.1",
+        "livewire/livewire": "^3.6",
+        "spatie/laravel-feed": "^4.4",
+        "spatie/laravel-google-fonts": "^1.4",
+        "spatie/laravel-markdown": "^2.7",
+        "spatie/laravel-sitemap": "^7.3"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",
