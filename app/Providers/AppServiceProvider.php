@@ -8,6 +8,7 @@ use Carbon\CarbonImmutable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Date;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Facades\Vite;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Str;
@@ -32,6 +33,7 @@ final class AppServiceProvider extends ServiceProvider
         $this->configureModels();
         $this->configureDates();
         $this->configurePasswordValidation();
+        $this->configureUrl();
 
         Vite::macro('image', fn (string $asset) => $this->asset("resources/images/{$asset}"));
 
@@ -66,7 +68,7 @@ final class AppServiceProvider extends ServiceProvider
      */
     private function configureModels(): void
     {
-        Model::shouldBeStrict(! $this->app->isProduction());
+        Model::shouldBeStrict();
         Model::unguard();
     }
 
@@ -83,8 +85,10 @@ final class AppServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    private function configureUrl()
+    private function configureUrl(): void
     {
-
+        URL::forceHttps(
+            $this->app->isProduction()
+        );
     }
 }
