@@ -13,6 +13,7 @@
 
     <meta name="og:type" content="website">
     <meta name="og:url" content="{{ url()->current() }}">
+    <meta name="og:image" content="{{ asset('assets/social.png') }}">
     <meta name="og:title" content="{{ $title }}">
     <meta name="og:description" content="{{ $description }}">
 
@@ -23,8 +24,8 @@
 
     <title>{{ $title }}</title>
 
-    <link rel="shortcut icon" href="{{ url(asset('favicon-16x16.png')) }}" sizes="16x16" type="image/png">
-    <link rel="shortcut icon" href="{{ url(asset('favicon-32x32.png')) }}" sizes="32x32" type="image/png">
+    <link rel="shortcut icon" href="{{ asset('assets/favicon-16x16.png') }}" sizes="16x16" type="image/png">
+    <link rel="shortcut icon" href="{{ asset('assets/favicon-32x32.png') }}" sizes="32x32" type="image/png">
 
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:300,400,500,600,700,800,900" rel="stylesheet"/>
