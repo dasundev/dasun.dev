@@ -9,6 +9,7 @@ build-assets
 build-docs
 install-prod-dependencies
 optimize
+reload-php-fpm
 maintenance-mode-off
 @endstory
 
@@ -53,6 +54,10 @@ php artisan migrate --force
 @task('maintenance-mode-off')
 cd /home/forge/www.dasun.dev
 php artisan up
+@endtask
+
+@task('reload-php-fpm')
+sudo service php8.2-fpm reload
 @endtask
 
 @task('build-docs')
