@@ -14,7 +14,7 @@ maintenance-mode-off
 
 @task('update-code')
 cd /home/forge/www.dasun.dev
-git pull origin 12.x
+git pull origin main
 @endtask
 
 @task('install-dev-dependencies')
