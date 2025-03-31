@@ -58,11 +58,6 @@ In a separate terminal, build the assets in watch mode:
 npm run dev
 ```
 
-Run the database migrations.
-```bash
-php artisan queue:work
-```
-
 Finally, start the development server:
 ```bash
 php artisan serve
