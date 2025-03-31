@@ -14,6 +14,9 @@ final class Feed
      */
     public static function getAllFeedItems(): Collection
     {
-        return Post::published()->orderByDesc('published_at')->get();
+        return Post::query()
+            ->published()
+            ->orderByDesc('published_at')
+            ->get();
     }
 }

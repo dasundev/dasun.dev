@@ -12,7 +12,7 @@ new class extends Component {
     #[Computed]
     public function packages()
     {
-        return Cache::remember('packages', 120, fn() => Package::orderByDesc('downloads')->get());
+        return Cache::remember('packages', 120, fn() => Package::query()->orderByDesc('downloads')->get());
     }
 
     public function render(): mixed

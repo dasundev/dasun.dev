@@ -9,7 +9,10 @@ new class extends Component {
     #[Computed]
     public function posts(): Collection
     {
-        return Post::published()->orderByDesc('published_at')->get();
+        return Post::query()
+            ->published()
+            ->orderByDesc('published_at')
+            ->get();
     }
 
     public function render(): mixed
