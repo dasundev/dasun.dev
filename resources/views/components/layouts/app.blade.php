@@ -35,6 +35,8 @@
 
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+
+    <script defer src="https://cloud.umami.is/script.js" data-website-id="572bed05-7902-4fce-85ab-acd4f1cf8253"></script>
 </head>
 <body class="max-w-6xl px-8 lg:px-18 min-h-screen mx-auto flex flex-col items-start font-display bg-black antialiased">
     <header class="w-full">
