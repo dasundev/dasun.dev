@@ -77,4 +77,14 @@ final class AppServiceProvider extends ServiceProvider
     {
         Password::defaults(fn () => $this->app->isProduction() ? Password::min(8)->uncompromised() : null);
     }
+
+    /**
+     * Configure the application's URL.
+     *
+     * @return void
+     */
+    private function configureUrl()
+    {
+
+    }
 }
