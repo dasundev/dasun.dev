@@ -10,7 +10,7 @@ return [
             'disk' => 'docs',
             'sheet_class' => App\Models\DocumentationPage::class,
             'path_parser' => Spatie\Sheets\PathParsers\SlugParser::class,
-            'content_parser' => App\Documentation\ContentParser::class,
+            'content_parser' => App\Markdown\DocumentationContentParser::class,
             'extension' => 'md',
         ],
     ],

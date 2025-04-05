@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace App\Documentation;
+namespace App\Markdown;
 
 use Illuminate\Support\HtmlString;
 use Spatie\LaravelMarkdown\MarkdownRenderer;
 use Spatie\Sheets\ContentParser as BaseContentParser;
 use Spatie\YamlFrontMatter\YamlFrontMatter;
 
-final class ContentParser implements BaseContentParser
+final class DocumentationContentParser implements BaseContentParser
 {
     private MarkdownRenderer $markdownRenderer;
 
