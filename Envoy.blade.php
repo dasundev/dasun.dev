@@ -3,7 +3,6 @@
 @story('deploy')
 maintenance-mode-on
 update-code
-install-dev-dependencies
 migrate-database
 build-assets
 install-prod-dependencies
@@ -15,12 +14,6 @@ maintenance-mode-off
 @task('update-code')
 cd /home/forge/www.dasun.dev
 git pull origin main
-@endtask
-
-@task('install-dev-dependencies')
-cd /home/forge/www.dasun.dev
-composer install
-npm install
 @endtask
 
 @task('install-prod-dependencies')
