@@ -1,19 +1,53 @@
-.markdown a {
-    @apply text-primary text-base;
-}
+.markdown {
+    a {
+        @apply text-primary font-bold;
+    }
 
-.markdown blockquote {
-    @apply border-zinc-900 text-zinc-300 text-base;
-}
+    blockquote {
+        @apply border-zinc-900 text-zinc-300;
+    }
 
-.markdown :where(blockquote, pre, p) {
-    @apply my-3;
-}
+    :where(blockquote, pre, p) {
+        @apply my-3;
+    }
 
-.markdown img {
-    @apply m-0;
-}
+    h1, h2 {
+        @apply font-semibold text-zinc-100;
+    }
 
-.markdown :is(p > code) {
-    @apply bg-zinc-800 p-1 font-normal text-zinc-100;
+    hr {
+        @apply border-zinc-800
+    }
+
+    p > code {
+        @apply bg-zinc-800 p-1
+    }
+
+    .callout {
+        @apply my-5 font-normal px-4 py-3;
+    }
+
+    .callout > p {
+        @apply m-0;
+    }
+
+    .callout.callout-note {
+        @apply border-blue-600 border-l-5
+    }
+
+    .callout.callout-tip {
+        @apply border-green-600 border-l-5
+    }
+
+    .callout.callout-important {
+        @apply border-purple-600 border-l-5
+    }
+
+    .callout.callout-warning {
+        @apply border-yellow-600 border-l-5
+    }
+
+    .callout.callout-caution {
+        @apply border-red-600 border-l-5
+    }
 }

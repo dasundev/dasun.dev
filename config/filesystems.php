@@ -62,6 +62,16 @@ return [
             'report' => false,
         ],
 
+        'docs' => [
+            'driver' => 'local',
+            'root' => storage_path('app/docs'),
+            'url' => env('APP_URL').'/storage',
+            'visibility' => 'public',
+            'serve' => true,
+            'throw' => false,
+            'report' => false,
+        ],
+
     ],
 
     /*
@@ -77,6 +87,7 @@ return [
 
     'links' => [
         public_path('storage') => storage_path('app/public'),
+        public_path('storage/docs') => storage_path('app/docs'),
     ],
 
 ];

@@ -27,7 +27,7 @@ final class Packagist
 
             return collect($data)->mapWithKeys(function ($data) {
                 return [
-                    'name' => $data['name'],
+                    'identifier' => $data['name'],
                     'description' => $data['description'],
                     'github_stars' => $data['github_stars'],
                     'downloads' => $data['downloads']['total'],

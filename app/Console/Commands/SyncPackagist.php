@@ -19,7 +19,7 @@ final class SyncPackagist extends Command
         $packages = Package::all();
 
         foreach ($packages as $package) {
-            $stats = Packagist::getPackageWithStats($package->name);
+            $stats = Packagist::getPackageWithStats($package->identifier);
 
             if ($stats) {
                 $package->update($stats);

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="bg-black">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     @php
         $title = isset($title) ? $title . ' - Dasun Tharanga' : 'Dasun Tharanga - Full-stack Laravel Developer';
@@ -40,14 +40,14 @@
         <script defer src="https://cloud.umami.is/script.js" data-website-id="572bed05-7902-4fce-85ab-acd4f1cf8253"></script>
     @endproduction
 </head>
-<body class="max-w-6xl px-8 lg:px-18 min-h-screen mx-auto flex flex-col items-start font-display bg-black antialiased">
-    <header class="w-full">
+<body class="min-h-screen flex flex-col items-start font-display bg-zinc-900 antialiased">
+    <header class="max-w-6xl mx-auto px-8 lg:px-18 w-full sticky top-0 z-10 bg-zinc-900">
         @include('components.layouts.navigation')
     </header>
-    <main class="flex flex-1 flex-col w-full">
+    <main class="max-w-6xl mx-auto px-8 lg:px-18 flex flex-1 flex-col w-full">
         {{ $slot }}
     </main>
-    <footer class="pb-10 pt-12 w-full">
+    <footer class="max-w-6xl mx-auto px-8 lg:px-18 pb-10 pt-16 w-full">
         <p class="text-xs md:text-sm text-zinc-400 leading-normal">© 2020 - {{ now()->year }} Dasun Tharanga. This website is open source.</p>
     </footer>
 </body>

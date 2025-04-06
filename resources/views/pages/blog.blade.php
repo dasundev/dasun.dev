@@ -25,10 +25,10 @@ new class extends Component {
 ?>
 
 <div>
-    <h1 class="text-zinc-100 text-4xl md:text-5xl font-bold tracking-tight leading-normal">Things that are too long to tweet.</h1>
+    <h1 class="text-zinc-100 text-4xl md:text-5xl font-bold tracking-tight leading-normal mt-8">Things that are too long to tweet.</h1>
     <div class="mt-10 flex max-w-full flex-col">
         @foreach($this->posts as $post)
-            <div class="z-0 group-hover:bg-zinc-950 sm:rounded-2xl md:col-span-3 group relative flex flex-col gap-1 items-start hover:bg-zinc-950 transition-colors -inset-x-5 px-5 py-8">
+            <div class="z-0 sm:rounded-2xl md:col-span-3 group relative flex flex-col gap-1 items-start hover:bg-zinc-800 transition-colors -inset-x-5 px-5 py-8">
                 <a href="{{ route('blog-post', ['slug' => $post->slug]) }}" class="absolute inset-0"></a>
                 <h2 class="text-xl font-semibold tracking-tight text-zinc-100">{{ $post->title }}</h2>
                 <p class="mt-2 text-base text-zinc-400">

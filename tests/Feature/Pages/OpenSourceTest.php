@@ -16,7 +16,7 @@ it('can list packages', function () {
 
     $component = Volt::test('open-source');
 
-    $component->assertSee($packages->find(1)->name);
-    $component->assertSee($packages->find(2)->name);
-    $component->assertSee($packages->find(3)->name);
+    $component->assertSee($packages->find(1)->identifier);
+    $component->assertSee($packages->find(2)->identifier);
+    $component->assertSee($packages->find(3)->identifier);
 });

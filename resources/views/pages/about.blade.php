@@ -11,7 +11,7 @@ new class extends Component {
 }
 ?>
 
-<div class="prose text-zinc-100 text-base max-w-4xl">
+<div class="prose prose-invert text-base max-w-4xl mt-8">
     <h1 class="text-4xl font-bold tracking-tight leading-normal text-zinc-100 md:text-5xl">Hi there, I'm Dasun Tharanga.</h1>
     <img src="{{ Vite::image('dasun.jpeg') }}" class="sm:float-right mx-auto sm:ml-16 mb-10 w-56 sm:w-48 rounded-md shadow-lg sm:rotate-2 sm:hover:rotate-3 hover:scale-105 hover:shadow-2xl transition duration-150" alt="Dasun Tharanga">
     <p>

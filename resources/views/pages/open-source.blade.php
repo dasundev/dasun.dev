@@ -12,7 +12,7 @@ new class extends Component {
     #[Computed]
     public function packages()
     {
-        return Cache::remember('packages', 120, fn() => Package::query()->orderByDesc('downloads')->get());
+        return Cache::remember('packages', 120, fn() => Package::query()->whereNotNull('repository')->orderByDesc('downloads')->get());
     }
 
     public function render(): mixed
@@ -26,12 +26,16 @@ new class extends Component {
 ?>
 
 <div>
-    <h1 class="text-zinc-100 text-4xl md:text-5xl font-bold tracking-tight leading-normal">Things I built for the community.</h1>
+    <h1 class="text-zinc-100 text-4xl md:text-5xl font-bold tracking-tight leading-normal mt-8">Things I built for the community.</h1>
     <div class="mt-10 grid grid-cols-1 lg:grid-cols-2 gap-8">
         @foreach ($this->packages as $package)
-            <div class="relative flex flex-col px-5 py-8 border border-zinc-800 hover:border-zinc-700 hover:bg-zinc-950 transition-colors rounded-xl">
-                <a href="{{ $package->repository }}" target="_blank" rel="noopener noreferrer" class="transition-all absolute inset-0"></a>
-                <h3 class="text-zinc-100 text-xl font-medium mb-5 leading-tight">{{ $package->name }}</h3>
+            <div class="relative flex flex-col px-5 py-8 border border-zinc-800 hover:border-zinc-700 hover:bg-zinc-800 transition-colors rounded-xl">
+                @if($package->documentation)
+                    <a href="{{ route('docs', ['slug' => $package->name]) }}" class="transition-all absolute inset-0" wire:navigate></a>
+                @else
+                    <a href="{{ $package->repository }}" target="_blank" rel="noopener noreferrer" class="transition-all absolute inset-0"></a>
+                @endif
+                <h3 class="text-zinc-100 text-xl font-medium mb-5 leading-tight">{{ $package->identifier }}</h3>
                 <div class="h-full flex flex-col">
                     <p class="mb-24 text-base text-zinc-400">{{ $package->description }}</p>
                     <div class="flex items-center gap-x-5 mt-auto">
