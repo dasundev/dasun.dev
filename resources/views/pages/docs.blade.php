@@ -44,7 +44,7 @@ new class extends Component {
 
 <div>
     <h1 class="text-zinc-100 text-4xl md:text-5xl font-bold tracking-tight leading-normal mt-8">{{ $this->package }}</h1>
-    <div class="grid grid-cols-12 gap-10 w-full mt-10">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 w-full mt-10">
         <aside class="col-span-full lg:col-span-3">
             <div class="sticky top-24 space-y-5">
                 @foreach($this->navigation as $key => $section)
