@@ -1,4 +1,4 @@
-<div x-data="{ open: false }" x-init="$watch('open', value => console.log(value))" class="my-8 flex justify-between">
+<div x-data="{ open: false }" x-init="$watch('open', value => console.log(value))" class="my-5 lg:my-8 flex justify-between">
     <nav class="flex justify-between w-full items-center">
         <a class="text-xl md:text-2xl font-normal text-zinc-100" href="/" wire:navigate>dasun.dev</a>
         <!-- Desktop Navigation -->
@@ -9,19 +9,11 @@
         </ul>
         <!-- Mobile Navigation -->
         <div class="w-full absolute hidden" :class="{ 'hidden' : !open }">
-            <div class="fixed inset-x-4 top-8 z-10 origin-top rounded-3xl p-8 ring-1 bg-zinc-950 ring-zinc-800">
-                <div class="flex flex-row-reverse items-center justify-between">
-                    <button aria-label="Close menu" class="-m-1 p-1" type="button" @click="open = !open">
-                        <svg viewBox="0 0 24 24" aria-hidden="true" class="h-6 w-6 text-zinc-500 dark:text-zinc-400">
-                            <path d="m17.25 6.75-10.5 10.5M6.75 6.75l10.5 10.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                        </svg>
-                    </button>
-                    <h2 class="text-sm font-medium text-zinc-400">Navigation</h2>
-                </div>
-                <ul class="mt-6 -my-2 divide-y text-base divide-zinc-100/10 text-zinc-300">
-                    <li><a class="block py-2" href="{{ route('about') }}">About</a></li>
-                    <li><a class="block py-2" href="{{ route('blog') }}">Blog</a></li>
-                    <li><a class="block py-2" href="{{ route('open-source') }}">Open Source</a></li>
+            <div class="fixed inset-x-0 top-17 z-10 origin-top bg-zinc-900 shadow-xl shadow-zinc-950">
+                <ul class="text-base text-zinc-300">
+                    <li><a class="block py-5 px-8 first:border-t border-b border-zinc-800" href="{{ route('about') }}" wire:current.exact="text-zinc-100" wire:navigate>About</a></li>
+                    <li><a class="block py-5 px-8 border-b border-zinc-800" href="{{ route('blog') }}" wire:current.exact="text-zinc-100" wire:navigate>Blog</a></li>
+                    <li><a class="block py-5 px-8 border-b border-zinc-800" href="{{ route('open-source') }}" wire:current.exact="text-zinc-100" wire:navigate>Open Source</a></li>
                 </ul>
             </div>
         </div>
@@ -29,7 +21,8 @@
     <button aria-label="Open menu" class="block lg:hidden" type="button" @click="open = !open">
         <span class="inset-0 absolute size-10"></span>
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="text-zinc-100 size-6">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+            <path x-transition x-show="!open" stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+            <path x-transition x-show="open" x-cloak stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
         </svg>
     </button>
 </div>
