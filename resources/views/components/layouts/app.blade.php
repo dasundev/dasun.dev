@@ -36,9 +36,9 @@
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
-    @production
+    @if(app()->isProduction() && !(auth()->check() && auth()->user()->email === 'hello@dasun.dev'))
         <script defer src="https://cloud.umami.is/script.js" data-website-id="572bed05-7902-4fce-85ab-acd4f1cf8253"></script>
-    @endproduction
+    @endif
 </head>
 <body class="min-h-screen flex flex-col items-start font-display bg-zinc-900 antialiased">
     <header class="max-w-6xl mx-auto px-8 lg:px-18 w-full sticky top-0 z-10 bg-zinc-900">
