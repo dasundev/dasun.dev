@@ -19,7 +19,7 @@ use League\Config\ConfigurationAwareInterface;
 use League\Config\ConfigurationInterface;
 use Stringable;
 
-final class ImageRenderer implements ConfigurationAwareInterface, NodeRendererInterface, XmlNodeRendererInterface
+final class DocsImageRenderer implements ConfigurationAwareInterface, NodeRendererInterface, XmlNodeRendererInterface
 {
     /** @psalm-readonly-allow-private-mutation */
     private ConfigurationInterface $config;
@@ -95,6 +95,11 @@ final class ImageRenderer implements ConfigurationAwareInterface, NodeRendererIn
 
     private function getImageUrl(Image $node): string
     {
+        // If we're not on the docs route, return the URL as-is
+        if (! request()->routeIs('docs')) {
+            return $node->getUrl();
+        }
+
         $basePath = request()->path();
 
         $parts = Str::of($basePath)->split('/\//');
