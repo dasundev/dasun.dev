@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace App\Markdown\Renderers;
 
-use Illuminate\Support\Str;
 use League\CommonMark\Extension\CommonMark\Node\Inline\Image;
 use League\CommonMark\Node\Inline\Newline;
 use League\CommonMark\Node\Node;
@@ -100,11 +99,10 @@ final class DocsImageRenderer implements ConfigurationAwareInterface, NodeRender
             return $node->getUrl();
         }
 
-        $basePath = request()->path();
+        $package = request()->route()->parameter('slug');
 
-        $parts = Str::of($basePath)->split('/\//');
         $imagePath = $node->getUrl();
 
-        return asset("storage/docs/{$parts[1]}/{$imagePath}");
+        return asset("storage/docs/{$package}/{$imagePath}");
     }
 }
