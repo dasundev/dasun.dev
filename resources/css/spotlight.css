@@ -1,0 +1,3 @@
+.spotlight:hover {
+    @apply cursor-pointer;
+}

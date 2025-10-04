@@ -37,6 +37,9 @@ final class DocsImageRenderer implements ConfigurationAwareInterface, NodeRender
         Image::assertInstanceOf($node);
 
         $attrs = $node->data->get('attributes');
+
+        $attrs['class'] = 'spotlight';
+
         $forbidUnsafeLinks = ! $this->config->get('allow_unsafe_links');
         if ($forbidUnsafeLinks && RegexHelper::isLinkPotentiallyUnsafe($this->getImageUrl($node))) {
             $attrs['src'] = '';

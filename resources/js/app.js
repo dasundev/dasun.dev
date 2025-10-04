@@ -1,4 +1,3 @@
 import './bootstrap';
-import.meta.glob([
-    '../images/**',
-]);
+import './spotlight';
+import.meta.glob(['../images/**']);
