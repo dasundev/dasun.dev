@@ -65,7 +65,7 @@ return [
         'docs' => [
             'driver' => 'local',
             'root' => storage_path('app/docs'),
-            'url' => env('APP_URL').'/storage',
+            'url' => env('APP_URL').'/storage/docs',
             'visibility' => 'public',
             'serve' => true,
             'throw' => false,

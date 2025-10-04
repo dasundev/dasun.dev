@@ -93,7 +93,7 @@ return [
      * More info: https://commonmark.thephpleague.com/2.4/customization/rendering/
      */
     'inline_renderers' => [
-        ['class' => League\CommonMark\Extension\CommonMark\Node\Inline\Image::class, 'renderer' => App\Markdown\Renderers\DocsImageRenderer::class, 'priority' => -1],
+        ['class' => League\CommonMark\Extension\CommonMark\Node\Inline\Image::class, 'renderer' => App\Markdown\Renderers\DocsImageRenderer::class, 'priority' => 1],
     ],
 
     /*
