@@ -21,7 +21,9 @@
     <meta name="twitter:description" content="{{ $description }}" />
     <meta name="twitter:image" content="{{ asset('assets/social.png') }}" />
 
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","url":"{{ url()->current() }}"}</script>
+    @verbatim
+        <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","url":"{{ url()->current() }}"}</script>
+    @endverbatim
 
     <title>{{ $title }}</title>
 
