@@ -3,6 +3,14 @@
         @apply text-primary font-bold;
     }
 
+    pre::-webkit-scrollbar {
+        @apply h-1;
+    }
+
+    pre::-webkit-scrollbar-thumb {
+        @apply bg-zinc-700 rounded-full;
+    }
+
     blockquote {
         @apply border-zinc-900 text-zinc-300;
     }
