@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Markdown\Renderers;
 
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use League\CommonMark\Extension\CommonMark\Node\Inline\Image;
@@ -111,6 +112,13 @@ final class DocsImageRenderer implements ConfigurationAwareInterface, NodeRender
         $package = Str::beforeLast($slug, '/');
 
         $imagePath = Str::after($node->getUrl(), './');
+
+        Log::info('rendering docs image', [
+            'slug' => $slug,
+            'package' => $package,
+            'imagePath' => $imagePath,
+            'fullPath' => "{$package}/{$imagePath}",
+        ]);
 
         $path = "{$package}/{$imagePath}";
 
