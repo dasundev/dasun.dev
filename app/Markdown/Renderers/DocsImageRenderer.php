@@ -104,12 +104,20 @@ final class DocsImageRenderer implements ConfigurationAwareInterface, NodeRender
             return $node->getUrl();
         }
 
+        $storage = Storage::disk('docs');
+
         $slug = request()->route('slug');
 
         $package = Str::beforeLast($slug, '/');
 
         $imagePath = Str::after($node->getUrl(), './');
 
-        return Storage::disk('docs')->url("/{$package}/{$imagePath}");
+        $path = "{$package}/{$imagePath}";
+
+        if ($storage->missing($path)) {
+            return $node->getUrl();
+        }
+
+        return $storage->url($path);
     }
 }
