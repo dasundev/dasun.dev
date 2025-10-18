@@ -69,7 +69,7 @@ new class extends Component {
         <aside class="col-span-full lg:col-span-2">
             <div class="relative inline-block sticky top-24 text-zinc-100 block font-medium text-xs text-center rounded-xl bg-zinc-800 px-4 py-3 transition hover:bg-zinc-700">
                 <a href="https://github.com/sponsors/dasundev" target="_blank" class="absolute inset-0"></a>
-                Your logo here? 💙
+                Your logo here?
             </div>
         </aside>
     </div>
